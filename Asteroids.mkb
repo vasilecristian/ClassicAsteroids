@@ -1,0 +1,14 @@
+#!/usr/bin/env mkb
+files
+{
+    Asteroids.cpp
+}
+
+subprojects
+{
+    iwutil
+}
+
+deployment
+{
+}

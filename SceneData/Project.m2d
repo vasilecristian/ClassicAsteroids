@@ -1,0 +1,14 @@
+{
+    "name": "Project",
+    "resources": [
+        {
+            "filename": "Project.resources"
+        }
+    ],
+    "scenes": [
+        {
+            "filename": "Scene.json"
+        }
+    ],
+    "version": "1.2"
+}

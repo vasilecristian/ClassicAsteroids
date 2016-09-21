@@ -1,0 +1,27 @@
+includepath .
+
+subprojects
+{
+    iw2dkitcore
+}
+
+files
+{
+    EngineDefines.h
+    GameManager.cpp
+    GameManager.h
+    GameManagerEvents.h
+    InputManager.cpp
+    InputManager.h
+    AssetContainer.cpp
+    AssetContainer.h
+    AssetLoaderBase.h
+    AssetHandleBase.h
+    AssetHandle.h
+    TextureAssetLoader.h
+    TextureAssetLoader.cpp
+    FontAssetLoader.h
+    FontAssetLoader.cpp
+    StringAssetLoader.h
+    StringAssetLoader.cpp
+}

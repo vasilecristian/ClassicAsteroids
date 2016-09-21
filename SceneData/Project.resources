@@ -1,0 +1,50 @@
+[
+    {
+        "filename": "defaultFont.ttf",
+        "hidden": true,
+        "id": 0,
+        "type": 3
+    },
+    {
+        "filename": "sprite_swap.png",
+        "hidden": false,
+        "id": 1,
+        "type": 1
+    },
+    {
+        "filename": "behaviour_bgpanel.png",
+        "hidden": false,
+        "id": 2,
+        "type": 1
+    },
+    {
+        "filename": "bg_image.png",
+        "hidden": false,
+        "id": 3,
+        "type": 1
+    },
+    {
+        "filename": "default_btn.png",
+        "hidden": false,
+        "id": 9,
+        "type": 1
+    },
+    {
+        "filename": "square_pixel-7.ttf",
+        "hidden": false,
+        "id": 10,
+        "type": 3
+    },
+    {
+        "filename": "selected_btn.png",
+        "hidden": false,
+        "id": 11,
+        "type": 1
+    },
+    {
+        "filename": "sprite_swap_ship2.png",
+        "hidden": false,
+        "id": 12,
+        "type": 1
+    }
+]

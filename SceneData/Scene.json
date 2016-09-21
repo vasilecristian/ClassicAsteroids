@@ -1,0 +1,410 @@
+{
+    "name": "Scene",
+    "nodes": [
+        {
+            "id": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "ConsumeTouch": 0,
+                "Name": "Scene",
+                "Size": [
+                    1024,
+                    768
+                ],
+                "TemplateName": ""
+            },
+            "timeStamp": 1447438574607,
+            "typeName": "RootNode",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{6c9f1efe-5e33-4956-8f13-9de97f60abe6}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -150,
+                    -150
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": true,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Background",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    512,
+                    384
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    1024,
+                    768
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": 3,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1456739563384,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{ae9bf52c-0621-4238-8f98-840212bff638}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -1529.5693359375,
+                    -1146.3675537109375
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    833,
+                    553
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Panel",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    505.5693359375,
+                    378.36752319335938
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    833,
+                    553
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": 2,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1456846606453,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{9b4e1652-ae7c-4796-8b27-e7e34a74ac22}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -149.61326599121094,
+                    -171.96484375
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 0,
+                "DisabledResourceID": -1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "Enabled": true,
+                "InternalSizeAnchoringBaseSize": [
+                    272,
+                    106
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Button",
+                "NormalResourceID": 9,
+                "NotInterruptibleStates": true,
+                "OverResourceID": -1,
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    508.03973388671875,
+                    552.6900634765625
+                ],
+                "PressedResourceID": 11,
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    272,
+                    106
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": -1,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1447442396157,
+            "typeName": "Button",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{89d22b2a-a06d-464b-ac39-a55445f9de81}",
+            "parentID": "{9b4e1652-ae7c-4796-8b27-e7e34a74ac22}",
+            "properties": {
+                "Alignment": 1,
+                "AnchoringType": 0,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -150.17129516601562,
+                    -141.21697998046875
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": true,
+                "EditorVisible": true,
+                "FontColor": [
+                    85,
+                    170,
+                    255,
+                    255
+                ],
+                "FontId": 10,
+                "FontSize": 28,
+                "InternalSizeAnchoringBaseSize": [
+                    256,
+                    128
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    272,
+                    106
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Label",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    136.4659423828125,
+                    43.689998626708984
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    256,
+                    128
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "Text": "Swap sprite frames",
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1455784188620,
+            "typeName": "Label",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{033a5e43-2619-4723-84fb-ca91217c152e}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -127.91445159912109,
+                    -140.67181396484375
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    203,
+                    203
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Sprite1",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    240.04498291015625,
+                    479.62533569335938
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    203,
+                    203
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": 12,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1456739642352,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{f2c79d9f-9d00-45bf-8b2c-104da48c2b16}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -170.33885192871094,
+                    -140.67181396484375
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    203,
+                    203
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    1024,
+                    768
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Sprite2",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    720.2698974609375,
+                    312.3594970703125
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    203,
+                    203
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": 1,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1456739649904,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        }
+    ],
+    "orientation": 0,
+    "version": "1.2"
+}

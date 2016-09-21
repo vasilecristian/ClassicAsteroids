@@ -1,0 +1,10 @@
+Package: marmaladeexampleresources
+Maintainer: Marmalade Package Team <packages@marmalademail.com>
+Description:
+  Resources used in Marmalade examples.
+Version: 1.0.5
+Revision: 1
+Redirect:
+  dir: $S3E_DIR/../examples/MarmaladeExampleResources
+No-Source-Upload: true
+Ignore-Missing-Changelog: true

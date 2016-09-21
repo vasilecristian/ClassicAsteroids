@@ -1,0 +1,9 @@
+
+deployments
+{
+    icon=resources/icons
+    splashscreen='resources/splashscreens/'
+    iphone-launch-dir='$CWD/resources/splashscreens/ios'
+    iphone-launch-storyboard='$CWD/resources/splashscreens/ios/LaunchScreen.storyboardc'
+    iphone-splitscreen-multitasking=1
+}

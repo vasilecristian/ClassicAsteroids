@@ -4,8 +4,8 @@
 # tool during the build process.
 
 config = {}
-cmdline = ['D:/tools/Marmalade/8.5/s3e/makefile_builder/mkb.py', 'd:/work/Asteroids/Asteroids.mkb', '--deploy-only', '--hub-data', 'D:/work/Asteroids/project_Asteroids/mkb-windows.txt', '--buildenv=VC14X']
-mkb = 'd:/work/Asteroids/Asteroids.mkb'
+cmdline = ['D:/tools/Marmalade/8.5/s3e/makefile_builder/mkb.py', 'd:/work/ClassicAsteroids/trunk/Asteroids.mkb', '--deploy-only', '--hub-data', 'D:/work/ClassicAsteroids/trunk/project_Asteroids/mkb-windows.txt', '--buildenv=VC14X']
+mkb = 'd:/work/ClassicAsteroids/trunk/Asteroids.mkb'
 mkf = ['d:\\tools\\marmalade\\8.5\\s3e\\s3e-default.mkf', 'd:\\tools\\marmalade\\8.5\\extensions\\s3eamazonads\\s3eamazonads.mkf', 'd:\\tools\\marmalade\\8.5\\modules\\iwutil\\iwutil.mkf', 'd:\\tools\\marmalade\\8.5\\modules\\third_party\\libjpeg\\libjpeg.mkf', 'd:\\tools\\marmalade\\8.5\\modules\\third_party\\libpng\\libpng.mkf', 'd:\\tools\\marmalade\\8.5\\modules\\third_party\\zlib\\zlib.mkf', 'd:\\tools\\marmalade\\8.5\\platform_libs\\android\\amazon-ads-android-sdk\\amazon-ads-android-sdk.mkf', 'd:\\tools\\marmalade\\8.5\\platform_libs\\iphone\\amazon-ads-ios-sdk\\amazon-ads-ios-sdk.mkf']
 
 class DeployConfig(object):
@@ -16,7 +16,7 @@ class DeployConfig(object):
 assets = {}
 
 assets['Default'] = [
-    ('d:/work/Asteroids\data', '.', 0),
+    ('d:/work/ClassicAsteroids/trunk\data', '.', 0),
 ]
 
 ######### DEFAULT CONFIG #############
@@ -29,9 +29,9 @@ class DefaultConfig(DeployConfig):
     caption = 'Asteroids'
     long_caption = 'Asteroids'
     version = [0, 0, 1]
-    config = ['d:/work/Asteroids\\data\\app.icf']
-    data_dir = 'd:/work/Asteroids/data'
-    mkb_dir = 'd:/work/Asteroids'
+    config = ['d:/work/ClassicAsteroids/trunk/data/app.icf']
+    data_dir = 'd:/work/ClassicAsteroids/trunk/data'
+    mkb_dir = 'd:/work/ClassicAsteroids/trunk'
     iphone_link_lib = ['s3eAmazonAds']
     tvos_link_lib = []
     osx_ext_dll = []
@@ -115,40 +115,40 @@ class DefaultConfig(DeployConfig):
     android_extra_strings = []
     target = {
          'gcc_x86' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86/Asteroids.so',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86/Asteroids.so',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86/Asteroids.so',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86/Asteroids.so',
                  },
          'gcc_x86_tizen' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86_tizen/Asteroids.s86',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86_tizen/Asteroids.s86',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86_tizen/Asteroids.s86',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86_tizen/Asteroids.s86',
                  },
          'firefoxos' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_firefoxos/Asteroids.js',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_firefoxos/Asteroids.js',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_firefoxos/Asteroids.js',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_firefoxos/Asteroids.js',
                  },
          'gcc_arm_android' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_arm_android/Asteroids.so',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_arm_android/Asteroids.so',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_arm_android/Asteroids.so',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_arm_android/Asteroids.so',
                  },
          'arm_gcc' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_arm/Asteroids.s3e',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_arm/Asteroids.s3e',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_arm/Asteroids.s3e',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_arm/Asteroids.s3e',
                  },
          'naclx86_64' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_naclx86_64/Asteroids.so.s64',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_naclx86_64/Asteroids.so.s64',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_naclx86_64/Asteroids.so.s64',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_naclx86_64/Asteroids.so.s64',
                  },
          'aarch64_gcc' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_aarch64/Asteroids.s3e',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_aarch64/Asteroids.s3e',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_aarch64/Asteroids.s3e',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_aarch64/Asteroids.s3e',
                  },
          'gcc_x86_android' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86_android/Asteroids.so',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86_android/Asteroids.so',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_gcc_x86_android/Asteroids.so',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_gcc_x86_android/Asteroids.so',
                  },
          'x86' : {
-                   'debug'   : r'd:/work/Asteroids/build_asteroids_vc14x/Debug_Asteroids_VC14X_x86/Asteroids.s86',
-                   'release' : r'd:/work/Asteroids/build_asteroids_vc14x/Release_Asteroids_VC14X_x86/Asteroids.s86',
+                   'debug'   : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Debug_Asteroids_VC14X_x86/Asteroids.s86',
+                   'release' : r'd:/work/ClassicAsteroids/trunk/build_asteroids_vc14x/Release_Asteroids_VC14X_x86/Asteroids.s86',
                  },
         }
     arm_arch = ''

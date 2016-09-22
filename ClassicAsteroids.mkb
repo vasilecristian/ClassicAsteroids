@@ -1,0 +1,44 @@
+#!/usr/bin/env mkb
+options
+{
+    
+}
+
+assets
+{
+    (data)
+    Scene.resources
+	Scene.json
+}
+assets
+{
+    (data)
+}
+
+
+
+files
+{
+    ClassicAsteroids.cpp
+}
+
+subprojects
+{
+	MarmaladeExampleResources
+	Framework
+    iwutil
+    iw2dscenegraphcore
+    iw2dscenegraph
+    iwgx
+    iwresmanager
+    iwtween
+    s3eFacebook
+}
+
+deployment
+{
+    # Replace FACEBOOK_APP_ID for login function correctly
+    iphone-bundle-url-schemes="fbFACEBOOK_APP_ID"
+    android-extra-strings='(app_id,FACEBOOK_APP_ID)' 
+
+}

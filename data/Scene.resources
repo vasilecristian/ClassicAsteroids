@@ -1,0 +1,32 @@
+{
+    "resources": {
+        "1": {
+            "path": "/assets/sprite_swap.png",
+            "type": "Image"
+        },
+        "10": {
+            "path": "/assets/square_pixel-7.ttf",
+            "type": "Font"
+        },
+        "11": {
+            "path": "/assets/selected_btn.png",
+            "type": "Image"
+        },
+        "12": {
+            "path": "/assets/sprite_swap_ship2.png",
+            "type": "Image"
+        },
+        "2": {
+            "path": "/assets/behaviour_bgpanel.png",
+            "type": "Image"
+        },
+        "3": {
+            "path": "/assets/bg_image.png",
+            "type": "Image"
+        },
+        "9": {
+            "path": "/assets/default_btn.png",
+            "type": "Image"
+        }
+    }
+}

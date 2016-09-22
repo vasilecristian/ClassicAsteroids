@@ -1,0 +1,2 @@
+VC14X;build_classicasteroids_vc14x;
+VC14X;build_classicasteroids_vc14x;

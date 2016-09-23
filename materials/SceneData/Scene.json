@@ -86,8 +86,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -1529.5693359375,
-                    -1146.3675537109375
+                    -1507.834228515625,
+                    -1144.3916015625
                 ],
                 "Animation": -1,
                 "Class": "",
@@ -165,8 +165,8 @@
                 "EditorVisible": true,
                 "Enabled": true,
                 "InternalSizeAnchoringBaseSize": [
-                    272,
-                    106
+                    271,
+                    103
                 ],
                 "InternalSizeAnchoringCachedParentSize": [
                     1024,
@@ -195,8 +195,8 @@
                     1
                 ],
                 "Size": [
-                    272,
-                    106
+                    271,
+                    103
                 ],
                 "SizeAnchoringType": 0,
                 "TemplateName": "",
@@ -349,8 +349,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 0,
                 "AnchoringVector": [
-                    -172.80662536621094,
-                    -144.65922546386719
+                    -173.19253540039062,
+                    -132.82431030273438
                 ],
                 "Animation": -1,
                 "Class": "",

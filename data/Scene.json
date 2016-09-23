@@ -134,8 +134,8 @@
                 1
             ],
             "Size": [
-                272,
-                106
+                271,
+                103
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
@@ -151,8 +151,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -150.17129516601562,
-                -141.21697998046875
+                -150.35643005371094,
+                -142.41748046875
             ],
             "Animation": -1,
             "Class": "",

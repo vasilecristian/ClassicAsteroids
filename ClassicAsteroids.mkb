@@ -19,7 +19,7 @@ assets
 
 files
 {
-    ClassicAsteroids.cpp
+    src/ClassicAsteroids.cpp
 }
 
 subprojects

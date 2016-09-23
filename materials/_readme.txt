@@ -1,0 +1,2 @@
+Folder used as a location for all raw data like: images, sounds, scene graphics, editor informations, that cannot be used directly in the application.
+Based on this files will be generated the content of data/ folder.

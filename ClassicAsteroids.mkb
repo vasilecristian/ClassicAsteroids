@@ -19,13 +19,15 @@ assets
 
 files
 {
-    src/ClassicAsteroids.cpp
+	["src"]
+	(src)
+    ClassicAsteroids.cpp
 }
 
 subprojects
 {
-	MarmaladeExampleResources
-	Framework
+	StandardResources
+	BaseFramework
     iwutil
     iw2dscenegraphcore
     iw2dscenegraph

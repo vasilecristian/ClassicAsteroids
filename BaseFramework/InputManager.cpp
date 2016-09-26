@@ -69,6 +69,7 @@ CInputManager::CInputManager(CGameManager* parent)
 
 void CInputManager::Update()
 {
+	s3eKeyboardUpdate();
     s3ePointerUpdate();
 }
 

@@ -19,6 +19,7 @@
 #include "SceneImporter.h"
 #include "Button.h"
 #include "Label.h"
+#include "IwDebug.h"
 
 using namespace Iw2DSceneGraphCore;
 using namespace Iw2DSceneGraph;
@@ -43,6 +44,12 @@ static int s_SceneId = -1;
 const char* FACEBOOK_APP_ID = NULL;
 const char* FACEBOOK_APP_SECRET = NULL;
 
+void ButtonReleasedCallback(CEventArgs* args)
+{
+	int a = 1;
+
+}
+
 
 // Main entry point for the application
 int main()
@@ -64,36 +71,6 @@ int main()
     {
         IwTrace(S3EFACEBOOK, ("Please supply a valid Facebook App ID for FACEBOOK_APP_ID and App secret for FACEBOOK_APP_SECRET in s3eFacebook.cpp!"));
     }
-    
-	/*
-    // Loop forever, until the user or the OS performs some action to quit the app
-    while (!s3eDeviceCheckQuitRequest())
-    {
-        //Update the input systems
-        s3eKeyboardUpdate();
-        s3ePointerUpdate();
-
-        //Update the scene. The SDK's example framework has a fixed
-        //framerate of 20fps, so we pass that duration to the update function.
-        g_SceneRoot->Update(1000/20);
-
-        Iw2DSurfaceClear(0xff00ff00);
-        
-        // Your rendering/app code goes here.
-
-        g_SceneRoot->Render();
-
-        //Draws Surface to screen
-        Iw2DSurfaceShow();
-
-        // Sleep for 0ms to allow the OS to process events etc.
-        s3eDeviceYield(0);
-    }
-
-    //Terminate modules being used
-    delete g_SceneRoot;
-    Iw2DTerminate();
-    */
 
 	// Create and initialise the game manager
 	g_Game = new CGameManager();
@@ -104,6 +81,11 @@ int main()
 	const int zIndex = 0;
 	if (sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, &s_SceneId))
 	{
+
+		// Attach pressed and released event callbacks to button
+		shared_ptr<CButton> btn = sc->GetNode<CButton>(s_SceneId, "Scene.ButtonPlay");
+		IwAssertMsg(2DENGINE, btn != 0, ("%s not found", "Scene.ButtonPlay"));
+		btn->SubscribeEvent(BUTTON_EVENT_RELEASED, ButtonReleasedCallback);
 
 		// Run the game
 		g_Game->Run();

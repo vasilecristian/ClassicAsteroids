@@ -4,19 +4,19 @@
             "ConsumeTouch": 0,
             "Name": "Scene",
             "Size": [
-                1024,
-                768
+                640,
+                960
             ],
             "TemplateName": "",
             "id": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
             "typeName": "RootNode"
         },
         {
-            "AnchoringType": "None",
+            "AnchoringType": "TopLeft",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -150,
-                -150
+                -50.038887023925781,
+                53.333328247070312
             ],
             "Animation": -1,
             "Class": "",
@@ -33,21 +33,21 @@
                 0.5
             ],
             "Position": [
-                512,
-                384
+                320.24887084960938,
+                448.00003051757812
             ],
             "Rotation": 0,
             "Scale": [
-                1,
+                0.83114159107208252,
                 1
             ],
             "Size": [
-                1024,
-                768
+                768,
+                1024
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
-            "TextureId": 3,
+            "TextureId": 5,
             "Visible": true,
             "ZIndex": 0,
             "id": "{6c9f1efe-5e33-4956-8f13-9de97f60abe6}",
@@ -58,8 +58,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
-                -1507.834228515625,
-                -1144.3916015625
+                -963.7763671875,
+                -1429.59033203125
             ],
             "Animation": -1,
             "Class": "",
@@ -76,13 +76,13 @@
                 0.5
             ],
             "Position": [
-                483.834228515625,
-                376.39157104492188
+                323.77633666992188,
+                469.59036254882812
             ],
             "Rotation": 0,
             "Scale": [
-                1,
-                1
+                0.55025047063827515,
+                1.4690177440643311
             ],
             "Size": [
                 833,
@@ -101,8 +101,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -149.61326599121094,
-                -171.96484375
+                -150,
+                -181.72767639160156
             ],
             "Animation": -1,
             "Class": "",
@@ -115,7 +115,7 @@
             "ConsumeTouch": 0,
             "DisabledResourceID": -1,
             "Enabled": true,
-            "Name": "Button",
+            "Name": "ButtonPlay",
             "NormalResourceID": 9,
             "NotInterruptibleStates": true,
             "OverResourceID": -1,
@@ -124,8 +124,8 @@
                 0.5
             ],
             "Position": [
-                508.03973388671875,
-                552.6900634765625
+                320,
+                784.58575439453125
             ],
             "PressedResourceID": 11,
             "Rotation": 0,
@@ -191,7 +191,7 @@
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
-            "Text": "Swap sprite frames",
+            "Text": "Play",
             "Visible": true,
             "ZIndex": 0,
             "id": "{89d22b2a-a06d-464b-ac39-a55445f9de81}",
@@ -202,10 +202,10 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -123.44188690185547,
-                -162.45121765136719
+                -150,
+                -120.23735046386719
             ],
-            "Animation": -1,
+            "Animation": 4,
             "Class": "",
             "Color": [
                 255,
@@ -220,8 +220,8 @@
                 0.5
             ],
             "Position": [
-                240.04498291015625,
-                479.62533569335938
+                320,
+                194.27854919433594
             ],
             "Rotation": 0,
             "Scale": [
@@ -245,8 +245,58 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -173.19253540039062,
-                -132.82431030273438
+                -150.43911743164062,
+                -168.382568359375
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 0,
+            "DisabledResourceID": -1,
+            "Enabled": true,
+            "Name": "ButtonOptions",
+            "NormalResourceID": 9,
+            "NotInterruptibleStates": true,
+            "OverResourceID": -1,
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                322.81039428710938,
+                656.47265625
+            ],
+            "PressedResourceID": 11,
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                271,
+                103
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "TextureId": -1,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{225977b6-60b1-46a4-b132-7560651e42b4}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Button"
+        },
+        {
+            "Alignment": "Centre",
+            "AnchoringType": "None",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -150.35643005371094,
+                -142.41748046875
             ],
             "Animation": -1,
             "Class": "",
@@ -257,14 +307,22 @@
                 255
             ],
             "ConsumeTouch": 1,
-            "Name": "Sprite2",
+            "FontColor": [
+                85,
+                170,
+                255,
+                255
+            ],
+            "FontId": 10,
+            "FontSize": 28,
+            "Name": "Label",
             "Pivot": [
                 0.5,
                 0.5
             ],
             "Position": [
-                749.4915771484375,
-                252.0906982421875
+                136.4659423828125,
+                43.689998626708984
             ],
             "Rotation": 0,
             "Scale": [
@@ -272,18 +330,220 @@
                 1
             ],
             "Size": [
-                203,
-                203
+                256,
+                128
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
-            "TextureId": 1,
+            "Text": "Options",
             "Visible": true,
             "ZIndex": 0,
-            "id": "{f2c79d9f-9d00-45bf-8b2c-104da48c2b16}",
+            "id": "{4d9c1681-879e-4ffe-adfd-fa0af08a30f1}",
+            "parentID": "{225977b6-60b1-46a4-b132-7560651e42b4}",
+            "typeName": "Label"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -150.15092468261719,
+                -155.36457824707031
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 0,
+            "DisabledResourceID": -1,
+            "Enabled": true,
+            "Name": "ButtonHelp",
+            "NormalResourceID": 9,
+            "NotInterruptibleStates": true,
+            "OverResourceID": -1,
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                320.9659423828125,
+                531.5
+            ],
+            "PressedResourceID": 11,
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                271,
+                103
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "TextureId": -1,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{77ac586e-2ff7-403d-9645-48366d14fdb4}",
             "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
-            "typeName": "Sprite"
+            "typeName": "Button"
+        },
+        {
+            "Alignment": "Centre",
+            "AnchoringType": "None",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -150.35643005371094,
+                -142.41748046875
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "FontColor": [
+                85,
+                170,
+                255,
+                255
+            ],
+            "FontId": 10,
+            "FontSize": 28,
+            "Name": "Label",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                136.4659423828125,
+                43.689998626708984
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                256,
+                128
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "Text": "Help",
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{ab38f4fc-a2bc-4a01-b8d2-9b45936f5fe1}",
+            "parentID": "{77ac586e-2ff7-403d-9645-48366d14fdb4}",
+            "typeName": "Label"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -150.59005737304688,
+                -141.30207824707031
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 0,
+            "DisabledResourceID": -1,
+            "Enabled": true,
+            "Name": "ButtonAbout",
+            "NormalResourceID": 9,
+            "NotInterruptibleStates": true,
+            "OverResourceID": -1,
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                323.77633666992188,
+                396.50003051757812
+            ],
+            "PressedResourceID": 11,
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                271,
+                103
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "TextureId": -1,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{3b833582-e13a-4ee4-917e-7e54f8b9d2f8}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Button"
+        },
+        {
+            "Alignment": "Centre",
+            "AnchoringType": "None",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -150.35643005371094,
+                -142.41748046875
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "FontColor": [
+                85,
+                170,
+                255,
+                255
+            ],
+            "FontId": 10,
+            "FontSize": 28,
+            "Name": "Label",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                136.4659423828125,
+                43.689998626708984
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                256,
+                128
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "Text": "About",
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{3d091892-88e6-46e8-8227-4182ac73a894}",
+            "parentID": "{3b833582-e13a-4ee4-917e-7e54f8b9d2f8}",
+            "typeName": "Label"
         }
     ],
-    "orientation": 0
+    "orientation": 1
 }

@@ -24,6 +24,18 @@
         "type": 1
     },
     {
+        "filename": "Animation1.anim",
+        "hidden": false,
+        "id": 4,
+        "type": 6
+    },
+    {
+        "filename": "bg_image2.png",
+        "hidden": false,
+        "id": 5,
+        "type": 1
+    },
+    {
         "filename": "default_btn.png",
         "hidden": false,
         "id": 9,

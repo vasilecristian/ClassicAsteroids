@@ -15,6 +15,7 @@
 
 #include "EngineDefines.h"
 #include "s3ePointer.h"
+#include "s3eKeyboard.h"
 #include "InputTouch.h"
 
 M2DKITENGINE_NAMESPACE_BEGIN

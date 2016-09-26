@@ -1,9 +1,5 @@
 {
     "resources": {
-        "1": {
-            "path": "/assets/sprite_swap.png",
-            "type": "Image"
-        },
         "10": {
             "path": "/assets/square_pixel-7.ttf",
             "type": "Font"
@@ -20,8 +16,12 @@
             "path": "/assets/behaviour_bgpanel.png",
             "type": "Image"
         },
-        "3": {
-            "path": "/assets/bg_image.png",
+        "4": {
+            "path": "/assets/Animation1.anim",
+            "type": "Animation"
+        },
+        "5": {
+            "path": "/assets/bg_image2.png",
             "type": "Image"
         },
         "9": {

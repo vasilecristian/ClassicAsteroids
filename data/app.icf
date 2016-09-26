@@ -18,8 +18,8 @@
 
 [S3E]
 MemSize=50000000
-WinWidth = 1024
-WinHeight = 768
+WinWidth = 640
+WinHeight = 960
 
 [GX]
 DataCacheSize=32768

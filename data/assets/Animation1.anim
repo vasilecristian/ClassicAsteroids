@@ -59,6 +59,20 @@
                 -13.76080322265625,
                 21.564727783203125
             ]
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 0,
+            "type": 0,
+            "value": 12
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 100,
+            "type": 0,
+            "value": 1
         }
     ],
     "loop": true,

@@ -20,6 +20,7 @@
 #include "SceneImporter.h"
 #include "Button.h"
 #include "Label.h"
+#include "Sprite.h"
 
 using namespace Iw2DSceneGraphCore;
 using namespace Iw2DSceneGraph;
@@ -86,6 +87,10 @@ int main()
 		shared_ptr<CButton> btn = sc->GetNode<CButton>(s_SceneId, "Scene.ButtonPlay");
 		IwAssertMsg(2DENGINE, btn != 0, ("%s not found", "Scene.ButtonPlay"));
 		btn->SubscribeEvent(BUTTON_EVENT_RELEASED, ButtonReleasedCallback);
+
+		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
+		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
+		sprite->SetScale(CIwFVec2(9.5, 8.4));
 
 		// Run the game
 		g_Game->Run();

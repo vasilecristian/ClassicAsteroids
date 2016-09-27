@@ -234,7 +234,7 @@
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
-            "TextureId": 12,
+            "TextureId": 1,
             "Visible": true,
             "ZIndex": 0,
             "id": "{033a5e43-2619-4723-84fb-ca91217c152e}",
@@ -543,6 +543,49 @@
             "id": "{3d091892-88e6-46e8-8227-4182ac73a894}",
             "parentID": "{3b833582-e13a-4ee4-917e-7e54f8b9d2f8}",
             "typeName": "Label"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 993,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "Sprite_Asteroid",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                158.59701538085938,
+                203.884765625
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                128,
+                128
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 16,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{f711b9e5-c12c-422e-a9c5-be634f602587}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
         }
     ],
     "orientation": 1

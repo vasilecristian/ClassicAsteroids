@@ -1,5 +1,9 @@
 {
     "resources": {
+        "1": {
+            "path": "/assets/sprite_swap.png",
+            "type": "Image"
+        },
         "10": {
             "path": "/assets/square_pixel-7.ttf",
             "type": "Font"
@@ -12,8 +16,84 @@
             "path": "/assets/sprite_swap_ship2.png",
             "type": "Image"
         },
+        "13": {
+            "path": "/assets/asteroid2.png/asteroid2_2",
+            "type": "Image"
+        },
+        "14": {
+            "path": "/assets/asteroid2.png/asteroid2_3",
+            "type": "Image"
+        },
+        "15": {
+            "path": "/assets/asteroid2.png/asteroid2_4",
+            "type": "Image"
+        },
+        "16": {
+            "path": "/assets/asteroid2.png/asteroid2_5",
+            "type": "Image"
+        },
+        "17": {
+            "path": "/assets/asteroid2.png/asteroid2_6",
+            "type": "Image"
+        },
+        "18": {
+            "path": "/assets/asteroid2.png/asteroid2_7",
+            "type": "Image"
+        },
+        "19": {
+            "path": "/assets/asteroid2.png/asteroid2_8",
+            "type": "Image"
+        },
         "2": {
             "path": "/assets/behaviour_bgpanel.png",
+            "type": "Image"
+        },
+        "20": {
+            "path": "/assets/asteroid2.png/asteroid2_9",
+            "type": "Image"
+        },
+        "21": {
+            "path": "/assets/asteroid2.png/asteroid2_10",
+            "type": "Image"
+        },
+        "22": {
+            "path": "/assets/asteroid2.png/asteroid2_11",
+            "type": "Image"
+        },
+        "23": {
+            "path": "/assets/asteroid2.png/asteroid2_12",
+            "type": "Image"
+        },
+        "24": {
+            "path": "/assets/asteroid2.png/asteroid2_13",
+            "type": "Image"
+        },
+        "25": {
+            "path": "/assets/asteroid2.png/asteroid2_14",
+            "type": "Image"
+        },
+        "26": {
+            "path": "/assets/asteroid2.png/asteroid2_15",
+            "type": "Image"
+        },
+        "27": {
+            "path": "/assets/asteroid2.png/asteroid2_16",
+            "type": "Image"
+        },
+        "28": {
+            "path": "/assets/asteroid2.png/asteroid2_17",
+            "type": "Image"
+        },
+        "29": {
+            "path": "/assets/asteroid2.png/asteroid2_18",
+            "type": "Image"
+        },
+        "30": {
+            "path": "/assets/asteroid2.png/asteroid2_19",
+            "type": "Image"
+        },
+        "31": {
+            "path": "/assets/asteroid2.png/asteroid2_20",
             "type": "Image"
         },
         "4": {
@@ -24,9 +104,21 @@
             "path": "/assets/bg_image2.png",
             "type": "Image"
         },
+        "7": {
+            "path": "/assets/asteroid2.png",
+            "type": "Atlas"
+        },
+        "8": {
+            "path": "/assets/asteroid2.png/asteroid2_1",
+            "type": "Image"
+        },
         "9": {
             "path": "/assets/default_btn.png",
             "type": "Image"
+        },
+        "993": {
+            "path": "/assets/Animation2.anim",
+            "type": "Animation"
         }
     }
 }

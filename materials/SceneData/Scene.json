@@ -333,7 +333,7 @@
                 ],
                 "SizeAnchoringType": 0,
                 "TemplateName": "",
-                "TextureId": 12,
+                "TextureId": 1,
                 "Visible": true,
                 "ZIndex": 0
             },
@@ -756,6 +756,68 @@
             },
             "timeStamp": 1474797082934,
             "typeName": "Label",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{f711b9e5-c12c-422e-a9c5-be634f602587}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -640,
+                    -960
+                ],
+                "Animation": 993,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    128,
+                    128
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Sprite_Asteroid",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    158.59701538085938,
+                    203.884765625
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    128,
+                    128
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "TextureId": 16,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1475002194370,
+            "typeName": "Sprite",
             "user_properties": {
             }
         }

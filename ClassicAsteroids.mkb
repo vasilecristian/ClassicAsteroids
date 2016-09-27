@@ -4,6 +4,11 @@ options
     
 }
 
+defines
+{
+	IW_GXFONT_TTF
+}
+
 assets
 {
     (data)
@@ -16,6 +21,12 @@ assets
 }
 
 
+includepaths
+{
+    Externals/TmxParser/include
+	Externals/tinyxml2/include
+	Externals/DarkFunctionParser/include
+}
 
 files
 {
@@ -26,8 +37,6 @@ files
 
 subprojects
 {
-	StandardResources
-	BaseFramework
     iwutil
     iw2dscenegraphcore
     iw2dscenegraph
@@ -35,6 +44,17 @@ subprojects
     iwresmanager
     iwtween
     s3eFacebook
+	zlib
+	tinyxml
+}
+
+subprojects
+{
+	StandardResources
+	BaseFramework
+	Externals/TmxParser/prj/marmaladesdk/TmxParser
+	Externals/tinyxml2/prj/marmaladesdk/tinyxml2
+	Externals/DarkFunctionParser/prj/marmaladesdk/DarkFunctionParser
 }
 
 deployment

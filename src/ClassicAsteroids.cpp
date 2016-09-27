@@ -9,6 +9,7 @@
  * Please do not use this program/source code before you have read the
  * EULA and have agreed to be bound by its terms.
  */
+
 #include "s3e.h"
 #include "IwDebug.h"
 #include "Iw2DSceneGraph.h"
@@ -19,7 +20,6 @@
 #include "SceneImporter.h"
 #include "Button.h"
 #include "Label.h"
-#include "IwDebug.h"
 
 using namespace Iw2DSceneGraphCore;
 using namespace Iw2DSceneGraph;

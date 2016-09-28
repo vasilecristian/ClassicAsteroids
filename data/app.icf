@@ -25,4 +25,4 @@ WinHeight = 960
 DataCacheSize=32768
 
 [GxFont]
-CacheTextureMaxSize=1024
+CacheTextureMaxSize=2048

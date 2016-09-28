@@ -15,7 +15,7 @@
             "AnchoringType": "TopLeft",
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
-                -50.038887023925781,
+                -49.714618682861328,
                 53.333328247070312
             ],
             "Animation": -1,
@@ -33,7 +33,7 @@
                 0.5
             ],
             "Position": [
-                320.24887084960938,
+                318.17355346679688,
                 448.00003051757812
             ],
             "Rotation": 0,
@@ -203,7 +203,7 @@
             "AnchoringUnits": "Percents",
             "AnchoringVector": [
                 -150,
-                -120.23735046386719
+                -121.23799896240234
             ],
             "Animation": 4,
             "Class": "",
@@ -216,17 +216,17 @@
             "ConsumeTouch": 1,
             "Name": "Sprite1",
             "Pivot": [
-                0.5,
-                0.5
+                0.48816999793052673,
+                0.47633939981460571
             ],
             "Position": [
-                320,
-                203.884765625
+                317.5985107421875,
+                199.08168029785156
             ],
             "Rotation": 0,
             "Scale": [
-                1,
-                1
+                -1.002036452293396,
+                -0.96193516254425049
             ],
             "Size": [
                 203,
@@ -234,7 +234,7 @@
             ],
             "SizeAnchoringType": "None",
             "TemplateName": "",
-            "TextureId": 1,
+            "TextureId": 12,
             "Visible": true,
             "ZIndex": 0,
             "id": "{033a5e43-2619-4723-84fb-ca91217c152e}",
@@ -548,8 +548,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
-                -640,
-                -960
+                -810.61114501953125,
+                -1163.884765625
             ],
             "Animation": 993,
             "Class": "",
@@ -566,7 +566,7 @@
                 0.5
             ],
             "Position": [
-                158.59701538085938,
+                170.61114501953125,
                 203.884765625
             ],
             "Rotation": 0,
@@ -584,6 +584,264 @@
             "Visible": true,
             "ZIndex": 0,
             "id": "{f711b9e5-c12c-422e-a9c5-be634f602587}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 6,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "asteroid2_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                490.8765869140625,
+                310.397705078125
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                64,
+                64
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 8,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{4e615f71-987a-4969-b254-862a0304b355}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 64,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "asteroid1_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                494.80294799804688,
+                218.12814331054688
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                64,
+                64
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 34,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{c465e88a-ca98-46ac-b6ae-063a26b59407}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 109,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "explosion1_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                141.43038940429688,
+                401.68563842773438
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                100,
+                100
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 73,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{cf331d6d-22ca-4f0e-9212-914b3ea6c41f}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 203,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "explosion3_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                524.73681640625,
+                604.45550537109375
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                130,
+                130
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 161,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{946ec708-5c6d-4650-b89c-e0adc2e80865}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 230,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "explosion4_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                510.61758422851562,
+                467.49725341796875
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                64,
+                64
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 205,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{88a677a1-a325-4995-95d0-3dc20b4576b0}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": 248,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "explosion5_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                136.45330810546875,
+                302.30020141601562
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                64,
+                64
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": 232,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{b25e237d-378f-4b70-9a81-f0603a782403}",
             "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
             "typeName": "Sprite"
         }

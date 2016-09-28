@@ -90,7 +90,8 @@ int main()
 
 		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
 		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
-		sprite->SetScale(CIwFVec2(9.5, 8.4));
+		sprite->SetScale(CIwFVec2(0.5, 0.4));
+
 
 		// Run the game
 		g_Game->Run();

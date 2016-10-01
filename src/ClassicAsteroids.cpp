@@ -22,6 +22,8 @@
 #include "Label.h"
 #include "Sprite.h"
 
+#include "DFPAnimedSprite/DFPAnimedSprite.h"
+
 using namespace Iw2DSceneGraphCore;
 using namespace Iw2DSceneGraph;
 
@@ -92,12 +94,20 @@ int main()
 		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
 		sprite->SetScale(CIwFVec2(0.5, 0.4));
 
+		/// Example of how to load an "dark function parser" animation type
+		/// the bellow two maps are global storrage for all loadded sprites
+		std::map<std::string, std::shared_ptr<dfp::Animations> > dfpAnimationsColection;
+		std::map<std::string, std::shared_ptr<dfp::Sprite> > dfpSpritesColection;
+
+		std::shared_ptr<dfp::DFPAnimedSprite> dfpa = std::make_shared<dfp::DFPAnimedSprite>(dfpAnimationsColection, dfpSpritesColection);
+		dfpa->Load("assets2/n69yj7.anim");
 
 		// Run the game
 		g_Game->Run();
 
 
 		sc->DestroyScene(s_SceneId);
+		dfpa = nullptr;
 	}
 
 	// Destroy the game manager

@@ -334,6 +334,12 @@
         "type": 1
     },
     {
+        "filename": "ship1.png",
+        "hidden": false,
+        "id": 32,
+        "type": 1
+    },
+    {
         "filename": "asteroid1.png",
         "frames": {
             "asteroid1_1": [

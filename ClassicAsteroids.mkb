@@ -33,6 +33,12 @@ files
 	["src"]
 	(src)
     ClassicAsteroids.cpp
+
+	["src/DFPAnimedSprite"]
+	(src/DFPAnimedSprite)
+	DFPAnimedSprite.h
+	DFPAnimedSprite.cpp
+	
 }
 
 subprojects

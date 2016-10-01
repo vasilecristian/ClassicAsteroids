@@ -488,6 +488,10 @@
             "path": "/assets/asteroid2.png/asteroid2_20",
             "type": "Image"
         },
+        "32": {
+            "path": "/assets/ship1.png",
+            "type": "Image"
+        },
         "33": {
             "path": "/assets/asteroid1.png",
             "type": "Atlas"

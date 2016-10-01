@@ -287,8 +287,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 0,
                 "AnchoringVector": [
-                    -150,
-                    -121.23799896240234
+                    -149.62477111816406,
+                    -120.7376708984375
                 ],
                 "Animation": 4,
                 "Class": "",
@@ -828,8 +828,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -1130.8765869140625,
+                    -1270.397705078125
                 ],
                 "Animation": 6,
                 "Class": "",
@@ -890,8 +890,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -1134.802978515625,
+                    -1178.128173828125
                 ],
                 "Animation": 64,
                 "Class": "",
@@ -952,8 +952,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -781.430419921875,
+                    -1361.6856689453125
                 ],
                 "Animation": 109,
                 "Class": "",
@@ -1014,8 +1014,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -1164.73681640625,
+                    -1564.45556640625
                 ],
                 "Animation": 203,
                 "Class": "",
@@ -1076,8 +1076,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -1150.6175537109375,
+                    -1427.497314453125
                 ],
                 "Animation": 230,
                 "Class": "",
@@ -1138,8 +1138,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -776.45330810546875,
+                    -1262.3001708984375
                 ],
                 "Animation": 248,
                 "Class": "",
@@ -1189,6 +1189,131 @@
                 "ZIndex": 0
             },
             "timeStamp": 1475094948256,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{d495d096-f017-439a-a9f3-fca0811acf0a}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -761.97637939453125,
+                    -1793.4697265625
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 0,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "Inertia": 0.80000000000000004,
+                "InternalSizeAnchoringBaseSize": [
+                    225.26953125,
+                    260.0086669921875
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Scroll Panel_1",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    121.97637939453125,
+                    833.46966552734375
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "ScrollDirection": 3,
+                "Size": [
+                    225.26953125,
+                    260.0086669921875
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1475175915788,
+            "typeName": "ScrollPanel",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{411ef68c-f784-459a-a56c-748f84904411}",
+            "parentID": "{d495d096-f017-439a-a9f3-fca0811acf0a}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -305.53875732421875,
+                    -383.88818359375
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    236,
+                    311
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    225.26953125,
+                    260.0086669921875
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Sprite_1",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    107.26953125,
+                    104.5086669921875
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    236,
+                    311
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "TextureId": 32,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1475175938408,
             "typeName": "Sprite",
             "user_properties": {
             }

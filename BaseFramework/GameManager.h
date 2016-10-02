@@ -32,6 +32,7 @@ public:
     void                    Init();
     void                    Run();
     void                    RunOneFrame();
+	void					SetCustomUpdateFunction(std::function<void(float)> customUpdateCallback);
 
     static CGameManager*    GetInstance();
     core::CSceneContainer*  GetSceneContainer() const;
@@ -69,6 +70,8 @@ protected:
 
     CIwVec2                 m_DisplaySize;          ///< Device display size in pixels
     core::CEventMap*        m_EventsMap;            // Events map
+
+	std::function<void(float)> m_customUpdateCallback;
 };
 
 M2DKITENGINE_NAMESPACE_END

@@ -893,8 +893,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
-                -305.53875732421875,
-                -383.88818359375
+                -332.5390625,
+                -364.517333984375
             ],
             "Animation": -1,
             "Class": "",
@@ -930,6 +930,49 @@
             "ZIndex": 0,
             "id": "{411ef68c-f784-459a-a56c-748f84904411}",
             "parentID": "{d495d096-f017-439a-a9f3-fca0811acf0a}",
+            "typeName": "Sprite"
+        },
+        {
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "Ship",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                -201.62948608398438,
+                846.861328125
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                128,
+                128
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "TextureId": -1,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{dc1ae180-9bd5-401b-aee0-fe4422e80d17}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
             "typeName": "Sprite"
         }
     ],

@@ -6,6 +6,7 @@
 #include <vector>
 #include <map>
 
+#include "Iw2DSceneGraph.h"
 
 namespace dfp
 {
@@ -18,7 +19,7 @@ namespace dfp
 {
     /** This Class is designed to load and store animations, sprites and textures for them.
     * Also, this class can update and draw the current animation.*/
-    class DFPAnimedSprite
+    class DFPAnimedSprite : public Iw2DSceneGraph::CDrawable
     {
     public:
 
@@ -48,20 +49,18 @@ namespace dfp
         * @return LoadMapResult type which can be LOAD_MAP_OK if the map was loaded succesfully.*/
         virtual LoadAnimResult Load(const std::string& dfpAnimationFileName);
 
+		void PreRender() override;
 
-        /** Update.  All the "update logic" must be placed in this function.
-        * @param dtSeconds time diference from last call (in seconds)
+		void Render() override;
+
+		void Update(float deltaTime, float alphaMul) override;
+
+		/** 
 		* @param animSpeedFactor is a factor that will accelerate or slow-down the animation.
 		*        Ex: if animSpeedFactor=2.0 the standard delay between animation-frames will be
 		*        delay / 2.0. */
-		virtual void Update(float dtSeconds, float animSpeedFactor);
+		void SetAnimSpeedFactor(float animSpeedFactor);
 
-        /**
-        * Draw. All the "paint calls" must be placed in this function.
-        * @param screenPosX is the current position in pixels relative to view port (aka screen).
-        * @param screenPosY is the current position in pixels relative to view port (aka screen).
-        * @param zoomFactor is a float used to specify the magnification of the draw. The default value is 1.0.*/
-		virtual void Draw(int screenPosX, int screenPosY, float zoomFactor = 1.0);
 
 	protected:
 
@@ -74,6 +73,13 @@ namespace dfp
 		* @param h is in pixels and is the height of the rectangle
 		* @return true if the rectangle is inside the screen or have some parts in the screen*/
 		virtual bool IsInsideViewPort(int x, int y, int w, int h){ return true; }
+
+		/**
+		* Draw. All the "paint calls" must be placed in this function.
+		* @param screenPosX is the current position in pixels relative to view port (aka screen).
+		* @param screenPosY is the current position in pixels relative to view port (aka screen).
+		* @param zoomFactor is a float used to specify the magnification of the draw. The default value is 1.0.*/
+		void Draw(int screenPosX, int screenPosY, float zoomFactorX = 1.0, float zoomFactorY = 1.0);
 
     protected:
 
@@ -92,6 +98,8 @@ namespace dfp
 
         /** This is the current animation of this instance. This animation will be displayed.*/
         std::shared_ptr<dfp::Anim> m_dfpCurrentAnim;
+
+		float m_animSpeedFactor;
 
     };
 

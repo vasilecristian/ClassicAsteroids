@@ -228,6 +228,10 @@ void CGameManager::RunOneFrame()
 
     // Update game
     Update(dt);
+	if (m_customUpdateCallback)
+	{
+		m_customUpdateCallback(dt);
+	}
 
     // Draw game
     IwGxSetColClear(m_ClearColour.r, m_ClearColour.g, m_ClearColour.b, m_ClearColour.a);
@@ -240,6 +244,11 @@ void CGameManager::RunOneFrame()
     s3eDeviceYield(0);
 
     m_PrevTime = new_time;
+}
+
+void CGameManager::SetCustomUpdateFunction(std::function<void(float)> customUpdateCallback)
+{
+	m_customUpdateCallback = customUpdateCallback;
 }
 
 M2DKITENGINE_NAMESPACE_END

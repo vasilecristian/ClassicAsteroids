@@ -53,6 +53,11 @@ void ButtonReleasedCallback(CEventArgs* args)
 
 }
 
+void Update(float dt)
+{
+	int a = 1;
+}
+
 
 // Main entry point for the application
 int main()
@@ -78,6 +83,7 @@ int main()
 	// Create and initialise the game manager
 	g_Game = new CGameManager();
 	g_Game->Init();
+	g_Game->SetCustomUpdateFunction(Update);
 
 	// Import the scene and its associated resources
 	CSceneContainer* sc = g_Game->GetSceneContainer();
@@ -92,7 +98,10 @@ int main()
 
 		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
 		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
-		sprite->SetScale(CIwFVec2(0.5, 0.4));
+
+		shared_ptr<core::CSprite> shipSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Ship");
+		IwAssertMsg(2DENGINE, shipSprite != 0, ("%s not found", "Scene.Ship"));
+		
 
 		/// Example of how to load an "dark function parser" animation type
 		/// the bellow two maps are global storrage for all loadded sprites
@@ -100,7 +109,12 @@ int main()
 		std::map<std::string, std::shared_ptr<dfp::Sprite> > dfpSpritesColection;
 
 		std::shared_ptr<dfp::DFPAnimedSprite> dfpa = std::make_shared<dfp::DFPAnimedSprite>(dfpAnimationsColection, dfpSpritesColection);
-		dfpa->Load("assets2/n69yj7.anim");
+		if (dfpa->Load("assets2/n69yj7.anim") == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
+		{
+			//m2dkit::shared_ptr<core::CNode> spr = m2dkit::shared_ptr<core::CNode>((core::CNode*)dfpa.get());
+			//shipSprite->AddChild(spr);
+		}
+
 
 		// Run the game
 		g_Game->Run();

@@ -15,7 +15,8 @@ namespace dfp
 		            : m_dfpAnimations(nullptr)
 					, m_dfpAnimationsColection(animationsColection)
 					, m_dfpSpritesColection(spritesColection)
-					, m_dfpSprite(nullptr)								
+					, m_dfpSprite(nullptr)	
+					, m_animSpeedFactor(1.0)
     {
     }
 
@@ -94,16 +95,23 @@ namespace dfp
         return LOAD_ANIM_OK;
     }
 
+	void DFPAnimedSprite::SetAnimSpeedFactor(float animSpeedFactor)
+	{
+		m_animSpeedFactor = animSpeedFactor;
+	}
+
    
-	void DFPAnimedSprite::Update(float dtSeconds, float animSpeedFactor)
+	void DFPAnimedSprite::Update(float deltaTime, float alphaMul)
     {
+		Iw2DSceneGraph::CDrawable::Update(deltaTime, alphaMul);
+
         if (m_dfpCurrentAnim == nullptr)
             return;
 
-		m_dfpCurrentAnim->Update(dtSeconds, animSpeedFactor);
+		m_dfpCurrentAnim->Update(deltaTime, m_animSpeedFactor);
     }
 
-    void DFPAnimedSprite::Draw(int currentPosX, int currentPosY, float zoomFactor)
+    void DFPAnimedSprite::Draw(int currentPosX, int currentPosY, float zoomFactorX, float zoomFactorY)
     {
         if (m_dfpCurrentAnim == nullptr)
             return;
@@ -124,10 +132,10 @@ namespace dfp
             SDL_Rect src = { sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH() };
             
 			SDL_Rect dst = { 
-				cs->GetX() * zoomFactor + currentPosX - sp->GetW() * zoomFactor / 2,
-				cs->GetY() * zoomFactor + currentPosY - sp->GetH() * zoomFactor / 2,
-                (int)(sp->GetW() * zoomFactor), 
-                (int)(sp->GetH() * zoomFactor) };
+				cs->GetX() * zoomFactorX + currentPosX - sp->GetW() * zoomFactorX / 2,
+				cs->GetY() * zoomFactorY + currentPosY - sp->GetH() * zoomFactorY / 2,
+                (int)(sp->GetW() * zoomFactorX), 
+                (int)(sp->GetH() * zoomFactorY) };
 
 			if (!IsInsideViewPort(dst.x, dst.y, dst.w, dst.h))
 				continue;
@@ -143,4 +151,16 @@ namespace dfp
             #endif
         }*/
     }
+
+	void DFPAnimedSprite::PreRender()
+	{
+		Iw2DSceneGraph::CDrawable::PreRender();
+	}
+
+	void DFPAnimedSprite::Render()
+	{
+		Iw2DSceneGraph::CDrawable::Render();
+		Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
+	}
+
 }

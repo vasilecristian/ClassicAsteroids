@@ -5,8 +5,8 @@
 #include <memory>
 #include <vector>
 #include <map>
+#include "Sprite.h"
 
-#include "Iw2DSceneGraph.h"
 
 namespace dfp
 {
@@ -15,17 +15,21 @@ namespace dfp
     class Sprite;
 }
 
+
 namespace dfp
 {
     /** This Class is designed to load and store animations, sprites and textures for them.
     * Also, this class can update and draw the current animation.*/
-    class DFPAnimedSprite : public Iw2DSceneGraph::CDrawable
+    class DFPAnimedSprite : public m2dkit::core::CSprite
     {
     public:
 
         /** Constructor 
 		* @param rendered is the main renderer object that is used to access the video driver.*/
-		DFPAnimedSprite(std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
+		DFPAnimedSprite(const m2dkit::core::CSpriteCreationParams& creationParams, 
+						m2dkit::core::CScene* associatedScene, 
+						const m2dkit::core::CAssetLoader* assetLoader,
+						std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
 			            std::map<std::string, std::shared_ptr<dfp::Sprite> >& spritesColection);
 
         /** The destructor */
@@ -49,11 +53,7 @@ namespace dfp
         * @return LoadMapResult type which can be LOAD_MAP_OK if the map was loaded succesfully.*/
         virtual LoadAnimResult Load(const std::string& dfpAnimationFileName);
 
-		void PreRender() override;
-
-		void Render() override;
-
-		void Update(float deltaTime, float alphaMul) override;
+		m2dkit::core::CNode::eState Update(float dt) override;
 
 		/** 
 		* @param animSpeedFactor is a factor that will accelerate or slow-down the animation.
@@ -80,6 +80,8 @@ namespace dfp
 		* @param screenPosY is the current position in pixels relative to view port (aka screen).
 		* @param zoomFactor is a float used to specify the magnification of the draw. The default value is 1.0.*/
 		void Draw(int screenPosX, int screenPosY, float zoomFactorX = 1.0, float zoomFactorY = 1.0);
+
+		void DrawImpl(m2dkit::core::CRender& nodeRenderer) override;
 
     protected:
 

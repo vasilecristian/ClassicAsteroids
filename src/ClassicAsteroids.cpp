@@ -25,11 +25,10 @@
 #include "DFPAnimedSprite/DFPAnimedSprite.h"
 
 using namespace Iw2DSceneGraphCore;
-using namespace Iw2DSceneGraph;
+//using namespace Iw2DSceneGraph;
 
 // The 2D engine lives in the Iw2DEngine namespace
 using namespace m2dkit;
-using namespace m2dkit::core;
 using namespace m2dkit::engine;
 
 // The main game manager
@@ -47,7 +46,7 @@ static int s_SceneId = -1;
 const char* FACEBOOK_APP_ID = NULL;
 const char* FACEBOOK_APP_SECRET = NULL;
 
-void ButtonReleasedCallback(CEventArgs* args)
+void ButtonReleasedCallback(core::CEventArgs* args)
 {
 	int a = 1;
 
@@ -86,15 +85,15 @@ int main()
 	g_Game->SetCustomUpdateFunction(Update);
 
 	// Import the scene and its associated resources
-	CSceneContainer* sc = g_Game->GetSceneContainer();
+	core::CSceneContainer* sc = g_Game->GetSceneContainer();
 	const int zIndex = 0;
 	if (sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, &s_SceneId))
 	{
 
 		// Attach pressed and released event callbacks to button
-		shared_ptr<CButton> btn = sc->GetNode<CButton>(s_SceneId, "Scene.ButtonPlay");
+		shared_ptr<core::CButton> btn = sc->GetNode<core::CButton>(s_SceneId, "Scene.ButtonPlay");
 		IwAssertMsg(2DENGINE, btn != 0, ("%s not found", "Scene.ButtonPlay"));
-		btn->SubscribeEvent(BUTTON_EVENT_RELEASED, ButtonReleasedCallback);
+		btn->SubscribeEvent(core::BUTTON_EVENT_RELEASED, ButtonReleasedCallback);
 
 		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
 		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
@@ -108,11 +107,12 @@ int main()
 		std::map<std::string, std::shared_ptr<dfp::Animations> > dfpAnimationsColection;
 		std::map<std::string, std::shared_ptr<dfp::Sprite> > dfpSpritesColection;
 
-		std::shared_ptr<dfp::DFPAnimedSprite> dfpa = std::make_shared<dfp::DFPAnimedSprite>(dfpAnimationsColection, dfpSpritesColection);
+		m2dkit::core::CSpriteCreationParams creationParams;
+		m2dkit::shared_ptr<dfp::DFPAnimedSprite> dfpa = m2dkit::shared_ptr<dfp::DFPAnimedSprite>(new dfp::DFPAnimedSprite(creationParams, sc->GetScene(s_SceneId), NULL, dfpAnimationsColection, dfpSpritesColection));
 		if (dfpa->Load("assets2/n69yj7.anim") == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
 		{
 			//m2dkit::shared_ptr<core::CNode> spr = m2dkit::shared_ptr<core::CNode>((core::CNode*)dfpa.get());
-			//shipSprite->AddChild(spr);
+			shipSprite->AddChild(dfpa);
 		}
 
 
@@ -121,7 +121,7 @@ int main()
 
 
 		sc->DestroyScene(s_SceneId);
-		dfpa = nullptr;
+		dfpa.reset();
 	}
 
 	// Destroy the game manager

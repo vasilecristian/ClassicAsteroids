@@ -10,9 +10,13 @@
 
 namespace dfp
 {
-	DFPAnimedSprite::DFPAnimedSprite(std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
+	DFPAnimedSprite::DFPAnimedSprite(const m2dkit::core::CSpriteCreationParams& creationParams,
+									 m2dkit::core::CScene* associatedScene,
+									 const m2dkit::core::CAssetLoader* assetLoader,
+									 std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
 									 std::map<std::string, std::shared_ptr<dfp::Sprite> >& spritesColection)
-		            : m_dfpAnimations(nullptr)
+		            : m2dkit::core::CSprite(creationParams, associatedScene, assetLoader)
+					, m_dfpAnimations(nullptr)
 					, m_dfpAnimationsColection(animationsColection)
 					, m_dfpSpritesColection(spritesColection)
 					, m_dfpSprite(nullptr)	
@@ -101,14 +105,16 @@ namespace dfp
 	}
 
    
-	void DFPAnimedSprite::Update(float deltaTime, float alphaMul)
+	m2dkit::core::CNode::eState DFPAnimedSprite::Update(float dt)
     {
-		Iw2DSceneGraph::CDrawable::Update(deltaTime, alphaMul);
+		m2dkit::core::CNode::eState state = m2dkit::core::CSprite::Update(dt);
 
-        if (m_dfpCurrentAnim == nullptr)
-            return;
+		if (m_dfpCurrentAnim)
+		{
+			m_dfpCurrentAnim->Update(dt, m_animSpeedFactor);
+		}
 
-		m_dfpCurrentAnim->Update(deltaTime, m_animSpeedFactor);
+		return state;
     }
 
     void DFPAnimedSprite::Draw(int currentPosX, int currentPosY, float zoomFactorX, float zoomFactorY)
@@ -152,15 +158,12 @@ namespace dfp
         }*/
     }
 
-	void DFPAnimedSprite::PreRender()
-	{
-		Iw2DSceneGraph::CDrawable::PreRender();
-	}
 
-	void DFPAnimedSprite::Render()
+	void DFPAnimedSprite::DrawImpl(m2dkit::core::CRender& nodeRenderer)
 	{
-		Iw2DSceneGraph::CDrawable::Render();
-		Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
+		m2dkit::core::CSprite::DrawImpl(nodeRenderer);
+
+		//Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
 	}
 
 }

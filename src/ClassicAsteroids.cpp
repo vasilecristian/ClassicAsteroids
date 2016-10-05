@@ -102,17 +102,12 @@ int main()
 		IwAssertMsg(2DENGINE, shipSprite != 0, ("%s not found", "Scene.Ship"));
 		
 
-		/// Example of how to load an "dark function parser" animation type
-		/// the bellow two maps are global storrage for all loadded sprites
-		std::map<std::string, std::shared_ptr<dfp::Animations> > dfpAnimationsColection;
-		std::map<std::string, std::shared_ptr<dfp::Sprite> > dfpSpritesColection;
-
+		
 		m2dkit::core::CSpriteCreationParams creationParams;
-		m2dkit::shared_ptr<dfp::DFPAnimedSprite> dfpa = m2dkit::shared_ptr<dfp::DFPAnimedSprite>(new dfp::DFPAnimedSprite(creationParams, sc->GetScene(s_SceneId), NULL, dfpAnimationsColection, dfpSpritesColection));
-		if (dfpa->Load("assets2/n69yj7.anim") == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
+		
+		if (dfp::CreateDFPNode("assets2/n69yj7.anim", sc, creationParams, s_SceneId, "Scene"))
 		{
-			//m2dkit::shared_ptr<core::CNode> spr = m2dkit::shared_ptr<core::CNode>((core::CNode*)dfpa.get());
-			shipSprite->AddChild(dfpa);
+			
 		}
 
 
@@ -121,7 +116,6 @@ int main()
 
 
 		sc->DestroyScene(s_SceneId);
-		dfpa.reset();
 	}
 
 	// Destroy the game manager

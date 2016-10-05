@@ -6,6 +6,7 @@
 #include <vector>
 #include <map>
 #include "Sprite.h"
+#include "SceneContainer.h"
 
 
 namespace dfp
@@ -18,18 +19,27 @@ namespace dfp
 
 namespace dfp
 {
+	bool CreateDFPNode(	std::string animFile,
+						m2dkit::core::CSceneContainer* sc,
+						const m2dkit::core::CSpriteCreationParams& params,
+						uint32 sceneId,
+						const char* parentHierachyPath);
+
+
     /** This Class is designed to load and store animations, sprites and textures for them.
     * Also, this class can update and draw the current animation.*/
-    class DFPAnimedSprite : public m2dkit::core::CSprite
+    class DFPAnimedSprite
     {
+		friend bool CreateDFPNode(	std::string animFile,
+									m2dkit::core::CSceneContainer* sc,
+									const m2dkit::core::CSpriteCreationParams& params,
+									uint32 sceneId,
+									const char* parentHierachyPath);
     public:
 
         /** Constructor 
 		* @param rendered is the main renderer object that is used to access the video driver.*/
-		DFPAnimedSprite(const m2dkit::core::CSpriteCreationParams& creationParams, 
-						m2dkit::core::CScene* associatedScene, 
-						const m2dkit::core::CAssetLoader* assetLoader,
-						std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
+		DFPAnimedSprite(std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
 			            std::map<std::string, std::shared_ptr<dfp::Sprite> >& spritesColection);
 
         /** The destructor */
@@ -52,8 +62,6 @@ namespace dfp
         * @param dfpAnimationFileName is the filename and path to the *.tmx file .
         * @return LoadMapResult type which can be LOAD_MAP_OK if the map was loaded succesfully.*/
         virtual LoadAnimResult Load(const std::string& dfpAnimationFileName);
-
-		m2dkit::core::CNode::eState Update(float dt) override;
 
 		/** 
 		* @param animSpeedFactor is a factor that will accelerate or slow-down the animation.
@@ -81,8 +89,6 @@ namespace dfp
 		* @param zoomFactor is a float used to specify the magnification of the draw. The default value is 1.0.*/
 		void Draw(int screenPosX, int screenPosY, float zoomFactorX = 1.0, float zoomFactorY = 1.0);
 
-		void DrawImpl(m2dkit::core::CRender& nodeRenderer) override;
-
     protected:
 
 
@@ -105,7 +111,6 @@ namespace dfp
 
     };
 
-    
 }
 
 #endif //AnimedSprite_H

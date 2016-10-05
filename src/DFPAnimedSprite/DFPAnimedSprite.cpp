@@ -10,13 +10,10 @@
 
 namespace dfp
 {
-	DFPAnimedSprite::DFPAnimedSprite(const m2dkit::core::CSpriteCreationParams& creationParams,
-									 m2dkit::core::CScene* associatedScene,
-									 const m2dkit::core::CAssetLoader* assetLoader,
+	DFPAnimedSprite::DFPAnimedSprite(
 									 std::map<std::string, std::shared_ptr<dfp::Animations> >& animationsColection,
 									 std::map<std::string, std::shared_ptr<dfp::Sprite> >& spritesColection)
-		            : m2dkit::core::CSprite(creationParams, associatedScene, assetLoader)
-					, m_dfpAnimations(nullptr)
+		            : m_dfpAnimations(nullptr)
 					, m_dfpAnimationsColection(animationsColection)
 					, m_dfpSpritesColection(spritesColection)
 					, m_dfpSprite(nullptr)	
@@ -105,7 +102,7 @@ namespace dfp
 	}
 
    
-	m2dkit::core::CNode::eState DFPAnimedSprite::Update(float dt)
+	/*m2dkit::core::CNode::eState DFPAnimedSprite::Update(float dt)
     {
 		m2dkit::core::CNode::eState state = m2dkit::core::CSprite::Update(dt);
 
@@ -115,7 +112,7 @@ namespace dfp
 		}
 
 		return state;
-    }
+    }*/
 
     void DFPAnimedSprite::Draw(int currentPosX, int currentPosY, float zoomFactorX, float zoomFactorY)
     {
@@ -159,11 +156,34 @@ namespace dfp
     }
 
 
-	void DFPAnimedSprite::DrawImpl(m2dkit::core::CRender& nodeRenderer)
-	{
-		m2dkit::core::CSprite::DrawImpl(nodeRenderer);
+	//void DFPAnimedSprite::DrawImpl(m2dkit::core::CRender& nodeRenderer)
+	//{
+	//	m2dkit::core::CSprite::DrawImpl(nodeRenderer);
 
-		//Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
+	//	//Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
+	//}
+
+	bool CreateDFPNode(	std::string animFile,
+						m2dkit::core::CSceneContainer* sc,
+						const m2dkit::core::CSpriteCreationParams& params,
+						uint32 sceneId,
+						const char* parentHierachyPath)
+	{
+		/// Example of how to load an "dark function parser" animation type
+		/// the bellow two maps are global storrage for all loadded sprites
+		std::map<std::string, std::shared_ptr<dfp::Animations> > dfpAnimationsColection;
+		std::map<std::string, std::shared_ptr<dfp::Sprite> > dfpSpritesColection;
+
+		std::shared_ptr<dfp::DFPAnimedSprite> dfpa = std::make_shared<dfp::DFPAnimedSprite>(dfpAnimationsColection, dfpSpritesColection);
+
+		if (dfpa->Load(animFile) == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
+		{
+			
+
+		}
+
+
+		return true;
 	}
 
 }

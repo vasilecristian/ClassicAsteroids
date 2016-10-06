@@ -103,9 +103,9 @@ int main()
 		
 
 		
-		m2dkit::core::CSpriteCreationParams creationParams;
 		
-		if (dfp::CreateDFPNode("assets2/n69yj7.anim", sc, creationParams, s_SceneId, "Scene"))
+		
+		if (dfp::CreateDFPNode("assets2/n69yj7.anim", sc, s_SceneId, "Scene"))
 		{
 			
 		}

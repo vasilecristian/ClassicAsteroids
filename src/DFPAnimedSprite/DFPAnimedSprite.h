@@ -21,7 +21,6 @@ namespace dfp
 {
 	bool CreateDFPNode(	std::string animFile,
 						m2dkit::core::CSceneContainer* sc,
-						const m2dkit::core::CSpriteCreationParams& params,
 						uint32 sceneId,
 						const char* parentHierachyPath);
 
@@ -32,7 +31,6 @@ namespace dfp
     {
 		friend bool CreateDFPNode(	std::string animFile,
 									m2dkit::core::CSceneContainer* sc,
-									const m2dkit::core::CSpriteCreationParams& params,
 									uint32 sceneId,
 									const char* parentHierachyPath);
     public:

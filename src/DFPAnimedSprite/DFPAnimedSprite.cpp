@@ -165,7 +165,6 @@ namespace dfp
 
 	bool CreateDFPNode(	std::string animFile,
 						m2dkit::core::CSceneContainer* sc,
-						const m2dkit::core::CSpriteCreationParams& params,
 						uint32 sceneId,
 						const char* parentHierachyPath)
 	{
@@ -178,8 +177,63 @@ namespace dfp
 
 		if (dfpa->Load(animFile) == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
 		{
+			m2dkit::core::CScene* scene = sc->GetScene(sceneId);
+
+			//m2dkit::core::CSpriteCreationParams params;
+			//params.m_Name = "Sprite1";
+			//params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
+			//params.m_Position = CIwFVec2(256.f, 128.0f);
+			//params.m_Pivot = CIwFVec2(0.5f, 0.5f);
+			////params.m_SpriteFrame = scene->CreateSpriteFrame("assets/barrel.png", "barrel1", CIwRect32(0, 0, 0, 0));
+			//m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
+
 			
 
+			for each (auto animIterator in dfpa->m_dfpAnimations->GetAnims())
+			{
+				std::shared_ptr<Anim> anim = animIterator.second;
+				
+				for each (auto cell in anim->GetCells())
+				{
+					auto cellsSpr = cell->GetCellsSpr();
+					for each (auto cs in cellsSpr)
+					{
+						std::shared_ptr<dfp::Spr> sp = dfpa->m_dfpSprite->GetSpr(cs->GetName());
+
+					
+						m2dkit::core::CSpriteCreationParams params;
+						//params.m_Name = "Sprite1";
+						params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
+						params.m_Position = CIwFVec2(256.f, 128.0f);
+						params.m_Pivot = CIwFVec2(0.5f, 0.5f);
+						params.m_SpriteFrame = scene->CreateSpriteFrame(dfpa->m_dfpSprite->GetImageFileName(), cs->GetName(), CIwRect32(sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH()));
+						m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
+
+						/*
+						SDL_Rect src = { sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH() };
+
+						SDL_Rect dst = {
+							cs->GetX() * zoomFactorX + currentPosX - sp->GetW() * zoomFactorX / 2,
+							cs->GetY() * zoomFactorY + currentPosY - sp->GetH() * zoomFactorY / 2,
+							(int)(sp->GetW() * zoomFactorX),
+							(int)(sp->GetH() * zoomFactorY) };
+
+						if (!IsInsideViewPort(dst.x, dst.y, dst.w, dst.h))
+							continue;
+
+						SDL_RenderCopy(m_renderer, m_spriteTextures->m_tex, &src, &dst);
+
+						#if defined(_DEBUG)
+						static int change = 1;
+						change++;
+						SDL_Rect absRect = { currentPosX - 2, currentPosY - 2, 4, 4 };
+						SDL_SetRenderDrawColor(m_renderer, change, 0, 255, 255);
+						SDL_RenderFillRect(m_renderer, &absRect);
+						#endif
+						*/
+					}
+				}
+			}
 		}
 
 

@@ -8,6 +8,8 @@
 
 #include "IwDebug.h"
 
+using namespace m2dkit::core;
+
 namespace dfp
 {
 	DFPAnimedSprite::DFPAnimedSprite(
@@ -179,15 +181,36 @@ namespace dfp
 		{
 			m2dkit::core::CScene* scene = sc->GetScene(sceneId);
 
-			//m2dkit::core::CSpriteCreationParams params;
-			//params.m_Name = "Sprite1";
-			//params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
-			//params.m_Position = CIwFVec2(256.f, 128.0f);
-			//params.m_Pivot = CIwFVec2(0.5f, 0.5f);
+			m2dkit::core::CSpriteCreationParams params;
+			params.m_Name = "Sprite1";
+			params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
+			params.m_Position = CIwFVec2(256.f, 128.0f);
+			params.m_Pivot = CIwFVec2(0.5f, 0.5f);
 			////params.m_SpriteFrame = scene->CreateSpriteFrame("assets/barrel.png", "barrel1", CIwRect32(0, 0, 0, 0));
-			//m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
-
+			m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
 			
+
+			m2dkit::core::TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema("AnimationName");
+			m2dkit::core::CAnimationSchemaNode& root = animSchema->GetRoot();
+
+			m2dkit::shared_ptr<CAnimationTrack<float> > rotationTrack = root.RequestNewAnimationTrack<float>("Rotation");
+			CKeyFrame<float> rotationKeyFrame1(0.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
+			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame1);
+
+			CKeyFrame<float> rotationKeyFrame2(2.0f, -180.0f, ExpOut, 2.0f, AbsoluteKeyFrameType);
+			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame2);
+
+			CKeyFrame<float> rotationKeyFrame3(4.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
+			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);
+
+			//CKeyFrame<TSpriteFramePtr> rotationKeyFrame4(4.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
+			//rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);
+			
+
+			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, "anim1");
+			animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
+			animInst1->SetRepeatCount(0);
+
 
 			for each (auto animIterator in dfpa->m_dfpAnimations->GetAnims())
 			{
@@ -207,8 +230,8 @@ namespace dfp
 						params.m_Position = CIwFVec2(256.f, 128.0f);
 						params.m_Pivot = CIwFVec2(0.5f, 0.5f);
 						params.m_SpriteFrame = scene->CreateSpriteFrame(dfpa->m_dfpSprite->GetImageFileName(), cs->GetName(), CIwRect32(sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH()));
-						m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
-
+						m2dkit::shared_ptr<m2dkit::core::CSprite> spriteChild = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
+						sprite->AddChild(spriteChild);
 						/*
 						SDL_Rect src = { sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH() };
 

@@ -165,11 +165,13 @@ namespace dfp
 	//	//Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
 	//}
 
-	bool CreateDFPNode(	std::string animFile,
+	m2dkit::shared_ptr<CSprite> CreateDFPNode(	std::string animFile,
 						m2dkit::core::CSceneContainer* sc,
 						uint32 sceneId,
 						const char* parentHierachyPath)
 	{
+		m2dkit::shared_ptr<CSprite> sprite;
+
 		/// Example of how to load an "dark function parser" animation type
 		/// the bellow two maps are global storrage for all loadded sprites
 		std::map<std::string, std::shared_ptr<dfp::Animations> > dfpAnimationsColection;
@@ -179,21 +181,24 @@ namespace dfp
 
 		if (dfpa->Load(animFile) == dfp::DFPAnimedSprite::LoadAnimResult::LOAD_ANIM_OK)
 		{
-			m2dkit::core::CScene* scene = sc->GetScene(sceneId);
+			CScene* scene = sc->GetScene(sceneId);
 
-			m2dkit::core::CSpriteCreationParams params;
-			params.m_Name = "Sprite1";
+			CSpriteCreationParams params;
+			params.m_Name = CHashString("SpriteName");
 			params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
-			params.m_Position = CIwFVec2(256.f, 128.0f);
+			params.m_Position = CIwFVec2(256, 256);
 			params.m_Pivot = CIwFVec2(0.5f, 0.5f);
 			////params.m_SpriteFrame = scene->CreateSpriteFrame("assets/barrel.png", "barrel1", CIwRect32(0, 0, 0, 0));
-			m2dkit::shared_ptr<m2dkit::core::CSprite> sprite = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
+			sprite = sc->CreateNode<CSprite>(params, sceneId, parentHierachyPath);
 			
+			CResourceContainer resources = scene->GetResourceContainer();
 
-			m2dkit::core::TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema("AnimationName");
-			m2dkit::core::CAnimationSchemaNode& root = animSchema->GetRoot();
+			TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema("AnimationName");
+			CAnimationSchemaNode& root = animSchema->GetRoot();
 
-			m2dkit::shared_ptr<CAnimationTrack<float> > rotationTrack = root.RequestNewAnimationTrack<float>("Rotation");
+			m2dkit::shared_ptr<CAnimationTrack<int> > imagesTrack = root.RequestNewAnimationTrack<int>("TextureId");
+			m2dkit::shared_ptr<CAnimationTrack<CIwFVec2> > sizeTrack = root.RequestNewAnimationTrack<CIwFVec2>("Size");
+			/*m2dkit::shared_ptr<CAnimationTrack<float> > rotationTrack = root.RequestNewAnimationTrack<float>("Rotation");
 			CKeyFrame<float> rotationKeyFrame1(0.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
 			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame1);
 
@@ -201,19 +206,17 @@ namespace dfp
 			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame2);
 
 			CKeyFrame<float> rotationKeyFrame3(4.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
-			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);
+			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);*/
 
-			//CKeyFrame<TSpriteFramePtr> rotationKeyFrame4(4.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
-			//rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);
-			
-
-			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, "anim1");
-			animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
-			animInst1->SetRepeatCount(0);
-
+			float time = 0;
+		
 
 			for each (auto animIterator in dfpa->m_dfpAnimations->GetAnims())
 			{
+				std::string animName = animIterator.first;
+
+				animSchema->RequestNewAnimationSchemaLabel(animName, time);
+
 				std::shared_ptr<Anim> anim = animIterator.second;
 				
 				for each (auto cell in anim->GetCells())
@@ -223,44 +226,27 @@ namespace dfp
 					{
 						std::shared_ptr<dfp::Spr> sp = dfpa->m_dfpSprite->GetSpr(cs->GetName());
 
-					
-						m2dkit::core::CSpriteCreationParams params;
-						//params.m_Name = "Sprite1";
-						params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
-						params.m_Position = CIwFVec2(256.f, 128.0f);
-						params.m_Pivot = CIwFVec2(0.5f, 0.5f);
-						params.m_SpriteFrame = scene->CreateSpriteFrame(dfpa->m_dfpSprite->GetImageFileName(), cs->GetName(), CIwRect32(sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH()));
-						m2dkit::shared_ptr<m2dkit::core::CSprite> spriteChild = sc->CreateNode<m2dkit::core::CSprite>(params, sceneId, parentHierachyPath);
-						sprite->AddChild(spriteChild);
-						/*
-						SDL_Rect src = { sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH() };
+						
+						TSpriteFramePtr frame = scene->CreateSpriteFrame(dfpa->m_dfpSprite->GetImageFileName(), cs->GetName(), CIwRect32(sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH()));
+						resources.AddResource(frame);
+						CKeyFrame<int> changeImage(time, frame->GetNameHash().GetHash(), NoInterpolation, 0, AbsoluteKeyFrameType);
+						imagesTrack->GetKeyFrames().push_back(changeImage);
 
-						SDL_Rect dst = {
-							cs->GetX() * zoomFactorX + currentPosX - sp->GetW() * zoomFactorX / 2,
-							cs->GetY() * zoomFactorY + currentPosY - sp->GetH() * zoomFactorY / 2,
-							(int)(sp->GetW() * zoomFactorX),
-							(int)(sp->GetH() * zoomFactorY) };
+						CKeyFrame<CIwFVec2> changeSize(time, CIwFVec2(sp->GetW(), sp->GetH()), NoInterpolation, 0, AbsoluteKeyFrameType);
+						sizeTrack->GetKeyFrames().push_back(changeSize);
 
-						if (!IsInsideViewPort(dst.x, dst.y, dst.w, dst.h))
-							continue;
-
-						SDL_RenderCopy(m_renderer, m_spriteTextures->m_tex, &src, &dst);
-
-						#if defined(_DEBUG)
-						static int change = 1;
-						change++;
-						SDL_Rect absRect = { currentPosX - 2, currentPosY - 2, 4, 4 };
-						SDL_SetRenderDrawColor(m_renderer, change, 0, 255, 255);
-						SDL_RenderFillRect(m_renderer, &absRect);
-						#endif
-						*/
+						time += 0.3;
 					}
 				}
 			}
+
+			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, "anim1");
+			animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
+			animInst1->SetRepeatCount(0);
 		}
 
 
-		return true;
+		return sprite;
 	}
 
 }

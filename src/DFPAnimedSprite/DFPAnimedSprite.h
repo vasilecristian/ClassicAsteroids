@@ -19,7 +19,7 @@ namespace dfp
 
 namespace dfp
 {
-	bool CreateDFPNode(	std::string animFile,
+	m2dkit::shared_ptr<m2dkit::core::CSprite> CreateDFPNode(	std::string animFile,
 						m2dkit::core::CSceneContainer* sc,
 						uint32 sceneId,
 						const char* parentHierachyPath);
@@ -29,7 +29,7 @@ namespace dfp
     * Also, this class can update and draw the current animation.*/
     class DFPAnimedSprite
     {
-		friend bool CreateDFPNode(	std::string animFile,
+		friend m2dkit::shared_ptr<m2dkit::core::CSprite> CreateDFPNode(	std::string animFile,
 									m2dkit::core::CSceneContainer* sc,
 									uint32 sceneId,
 									const char* parentHierachyPath);

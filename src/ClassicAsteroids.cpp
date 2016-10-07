@@ -22,6 +22,7 @@
 #include "Label.h"
 #include "Sprite.h"
 
+
 #include "DFPAnimedSprite/DFPAnimedSprite.h"
 
 using namespace Iw2DSceneGraphCore;
@@ -104,10 +105,15 @@ int main()
 
 		
 		
-		
-		if (dfp::CreateDFPNode("assets2/n69yj7.anim", sc, s_SceneId, "Scene"))
+		shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("assets2/n69yj7.anim", sc, s_SceneId, "Scene");
+		if (dfpSprite)
 		{
-			
+			dfpSprite->SetScale(CIwFVec2(2, 2));
+			core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("anim1");
+			if (anim)
+			{
+				//anim->Play("StandW");
+			}
 		}
 
 

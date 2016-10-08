@@ -189,34 +189,23 @@ namespace dfp
 			params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
 			params.m_Position = CIwFVec2(256, 256);
 			params.m_Pivot = CIwFVec2(0.5f, 0.5f);
-			////params.m_SpriteFrame = scene->CreateSpriteFrame("assets/barrel.png", "barrel1", CIwRect32(0, 0, 0, 0));
+			//params.m_SpriteFrame = scene->CreateSpriteFrame("assets/barrel.png", "barrel1", CIwRect32(0, 0, 0, 0));
 			sprite = sc->CreateNode<CSprite>(params, sceneId, parentHierachyPath);
 			
 			CResourceContainer resources = scene->GetResourceContainer();
 
-			TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema(spriteName + "Anim");
-			CAnimationSchemaNode& root = animSchema->GetRoot();
-
-			m2dkit::shared_ptr<CAnimationTrack<int> > imagesTrack = root.RequestNewAnimationTrack<int>("TextureId");
-			m2dkit::shared_ptr<CAnimationTrack<CIwFVec2> > sizeTrack = root.RequestNewAnimationTrack<CIwFVec2>("Size");
-			/*m2dkit::shared_ptr<CAnimationTrack<float> > rotationTrack = root.RequestNewAnimationTrack<float>("Rotation");
-			CKeyFrame<float> rotationKeyFrame1(0.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
-			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame1);
-
-			CKeyFrame<float> rotationKeyFrame2(2.0f, -180.0f, ExpOut, 2.0f, AbsoluteKeyFrameType);
-			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame2);
-
-			CKeyFrame<float> rotationKeyFrame3(4.0f, 0.0f, ExpIn, 2.0f, AbsoluteKeyFrameType);
-			rotationTrack->GetKeyFrames().push_back(rotationKeyFrame3);*/
-
-			float time = 0;
-		
-
 			for each (auto animIterator in dfpa->m_dfpAnimations->GetAnims())
 			{
-				std::string animName = animIterator.first;
+				float time = 0;
 
-				animSchema->RequestNewAnimationSchemaLabel(animName, time);
+				std::string animName = animIterator.first;
+				
+				TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema(animFile + "/" + animName);
+				CAnimationSchemaNode& root = animSchema->GetRoot();
+				m2dkit::shared_ptr<CAnimationTrack<int> > imagesTrack = root.RequestNewAnimationTrack<int>("TextureId");
+				m2dkit::shared_ptr<CAnimationTrack<CIwFVec2> > sizeTrack = root.RequestNewAnimationTrack<CIwFVec2>("Size");
+
+				//animSchema->RequestNewAnimationSchemaLabel(animName, time);
 
 				std::shared_ptr<Anim> anim = animIterator.second;
 				
@@ -239,11 +228,14 @@ namespace dfp
 						time += 0.3;
 					}
 				}
+
+				CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, (animFile + "/" + animName).c_str());
+				animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
+				animInst1->SetRepeatCount(1);
+				animInst1->Stop();
 			}
 
-			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, animFile.c_str());
-			animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
-			animInst1->SetRepeatCount(0);
+			
 		}
 
 

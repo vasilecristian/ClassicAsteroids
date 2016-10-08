@@ -47,21 +47,41 @@ static int s_SceneId = -1;
 const char* FACEBOOK_APP_ID = NULL;
 const char* FACEBOOK_APP_SECRET = NULL;
 
-void ButtonReleasedCallback(core::CEventArgs* args)
+void ButtonReleasedCallback1(core::CEventArgs* args)
+{
+	core::CSceneContainer* sc = g_Game->GetSceneContainer();
+
+	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
+	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
+	
+
+	if (dfpSprite)
+	{
+		dfpSprite->SetScale(CIwFVec2(4, 4));
+		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim/WalkN");
+		if (anim)
+		{
+			anim->Play(NULL);
+		}
+	}
+
+}
+
+void ButtonReleasedCallback2(core::CEventArgs* args)
 {
 	core::CSceneContainer* sc = g_Game->GetSceneContainer();
 
 	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
 	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
 
+
 	if (dfpSprite)
 	{
-		dfpSprite->SetScale(CIwFVec2(4, 4));
-		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim");
+		dfpSprite->SetScale(CIwFVec2(3, 3));
+		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim/WalkS");
 		if (anim)
 		{
-			//anim->Play(NULL);
-			anim->Play("WalkN");
+			anim->Play(NULL);
 		}
 	}
 
@@ -106,9 +126,14 @@ int main()
 	{
 
 		// Attach pressed and released event callbacks to button
-		shared_ptr<core::CButton> btn = sc->GetNode<core::CButton>(s_SceneId, "Scene.ButtonPlay");
-		IwAssertMsg(2DENGINE, btn != 0, ("%s not found", "Scene.ButtonPlay"));
-		btn->SubscribeEvent(core::BUTTON_EVENT_RELEASED, ButtonReleasedCallback);
+		shared_ptr<core::CButton> btn1 = sc->GetNode<core::CButton>(s_SceneId, "Scene.ButtonPlay");
+		IwAssertMsg(2DENGINE, btn1 != 0, ("%s not found", "Scene.ButtonPlay"));
+		btn1->SubscribeEvent(core::BUTTON_EVENT_RELEASED, ButtonReleasedCallback1);
+
+		// Attach pressed and released event callbacks to button
+		shared_ptr<core::CButton> btn2 = sc->GetNode<core::CButton>(s_SceneId, "Scene.ButtonOptions");
+		IwAssertMsg(2DENGINE, btn2 != 0, ("%s not found", "Scene.ButtonOptions"));
+		btn2->SubscribeEvent(core::BUTTON_EVENT_RELEASED, ButtonReleasedCallback2);
 
 		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
 		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));

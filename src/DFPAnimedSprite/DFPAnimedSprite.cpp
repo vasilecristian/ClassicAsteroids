@@ -216,17 +216,18 @@ namespace dfp
 					{
 						std::shared_ptr<dfp::Spr> sp = dfpa->m_dfpSprite->GetSpr(cs->GetName());
 
-						
 						TSpriteFramePtr frame = scene->CreateSpriteFrame(dfpa->m_dfpSprite->GetImageFileName(), cs->GetName(), CIwRect32(sp->GetX(), sp->GetY(), sp->GetW(), sp->GetH()));
 						resources.AddResource(frame);
+
 						CKeyFrame<int> changeImage(time, frame->GetNameHash().GetHash(), NoInterpolation, 0, AbsoluteKeyFrameType);
 						imagesTrack->GetKeyFrames().push_back(changeImage);
 
 						CKeyFrame<CIwFVec2> changeSize(time, CIwFVec2(sp->GetW(), sp->GetH()), NoInterpolation, 0, AbsoluteKeyFrameType);
 						sizeTrack->GetKeyFrames().push_back(changeSize);
 
-						time += 0.3;
 					}
+
+					time += (float)(cell->GetDelay()) / 1000;
 				}
 
 				CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, (animFile + "/" + animName).c_str());

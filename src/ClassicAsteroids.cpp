@@ -61,7 +61,7 @@ void ButtonReleasedCallback1(core::CEventArgs* args)
 		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().SetCurrentAnimation("assets2/n69yj7.anim/WalkN");
 		if (anim)
 		{
-			anim->Play(NULL);
+			anim->Play();
 		}
 	}
 

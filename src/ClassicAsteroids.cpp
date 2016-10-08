@@ -58,7 +58,7 @@ void ButtonReleasedCallback1(core::CEventArgs* args)
 	if (dfpSprite)
 	{
 		dfpSprite->SetScale(CIwFVec2(4, 4));
-		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim/WalkN");
+		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().SetCurrentAnimation("assets2/n69yj7.anim/WalkN");
 		if (anim)
 		{
 			anim->Play(NULL);
@@ -78,7 +78,7 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 	if (dfpSprite)
 	{
 		dfpSprite->SetScale(CIwFVec2(3, 3));
-		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim/WalkS");
+		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().SetCurrentAnimation("assets2/n69yj7.anim/WalkS");
 		if (anim)
 		{
 			anim->Play(NULL);

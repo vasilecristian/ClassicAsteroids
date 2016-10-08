@@ -231,7 +231,7 @@ namespace dfp
 
 				CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, (animFile + "/" + animName).c_str());
 				animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
-				animInst1->SetRepeatCount(1);
+				animInst1->SetRepeatCount(0);
 				animInst1->Stop();
 			}
 

@@ -49,7 +49,21 @@ const char* FACEBOOK_APP_SECRET = NULL;
 
 void ButtonReleasedCallback(core::CEventArgs* args)
 {
-	int a = 1;
+	core::CSceneContainer* sc = g_Game->GetSceneContainer();
+
+	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
+	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
+
+	if (dfpSprite)
+	{
+		dfpSprite->SetScale(CIwFVec2(4, 4));
+		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("assets2/n69yj7.anim");
+		if (anim)
+		{
+			//anim->Play(NULL);
+			anim->Play("WalkN");
+		}
+	}
 
 }
 
@@ -102,19 +116,8 @@ int main()
 		shared_ptr<core::CSprite> shipSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Ship");
 		IwAssertMsg(2DENGINE, shipSprite != 0, ("%s not found", "Scene.Ship"));
 		
-
 		
-		
-		shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("assets2/n69yj7.anim", sc, s_SceneId, "Scene");
-		if (dfpSprite)
-		{
-			dfpSprite->SetScale(CIwFVec2(2, 2));
-			core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().GetAnimation("anim1");
-			if (anim)
-			{
-				//anim->Play("StandW");
-			}
-		}
+		shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, s_SceneId, "Scene");
 
 
 		// Run the game

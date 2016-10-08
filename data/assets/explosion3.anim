@@ -295,7 +295,17 @@
             "value": 202
         }
     ],
-    "loop": true,
+    "labels": [
+        {
+            "name": "Label1",
+            "time": 0
+        },
+        {
+            "name": "Label2",
+            "time": 2000
+        }
+    ],
+    "loop": false,
     "playDirection": 0,
     "version": "1.1"
 }

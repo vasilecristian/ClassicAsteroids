@@ -165,10 +165,11 @@ namespace dfp
 	//	//Draw(this->m_X, this->m_Y, this->m_ScaleX, this->m_ScaleY);
 	//}
 
-	m2dkit::shared_ptr<CSprite> CreateDFPNode(	std::string animFile,
-						m2dkit::core::CSceneContainer* sc,
-						uint32 sceneId,
-						const char* parentHierachyPath)
+	m2dkit::shared_ptr<CSprite> CreateDFPNode(	std::string spriteName,
+												std::string animFile,
+												m2dkit::core::CSceneContainer* sc,
+												uint32 sceneId,
+												const char* parentHierachyPath)
 	{
 		m2dkit::shared_ptr<CSprite> sprite;
 
@@ -184,7 +185,7 @@ namespace dfp
 			CScene* scene = sc->GetScene(sceneId);
 
 			CSpriteCreationParams params;
-			params.m_Name = CHashString("SpriteName");
+			params.m_Name = CHashString(spriteName.c_str());
 			params.m_Dimensions = CIwFVec2(128.0f, 128.0f);
 			params.m_Position = CIwFVec2(256, 256);
 			params.m_Pivot = CIwFVec2(0.5f, 0.5f);
@@ -193,7 +194,7 @@ namespace dfp
 			
 			CResourceContainer resources = scene->GetResourceContainer();
 
-			TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema("AnimationName");
+			TAnimationSchemaPtr animSchema = scene->CreateAnimationSchema(spriteName + "Anim");
 			CAnimationSchemaNode& root = animSchema->GetRoot();
 
 			m2dkit::shared_ptr<CAnimationTrack<int> > imagesTrack = root.RequestNewAnimationTrack<int>("TextureId");
@@ -240,7 +241,7 @@ namespace dfp
 				}
 			}
 
-			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, "anim1");
+			CAnimationInstance* animInst1 = sprite->GetAnimationContainer().AddAnimation(animSchema, animFile.c_str());
 			animInst1->SetPlaybackDirection(Animation::PlaybackDirectionForward);
 			animInst1->SetRepeatCount(0);
 		}

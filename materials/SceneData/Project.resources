@@ -756,6 +756,20 @@
         "type": 1
     },
     {
+        "filename": "Label1",
+        "hidden": false,
+        "id": 67,
+        "parentID": 203,
+        "type": 6
+    },
+    {
+        "filename": "Label2",
+        "hidden": false,
+        "id": 68,
+        "parentID": 203,
+        "type": 6
+    },
+    {
         "filename": "explosion1.png",
         "frames": {
             "explosion1_1": [

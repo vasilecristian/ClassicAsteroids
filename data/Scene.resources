@@ -632,6 +632,14 @@
             "path": "/assets/asteroid1.anim",
             "type": "Animation"
         },
+        "67": {
+            "path": "/assets/explosion3.anim/Label1",
+            "type": "Animation"
+        },
+        "68": {
+            "path": "/assets/explosion3.anim/Label2",
+            "type": "Animation"
+        },
         "7": {
             "path": "/assets/asteroid2.png",
             "type": "Atlas"

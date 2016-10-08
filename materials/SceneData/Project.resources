@@ -334,12 +334,6 @@
         "type": 1
     },
     {
-        "filename": "ship1.png",
-        "hidden": false,
-        "id": 32,
-        "type": 1
-    },
-    {
         "filename": "asteroid1.png",
         "frames": {
             "asteroid1_1": [
@@ -742,12 +736,6 @@
         "hidden": false,
         "id": 64,
         "type": 6
-    },
-    {
-        "filename": "STRIP-1.png",
-        "hidden": false,
-        "id": 65,
-        "type": 1
     },
     {
         "filename": "asteroid3.png",

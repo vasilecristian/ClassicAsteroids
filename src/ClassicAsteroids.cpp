@@ -65,6 +65,22 @@ void ButtonReleasedCallback1(core::CEventArgs* args)
 		}
 	}
 
+	shared_ptr<core::CSprite> ship1 = sc->GetNode<core::CSprite>(s_SceneId, "Scene.ship1");
+	IwAssertMsg(2DENGINE, ship1 != 0, ("%s not found", "Scene.ship1"));
+
+	if (ship1)
+	{
+		ship1->SetScale(CIwFVec2(4, 4));
+		ship1->SetPosition(CIwFVec2(300, 300));
+		core::CAnimationInstance* anim = ship1->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
+		if (anim)
+		{
+			anim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
+			anim->SetRepeatCount(1);
+			anim->Play();
+		}
+	}
+
 }
 
 void ButtonReleasedCallback2(core::CEventArgs* args)
@@ -82,6 +98,23 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 		if (anim)
 		{
 			anim->Play(NULL);
+		}
+	}
+
+
+	shared_ptr<core::CSprite> ship1 = sc->GetNode<core::CSprite>(s_SceneId, "Scene.ship1");
+	IwAssertMsg(2DENGINE, ship1 != 0, ("%s not found", "Scene.ship1"));
+
+	if (ship1)
+	{
+		ship1->SetScale(CIwFVec2(4, 4));
+		ship1->SetPosition(CIwFVec2(300, 300));
+		core::CAnimationInstance* anim = ship1->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
+		if (anim)
+		{
+			anim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionReverse);
+			anim->SetRepeatCount(1);
+			anim->Play();
 		}
 	}
 
@@ -143,6 +176,8 @@ int main()
 		
 		
 		shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, s_SceneId, "Scene");
+
+		shared_ptr<core::CSprite> ship1 = dfp::CreateDFPNode("ship1", "assets2/ship1.anim", sc, s_SceneId, "Scene");
 
 
 		// Run the game

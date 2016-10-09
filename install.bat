@@ -17,3 +17,10 @@ if not exist %~dp0Externals\tinyxml2 (
 ) else (
 	svn up %~dp0Externals\tinyxml2
 )
+
+if not exist %~dp0Externals\MarmaladeSDK_template (
+	svn co file:///C:/Users/cristian/Dropbox/SVN_REPOSITORY/tools/MarmaladeSDK %~dp0Externals\MarmaladeSDK_template
+) else (
+	svn up %~dp0Externals\MarmaladeSDK_template
+)
+

@@ -39,6 +39,13 @@ files
 	DFPAnimedSprite.h
 	DFPAnimedSprite.cpp
 	
+	["src/GameStates"]
+	(src/GameStates)
+	GameStates.h
+	GameStates.cpp
+	StatesStack.cpp
+	StatesStack.h
+	
 }
 
 subprojects

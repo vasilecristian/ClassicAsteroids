@@ -168,11 +168,11 @@ int main()
 		IwAssertMsg(2DENGINE, btn2 != 0, ("%s not found", "Scene.ButtonOptions"));
 		btn2->SubscribeEvent(core::BUTTON_EVENT_RELEASED, ButtonReleasedCallback2);
 
-		shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
-		IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
+		//shared_ptr<core::CSprite> sprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Sprite_Asteroid");
+		//IwAssertMsg(2DENGINE, sprite != 0, ("%s not found", "Scene.Sprite_Asteroid"));
 
-		shared_ptr<core::CSprite> shipSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Ship");
-		IwAssertMsg(2DENGINE, shipSprite != 0, ("%s not found", "Scene.Ship"));
+		//shared_ptr<core::CSprite> shipSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.Ship");
+		//IwAssertMsg(2DENGINE, shipSprite != 0, ("%s not found", "Scene.Ship"));
 		
 		
 		shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, s_SceneId, "Scene");

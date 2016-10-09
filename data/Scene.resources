@@ -48,10 +48,6 @@
             "path": "/assets/selected_btn.png",
             "type": "Image"
         },
-        "12": {
-            "path": "/assets/sprite_swap_ship2.png",
-            "type": "Image"
-        },
         "13": {
             "path": "/assets/asteroid2.png/asteroid2_2",
             "type": "Image"
@@ -486,10 +482,6 @@
         },
         "31": {
             "path": "/assets/asteroid2.png/asteroid2_20",
-            "type": "Image"
-        },
-        "32": {
-            "path": "/assets/ship1.png",
             "type": "Image"
         },
         "33": {

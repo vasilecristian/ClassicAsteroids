@@ -23,6 +23,7 @@ assets
 
 includepaths
 {
+	src
     Externals/TmxParser/include
 	Externals/tinyxml2/include
 	Externals/DarkFunctionParser/include
@@ -39,12 +40,19 @@ files
 	DFPAnimedSprite.h
 	DFPAnimedSprite.cpp
 	
-	["src/GameStates"]
-	(src/GameStates)
+	["src/GameStatesBase"]
+	(src/GameStatesBase)
 	GameStates.h
 	GameStates.cpp
 	StatesStack.cpp
 	StatesStack.h
+
+	["src/GameStates"]
+	(src/GameStates)
+	GS_Logo.cpp
+	GS_Logo.h
+	GS_MenuMain.cpp
+	GS_MenuMain.h
 	
 }
 

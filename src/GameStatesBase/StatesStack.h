@@ -13,12 +13,14 @@
 #define GAME_STATES_STACK_SIZE	512
 
 
-namespace gll
+namespace gs
 {
     class GameState;
+	class StateStackDeleter;
 
 	class StateStack 
 	{
+		friend class StateStackDeleter;
     private:
 
         /** Update - the game state stack.
@@ -88,34 +90,32 @@ namespace gll
 
 
 	public:
-		/** This deleter class is a helper to allow the shared_ptr to access private destructors */
-		class deleter;
-		friend class deleter;
-		class deleter
-		{
-		public:
-			void operator()(StateStack* p);
-		};
+		
 
 	public:
 		/** Use this to get the single instance for the Platform. This function will fail if the
 		* previous instance is not deleted => You cannot have two different instances at a same time.
 		* @return a shared_ptr for Platform */
-		static std::shared_ptr<gll::StateStack> CreateSingleInstance();
+		static std::shared_ptr<StateStack> CreateSingleInstance();
 
 	protected:
 		StateStack();
-
-	public:
-
+	
 		virtual ~StateStack();
 
 	protected:
 
 	private:
-		static std::weak_ptr<gll::StateStack> s_instance;
+		static std::weak_ptr<StateStack> s_instance;
 		static std::mutex s_mutex;
 	};	
+
+	/** This deleter class is a helper to allow the shared_ptr to access private destructors */
+	class StateStackDeleter
+	{
+	public:
+		void operator()(StateStack* p);
+	};
 } //namespace gll
 
 

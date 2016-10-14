@@ -3,15 +3,15 @@
 #include "GameStates.h"
 #include "IwDebug.h"
 
-namespace gll
+namespace gs
 {
-	std::shared_ptr<gll::StateStack> StateStack::CreateSingleInstance()
+	std::shared_ptr<gs::StateStack> StateStack::CreateSingleInstance()
 	{
 		std::lock_guard<std::mutex> lock(s_mutex);
 		if (!s_instance.expired())
 			return nullptr; /// return nullptr because there is already an instance!
 
-		std::shared_ptr<StateStack> instance = std::shared_ptr<StateStack>(new StateStack(), StateStack::deleter());
+		std::shared_ptr<StateStack> instance = std::shared_ptr<StateStack>(new StateStack(), StateStackDeleter());
 		s_instance = instance;
 		return instance;
 	}
@@ -22,7 +22,7 @@ namespace gll
 
 	}
 
-	void StateStack::deleter::operator()(StateStack* p)
+	void StateStackDeleter::operator()(StateStack* p)
 	{
 		delete p;
 	}

@@ -181,7 +181,11 @@ int main()
 
 
 		// Run the game
-		g_Game->Run();
+		//g_Game->Run();
+		while (!s3eDeviceCheckQuitRequest())
+		{
+			g_Game->RunOneFrame();
+		}
 
 
 		sc->DestroyScene(s_SceneId);

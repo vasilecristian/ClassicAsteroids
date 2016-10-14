@@ -3,7 +3,7 @@
 #include "StatesStack.h"
 #include "IwDebug.h"
 
-namespace gll
+namespace gs
 {
 
 	bool	GameState::isKindOf(int) { return false; }

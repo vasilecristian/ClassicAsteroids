@@ -24,6 +24,8 @@
 
 
 #include "DFPAnimedSprite/DFPAnimedSprite.h"
+#include "GameStatesBase/StatesStack.h"
+#include "GameStates/GS_Logo.h"
 
 using namespace Iw2DSceneGraphCore;
 //using namespace Iw2DSceneGraph;
@@ -33,7 +35,9 @@ using namespace m2dkit;
 using namespace m2dkit::engine;
 
 // The main game manager
-static CGameManager* g_Game;
+static std::shared_ptr<CGameManager> s_game = nullptr;
+
+static std::shared_ptr<gs::StatesStack> s_stateStack = nullptr;
 
 // The scenes unique Id
 static int s_SceneId = -1;
@@ -49,7 +53,7 @@ const char* FACEBOOK_APP_SECRET = NULL;
 
 void ButtonReleasedCallback1(core::CEventArgs* args)
 {
-	core::CSceneContainer* sc = g_Game->GetSceneContainer();
+	core::CSceneContainer* sc = s_game->GetSceneContainer();
 
 	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
 	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
@@ -85,7 +89,7 @@ void ButtonReleasedCallback1(core::CEventArgs* args)
 
 void ButtonReleasedCallback2(core::CEventArgs* args)
 {
-	core::CSceneContainer* sc = g_Game->GetSceneContainer();
+	core::CSceneContainer* sc = s_game->GetSceneContainer();
 
 	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
 	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
@@ -122,7 +126,10 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 
 void Update(float dt)
 {
-	int a = 1;
+	if (s_stateStack)
+	{
+		s_stateStack->Update(dt);
+	}
 }
 
 
@@ -148,12 +155,18 @@ int main()
     }
 
 	// Create and initialise the game manager
-	g_Game = new CGameManager();
-	g_Game->Init();
-	g_Game->SetCustomUpdateFunction(Update);
+	s_game = std::make_shared<CGameManager>();
+	s_game->Init();
+	s_game->SetCustomUpdateFunction(Update);
+
+	// Create the state machine for game states.
+	s_stateStack = gs::StatesStack::CreateSingleInstance();
+	
+	//GS_Logo* logoState = new GS_Logo(s_game);
+	//s_stateStack->PushState(logoState);
 
 	// Import the scene and its associated resources
-	core::CSceneContainer* sc = g_Game->GetSceneContainer();
+	core::CSceneContainer* sc = s_game->GetSceneContainer();
 	const int zIndex = 0;
 	if (sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, &s_SceneId))
 	{
@@ -181,19 +194,20 @@ int main()
 
 
 		// Run the game
-		//g_Game->Run();
-		while (!s3eDeviceCheckQuitRequest())
-		{
-			g_Game->RunOneFrame();
-		}
-
+		s_game->Run();
+	
 
 		sc->DestroyScene(s_SceneId);
 	}
 
-	// Destroy the game manager
-	delete g_Game;
+	//s_stateStack->ClearStateStack();
+	//s_stateStack->Update(0);
+	s_stateStack = nullptr;
 
+	// Destroy the game manager
+	s_game = nullptr;
+
+	
 
     // Return
     return 0;

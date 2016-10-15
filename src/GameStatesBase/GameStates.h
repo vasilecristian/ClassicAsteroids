@@ -10,7 +10,7 @@ namespace gs
 {
 	class GameState 
 	{
-        friend class StateStack;
+        friend class StatesStack;
 	public:
         /** Constructor */
         GameState();

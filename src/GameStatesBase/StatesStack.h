@@ -16,21 +16,21 @@
 namespace gs
 {
     class GameState;
-	class StateStackDeleter;
+	class StatesStackDeleter;
 
-	class StateStack 
+	class StatesStack 
 	{
-		friend class StateStackDeleter;
+		friend class StatesStackDeleter;
     private:
-
-        /** Update - the game state stack.
-        * @param timestamp is float, the time*/
-		void Update(long timestamp);
 
 		std::queue<GameState*>	m_pStatePushed;
 		std::vector<GameState*>	m_pStatePoped;
 
 	public:
+
+		/** Update - the game state stack.
+		* @param timestamp is float, the time*/
+		void Update(long timestamp);
 
         /** InitStateStack - initialize the state stack. */
 		void InitStateStack() { m_stateIndex = -1; m_stateCountToDelete = 0; }
@@ -96,25 +96,25 @@ namespace gs
 		/** Use this to get the single instance for the Platform. This function will fail if the
 		* previous instance is not deleted => You cannot have two different instances at a same time.
 		* @return a shared_ptr for Platform */
-		static std::shared_ptr<StateStack> CreateSingleInstance();
+		static std::shared_ptr<StatesStack> CreateSingleInstance();
 
 	protected:
-		StateStack();
+		StatesStack();
 	
-		virtual ~StateStack();
+		virtual ~StatesStack();
 
 	protected:
 
 	private:
-		static std::weak_ptr<StateStack> s_instance;
+		static std::weak_ptr<StatesStack> s_instance;
 		static std::mutex s_mutex;
 	};	
 
 	/** This deleter class is a helper to allow the shared_ptr to access private destructors */
-	class StateStackDeleter
+	class StatesStackDeleter
 	{
 	public:
-		void operator()(StateStack* p);
+		void operator()(StatesStack* p);
 	};
 } //namespace gll
 

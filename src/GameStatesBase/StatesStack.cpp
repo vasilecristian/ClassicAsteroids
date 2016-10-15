@@ -5,32 +5,32 @@
 
 namespace gs
 {
-	std::shared_ptr<gs::StateStack> StateStack::CreateSingleInstance()
+	std::shared_ptr<gs::StatesStack> StatesStack::CreateSingleInstance()
 	{
 		std::lock_guard<std::mutex> lock(s_mutex);
 		if (!s_instance.expired())
 			return nullptr; /// return nullptr because there is already an instance!
 
-		std::shared_ptr<StateStack> instance = std::shared_ptr<StateStack>(new StateStack(), StateStackDeleter());
+		std::shared_ptr<StatesStack> instance = std::shared_ptr<StatesStack>(new StatesStack(), StatesStackDeleter());
 		s_instance = instance;
 		return instance;
 	}
 
 
-	StateStack::~StateStack()
+	StatesStack::~StatesStack()
 	{
-
+		int a = 0;
 	}
 
-	void StateStackDeleter::operator()(StateStack* p)
+	void StatesStackDeleter::operator()(StatesStack* p)
 	{
 		delete p;
 	}
 
-	std::weak_ptr<StateStack> StateStack::s_instance = std::weak_ptr<StateStack>();
-	std::mutex StateStack::s_mutex;
+	std::weak_ptr<StatesStack> StatesStack::s_instance = std::weak_ptr<StatesStack>();
+	std::mutex StatesStack::s_mutex;
 
-	StateStack::StateStack() 
+	StatesStack::StatesStack() 
 		: m_stateIndex(-1)
 		, m_pPreviousState(NULL)
 		, m_stateCountToDelete(0)
@@ -38,7 +38,7 @@ namespace gs
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 	}
 
-	void StateStack::ChangeState(GameState* pState, bool destroyPrevious)
+	void StatesStack::ChangeState(GameState* pState, bool destroyPrevious)
 	{
 		// PopState
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
@@ -88,7 +88,7 @@ namespace gs
 	}
 
 
-	void StateStack::Update(long timestamp)
+	void StatesStack::Update(long timestamp)
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -167,6 +167,11 @@ namespace gs
 
 		DeleteStatesList();
 
+		if (m_stateIndex == -1)
+		{
+			return;
+		}
+
 		if (m_pStateStack[m_stateIndex]->IsLoading())
 		{
 			m_pStateStack[m_stateIndex]->SetLoading(m_pStateStack[m_stateIndex]->Load());
@@ -178,7 +183,7 @@ namespace gs
 	}
 
 
-	void StateStack::PushState(GameState* pState)
+	void StatesStack::PushState(GameState* pState)
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -187,7 +192,7 @@ namespace gs
 
 
 
-	void StateStack::PopState(bool bResume)
+	void StatesStack::PopState(bool bResume)
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -198,7 +203,7 @@ namespace gs
 
 
 
-	void StateStack::ClearStateStack()
+	void StatesStack::ClearStateStack()
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -224,7 +229,7 @@ namespace gs
 		m_pStatePoped.clear();
 	}
 
-	void StateStack::MarkStateToDelete(GameState* pState)
+	void StatesStack::MarkStateToDelete(GameState* pState)
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -232,7 +237,7 @@ namespace gs
 		m_stateCountToDelete++;
 	}
 
-	void StateStack::DeleteStatesList()
+	void StatesStack::DeleteStatesList()
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -246,7 +251,7 @@ namespace gs
 
 
 
-	bool StateStack::IsStateOnStack(int stateKind) const
+	bool StatesStack::IsStateOnStack(int stateKind) const
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -261,7 +266,7 @@ namespace gs
 
 
 
-	GameState* StateStack::CurrentState()
+	GameState* StatesStack::CurrentState()
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -270,7 +275,7 @@ namespace gs
 
 
 
-	void StateStack::ResetTouch()
+	void StatesStack::ResetTouch()
 	{
 
 	}

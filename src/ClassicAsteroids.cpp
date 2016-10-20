@@ -37,8 +37,6 @@ using namespace m2dkit::engine;
 // The main game manager
 static std::shared_ptr<CGameManager> s_game = nullptr;
 
-static std::shared_ptr<gs::StatesStack> s_stateStack = nullptr;
-
 // The scenes unique Id
 static int s_SceneId = -1;
 
@@ -126,9 +124,10 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 
 void Update(float dt)
 {
-	if (s_stateStack)
+	std::shared_ptr<gs::StatesStack> stateStack = s_game->GetStateStack().lock();
+	if (stateStack)
 	{
-		s_stateStack->Update(dt);
+		stateStack->Update(dt);
 	}
 }
 
@@ -160,7 +159,7 @@ int main()
 	s_game->SetCustomUpdateFunction(Update);
 
 	// Create the state machine for game states.
-	s_stateStack = gs::StatesStack::CreateSingleInstance();
+	std::shared_ptr<gs::StatesStack> stateStack = s_game->GetStateStack().lock();
 	
 	//GS_Logo* logoState = new GS_Logo(s_game);
 	//s_stateStack->PushState(logoState);
@@ -199,10 +198,6 @@ int main()
 
 		sc->DestroyScene(s_SceneId);
 	}
-
-	//s_stateStack->ClearStateStack();
-	//s_stateStack->Update(0);
-	s_stateStack = nullptr;
 
 	// Destroy the game manager
 	s_game = nullptr;

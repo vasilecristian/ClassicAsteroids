@@ -24,4 +24,11 @@ files
     FontAssetLoader.cpp
     StringAssetLoader.h
     StringAssetLoader.cpp
+
+	["GameStatesBase"]
+	(GameStatesBase)
+	GameStates.h
+	GameStates.cpp
+	StatesStack.cpp
+	StatesStack.h
 }

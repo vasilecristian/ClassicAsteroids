@@ -17,7 +17,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 
-GS_Logo::GS_Logo(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr) : m_timer(2000)
+GS_Logo::GS_Logo(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr) 
+	: m_gameWeakPtr(gamePtr), m_timer(2000)
 {
 	
 
@@ -26,6 +27,7 @@ GS_Logo::GS_Logo(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr) : m_timer(
 //
 GS_Logo::~GS_Logo()
 {
+	m_gameWeakPtr.reset();
   
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////

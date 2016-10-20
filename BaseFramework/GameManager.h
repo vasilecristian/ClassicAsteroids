@@ -14,10 +14,12 @@
 #define _GAMEMANAGER_H_
 
 #include <list>
+#include <memory>
 #include "IwGx.h"
 #include "Node.h"
 #include "SceneContainer.h"
 #include "AssetContainer.h"
+#include "GameStatesBase/StatesStack.h"
 
 M2DKITENGINE_NAMESPACE_BEGIN
 
@@ -38,6 +40,7 @@ public:
     core::CSceneContainer*  GetSceneContainer() const;
     CInputManager*          GetInputManager() const;
     CAssetContainer&        GetAssetContainer();
+	std::weak_ptr<gs::StatesStack> GetStateStack();
 
     void                    SetClearColour(uint8 r, uint8 g, uint8 b, uint8 a);
 
@@ -70,6 +73,8 @@ protected:
 
     CIwVec2                 m_DisplaySize;          ///< Device display size in pixels
     core::CEventMap*        m_EventsMap;            // Events map
+
+	std::shared_ptr<gs::StatesStack> m_stateStack;
 
 	std::function<void(float)> m_customUpdateCallback;
 };

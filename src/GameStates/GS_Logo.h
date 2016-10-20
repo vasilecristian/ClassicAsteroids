@@ -64,6 +64,7 @@ public:
 private:
 	int           m_timer; ///< Timer that gets decremented each tick.
 
+	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
 };
 
 #endif //__GS_LOGO_H__

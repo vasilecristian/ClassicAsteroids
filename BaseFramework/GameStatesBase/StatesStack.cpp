@@ -5,30 +5,11 @@
 
 namespace gs
 {
-	std::shared_ptr<gs::StatesStack> StatesStack::CreateSingleInstance()
-	{
-		std::lock_guard<std::mutex> lock(s_mutex);
-		if (!s_instance.expired())
-			return nullptr; /// return nullptr because there is already an instance!
-
-		std::shared_ptr<StatesStack> instance = std::shared_ptr<StatesStack>(new StatesStack(), StatesStackDeleter());
-		s_instance = instance;
-		return instance;
-	}
-
-
+	
 	StatesStack::~StatesStack()
 	{
-		int a = 0;
+		
 	}
-
-	void StatesStackDeleter::operator()(StatesStack* p)
-	{
-		delete p;
-	}
-
-	std::weak_ptr<StatesStack> StatesStack::s_instance = std::weak_ptr<StatesStack>();
-	std::mutex StatesStack::s_mutex;
 
 	StatesStack::StatesStack() 
 		: m_stateIndex(-1)
@@ -223,10 +204,16 @@ namespace gs
 
 		
 		while (!m_pStatePushed.empty())
+		{
 			m_pStatePushed.pop();
+		}
 		
 
 		m_pStatePoped.clear();
+
+		// Update must be called because all the states marked to be deleted,
+		// will be deleted actually on the next update call. 
+		Update(0);
 	}
 
 	void StatesStack::MarkStateToDelete(GameState* pState)

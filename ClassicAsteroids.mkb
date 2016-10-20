@@ -39,13 +39,6 @@ files
 	(src/DFPAnimedSprite)
 	DFPAnimedSprite.h
 	DFPAnimedSprite.cpp
-	
-	["src/GameStatesBase"]
-	(src/GameStatesBase)
-	GameStates.h
-	GameStates.cpp
-	StatesStack.cpp
-	StatesStack.h
 
 	["src/GameStates"]
 	(src/GameStates)

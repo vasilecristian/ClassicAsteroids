@@ -12,6 +12,13 @@
 
 #define GAME_STATES_STACK_SIZE	512
 
+namespace m2dkit
+{
+	namespace engine
+	{
+		class CGameManager;
+	};
+};
 
 namespace gs
 {
@@ -20,7 +27,7 @@ namespace gs
 
 	class StatesStack 
 	{
-		friend class StatesStackDeleter;
+		friend class m2dkit::engine::CGameManager;
     private:
 
 		std::queue<GameState*>	m_pStatePushed;
@@ -47,9 +54,6 @@ namespace gs
         /** PopState - pop the state from stack, (set the m_pStatePoped).
         * @param bResume is a boolean (optional), unused. */
 		void PopState(bool bResume = true);
-
-        /** ClearStateStack - clear the state stack. */
-		void ClearStateStack();
 
         /** MarkStateToDelete - put the state in the m_pStateStackToDelete.
         * @param pState is a pointer to GameState, the state to be deleted. */
@@ -80,6 +84,9 @@ namespace gs
 
 	private:
 
+		/** ClearStateStack - clear the state stack. */
+		void ClearStateStack();
+
 		mutable std::recursive_mutex m_pStateStackMutex;
 		std::array<GameState*, GAME_STATES_STACK_SIZE> m_pStateStack;
 		GameState*	m_pPreviousState;
@@ -90,33 +97,17 @@ namespace gs
 
 
 	public:
-		
 
-	public:
-		/** Use this to get the single instance for the Platform. This function will fail if the
-		* previous instance is not deleted => You cannot have two different instances at a same time.
-		* @return a shared_ptr for Platform */
-		static std::shared_ptr<StatesStack> CreateSingleInstance();
-
-	protected:
 		StatesStack();
 	
 		virtual ~StatesStack();
-
-	protected:
 
 	private:
 		static std::weak_ptr<StatesStack> s_instance;
 		static std::mutex s_mutex;
 	};	
 
-	/** This deleter class is a helper to allow the shared_ptr to access private destructors */
-	class StatesStackDeleter
-	{
-	public:
-		void operator()(StatesStack* p);
-	};
-} //namespace gll
+} //namespace gs
 
 
 #endif //_STATES_STACH_H_

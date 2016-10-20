@@ -38,6 +38,7 @@ CGameManager::CGameManager()
     , m_EventsMap(0)
 {
     s_Instance = this;
+	m_stateStack = std::make_shared<gs::StatesStack>();
     SetClearColour(0, 0, 0, 255);
 }
 
@@ -46,6 +47,8 @@ CGameManager::~CGameManager()
     delete m_Input;
     delete m_EventsMap;
     delete m_SceneContainer;
+	m_stateStack->ClearStateStack();
+	m_stateStack = nullptr;
 
     m_AssetContainer.Destroy();
 
@@ -71,6 +74,11 @@ CInputManager* CGameManager::GetInputManager() const
 CAssetContainer& CGameManager::GetAssetContainer()
 {
     return m_AssetContainer;
+}
+
+std::weak_ptr<gs::StatesStack> CGameManager::GetStateStack()
+{
+	return m_stateStack;
 }
 
 void CGameManager::SetClearColour(uint8 r, uint8 g, uint8 b, uint8 a)

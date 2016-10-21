@@ -38,7 +38,6 @@ CGameManager::CGameManager()
     , m_EventsMap(0)
 {
     s_Instance = this;
-	m_stateStack = std::make_shared<gs::StatesStack>();
     SetClearColour(0, 0, 0, 255);
 }
 
@@ -48,7 +47,7 @@ CGameManager::~CGameManager()
     delete m_EventsMap;
     delete m_SceneContainer;
 	m_stateStack->ClearStateStack();
-	m_stateStack = nullptr;
+	delete m_stateStack;
 
     m_AssetContainer.Destroy();
 
@@ -76,7 +75,7 @@ CAssetContainer& CGameManager::GetAssetContainer()
     return m_AssetContainer;
 }
 
-std::weak_ptr<gs::StatesStack> CGameManager::GetStateStack()
+gs::StatesStack* CGameManager::GetStateStack()
 {
 	return m_stateStack;
 }
@@ -99,6 +98,7 @@ void CGameManager::Init()
 
     m_SceneContainer = new CSceneContainer();
     m_EventsMap = new CEventMap();
+	m_stateStack = new gs::StatesStack();
 
     m_DisplaySize.x = IwGxGetScreenWidth();
     m_DisplaySize.y = IwGxGetScreenHeight();

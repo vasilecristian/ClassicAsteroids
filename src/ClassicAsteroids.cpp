@@ -124,7 +124,7 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 
 void Update(float dt)
 {
-	std::shared_ptr<gs::StatesStack> stateStack = s_game->GetStateStack().lock();
+	gs::StatesStack* stateStack = s_game->GetStateStack();
 	if (stateStack)
 	{
 		stateStack->Update(dt);
@@ -159,10 +159,11 @@ int main()
 	s_game->SetCustomUpdateFunction(Update);
 
 	// Create the state machine for game states.
-	std::shared_ptr<gs::StatesStack> stateStack = s_game->GetStateStack().lock();
+	gs::StatesStack* stateStack = s_game->GetStateStack();
 	
-	//GS_Logo* logoState = new GS_Logo(s_game);
-	//s_stateStack->PushState(logoState);
+	std::shared_ptr<gs::GameState> logoState = std::shared_ptr<gs::GameState>(new GS_Logo(s_game));
+	stateStack->PushState(logoState);
+	logoState = nullptr;
 
 	// Import the scene and its associated resources
 	core::CSceneContainer* sc = s_game->GetSceneContainer();
@@ -199,9 +200,11 @@ int main()
 		sc->DestroyScene(s_SceneId);
 	}
 
+	
+
 	// Destroy the game manager
 	s_game = nullptr;
-
+	
 	
 
     // Return

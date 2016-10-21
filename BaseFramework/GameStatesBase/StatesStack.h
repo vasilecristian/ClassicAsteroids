@@ -30,8 +30,8 @@ namespace gs
 		friend class m2dkit::engine::CGameManager;
     private:
 
-		std::queue<GameState*>	m_pStatePushed;
-		std::vector<GameState*>	m_pStatePoped;
+		std::queue<std::shared_ptr<GameState> >		m_pStatePushed;
+		std::vector<std::shared_ptr<GameState> >	m_pStatePoped;
 
 	public:
 
@@ -45,11 +45,11 @@ namespace gs
         /** ChangeState - process the change of the state.
         * @param pState is a pointer to GameState, that is the new state to be put on stack.
         * @param destroyPrevious is a boolean (optional), if true (default) the previous state will be destroyed. */
-		void ChangeState(GameState* pState, bool destroyPrevious = true);
+		void ChangeState(std::shared_ptr<GameState> pState, bool destroyPrevious = true);
 
         /** PushState - set the state to be pushed.
         * @param pState is a pointer to GameState, that will be the value for m_pStatePushed. */
-		void PushState(GameState* pState);
+		void PushState(std::shared_ptr<GameState> pState);
 
         /** PopState - pop the state from stack, (set the m_pStatePoped).
         * @param bResume is a boolean (optional), unused. */
@@ -57,18 +57,18 @@ namespace gs
 
         /** MarkStateToDelete - put the state in the m_pStateStackToDelete.
         * @param pState is a pointer to GameState, the state to be deleted. */
-		void MarkStateToDelete( GameState* pState );
+		void MarkStateToDelete(std::shared_ptr<GameState> pState );
 
         /** DeleteStatesList - delete m_pStateStackToDelete */
 		void DeleteStatesList();
 				
         /** CurrentState - get the current state.
         * @return a pointer to GameState, if a state is on the stack or NULL. */
-		GameState* CurrentState();
+		std::shared_ptr<GameState> CurrentState();
 
         /** PreviousState - get the previous state.
         * @return a pointer to GameState, that is the previous state. */
-		GameState* PreviousState() { return m_pPreviousState; };
+		std::shared_ptr<GameState> PreviousState() { return m_pPreviousState; };
 				
         /** GetStateNo - return the number of states in the stack.
         * @returns an integer, m_stateIndex .*/
@@ -88,11 +88,11 @@ namespace gs
 		void ClearStateStack();
 
 		mutable std::recursive_mutex m_pStateStackMutex;
-		std::array<GameState*, GAME_STATES_STACK_SIZE> m_pStateStack;
-		GameState*	m_pPreviousState;
+		std::array<std::shared_ptr<GameState>, GAME_STATES_STACK_SIZE> m_pStateStack;
+		std::shared_ptr<GameState>	m_pPreviousState;
 		int				m_stateIndex;
 
-		std::array<GameState*, GAME_STATES_STACK_SIZE> m_pStateStackToDelete;
+		std::array<std::shared_ptr<GameState>, GAME_STATES_STACK_SIZE> m_pStateStackToDelete;
 		int				m_stateCountToDelete;
 
 
@@ -103,8 +103,8 @@ namespace gs
 		virtual ~StatesStack();
 
 	private:
-		static std::weak_ptr<StatesStack> s_instance;
-		static std::mutex s_mutex;
+		//static std::weak_ptr<StatesStack> s_instance;
+		//static std::mutex s_mutex;
 	};	
 
 } //namespace gs

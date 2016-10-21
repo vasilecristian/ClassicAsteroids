@@ -37,11 +37,11 @@ namespace gs
 		m_pParent = nullptr;
 	}
 
-	GameState* GameState::GetParent(int level)
+	std::shared_ptr<GameState> GameState::GetParent(int level)
 	{
 		IwAssertMsg(2DENGINE, level >= 0 && level <= GAME_STATES_STACK_SIZE, ("level %d invalid", level));
 
-		GameState* parent = m_pParent;
+		std::shared_ptr<GameState> parent = m_pParent;
 
 		for (int i = 0; i < level; i++)
 		{

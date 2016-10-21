@@ -2,7 +2,7 @@
 #ifndef _GAME_STATES_H_
 #define _GAME_STATES_H_
 
-
+#include <memory>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Base class for all game states
@@ -64,12 +64,12 @@ namespace gs
 
         /** SetParent - set the parent of the game state.
         * @param parent is a pointer to GameState, is the parent to be set to game state.*/
-        void SetParent(GameState*	parent)	{ m_pParent = parent;};
+        void SetParent(std::shared_ptr<GameState>	parent)	{ m_pParent = parent;};
 
         /** GetParent - get the parent of the GameState.
         * @param level is an integer representing the parent level 
         * @return a pointer to the parent GameState, if it exists, else return NULL.*/
-		GameState* GetParent( int level = 0) ;
+		std::shared_ptr<GameState> GetParent( int level = 0) ;
 
         /** ResetControls - reset the controls */
 		void ResetControls();
@@ -99,7 +99,7 @@ namespace gs
 
     protected:
 		
-		GameState* m_pParent;
+		std::shared_ptr<GameState> m_pParent;
 
 		bool m_bStateLoading;
 

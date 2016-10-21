@@ -23,8 +23,6 @@
 #include "Sprite.h"
 
 
-#include "DFPAnimedSprite/DFPAnimedSprite.h"
-#include "GameStatesBase/StatesStack.h"
 #include "GameStates/GS_Logo.h"
 
 using namespace Iw2DSceneGraphCore;
@@ -49,41 +47,7 @@ static int s_SceneId = -1;
 const char* FACEBOOK_APP_ID = NULL;
 const char* FACEBOOK_APP_SECRET = NULL;
 
-void ButtonReleasedCallback1(core::CEventArgs* args)
-{
-	core::CSceneContainer* sc = s_game->GetSceneContainer();
 
-	shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(s_SceneId, "Scene.omulet");
-	IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
-	
-
-	if (dfpSprite)
-	{
-		dfpSprite->SetScale(CIwFVec2(4, 4));
-		core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().SetCurrentAnimation("assets2/n69yj7.anim/WalkN");
-		if (anim)
-		{
-			anim->Play();
-		}
-	}
-
-	shared_ptr<core::CSprite> ship1 = sc->GetNode<core::CSprite>(s_SceneId, "Scene.ship1");
-	IwAssertMsg(2DENGINE, ship1 != 0, ("%s not found", "Scene.ship1"));
-
-	if (ship1)
-	{
-		ship1->SetScale(CIwFVec2(4, 4));
-		ship1->SetPosition(CIwFVec2(300, 300));
-		core::CAnimationInstance* anim = ship1->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
-		if (anim)
-		{
-			anim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
-			anim->SetRepeatCount(1);
-			anim->Play();
-		}
-	}
-
-}
 
 void ButtonReleasedCallback2(core::CEventArgs* args)
 {
@@ -124,11 +88,7 @@ void ButtonReleasedCallback2(core::CEventArgs* args)
 
 void Update(float dt)
 {
-	gs::StatesStack* stateStack = s_game->GetStateStack();
-	if (stateStack)
-	{
-		stateStack->Update(dt);
-	}
+
 }
 
 
@@ -152,7 +112,7 @@ int main()
 	// Create the state machine for game states.
 	gs::StatesStack* stateStack = s_game->GetStateStack();
 	
-	std::shared_ptr<gs::GameState> logoState = std::shared_ptr<gs::GameState>(new GS_Logo(s_game));
+	auto logoState = std::shared_ptr<gs::GameState>(new GS_Logo(s_game));
 	stateStack->PushState(logoState);
 	logoState = nullptr;
 

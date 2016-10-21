@@ -75,7 +75,7 @@ void GS_Logo::Update(float dt)
 	if (auto game = m_gameWeakPtr.lock())
 	{
 		auto ss = game->GetStateStack();
-		std::shared_ptr<gs::GameState> menuMain = std::shared_ptr<gs::GameState>(new GS_MenuMain(game));
+		auto menuMain = std::shared_ptr<gs::GameState>(new GS_MenuMain(game));
 		ss->PushState(menuMain);
 		menuMain = nullptr;
 	}

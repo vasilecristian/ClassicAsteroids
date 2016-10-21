@@ -3,6 +3,7 @@
 
 #include "GameStatesBase/GameStates.h"
 #include <memory>
+#include "Button.h"
 
 namespace m2dkit
 {
@@ -81,6 +82,8 @@ public:
 	void Resume() override;
 
 	bool Load();
+
+	void ButtonReleasedCallback1(m2dkit::core::CEventArgs* args);
 	
 private:
 

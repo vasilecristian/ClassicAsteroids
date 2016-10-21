@@ -36,7 +36,7 @@ public:
      *
      * @param dt The Delta time elapsed since the last update.
      */
-	void Update(long dt) override;
+	void Update(float dt) override;
 
     /**
      * Render method.
@@ -62,8 +62,9 @@ public:
 
     
 private:
-	int           m_timer; ///< Timer that gets decremented each tick.
-
+	float m_timer; ///< Timer that gets decremented each tick.
+						   
+	int m_sceneId; /// The scenes unique Id
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
 };
 

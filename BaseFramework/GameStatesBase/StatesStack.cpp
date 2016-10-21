@@ -69,7 +69,7 @@ namespace gs
 	}
 
 
-	void StatesStack::Update(long timestamp)
+	void StatesStack::Update(float timestamp)
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
@@ -130,8 +130,11 @@ namespace gs
 			m_stateIndex++;
 			m_pStateStack[m_stateIndex] = pState;
 
-			IwAssertMsg(2DENGINE, pState->Create() >= 0, ("Failed to create the current state!!!"));
-			if (pState->Create() < 0)
+			int createResult = pState->Create();
+
+			IwAssertMsg(2DENGINE, createResult >= 0, ("Failed to create the current state!!!"));
+			
+			if (createResult < 0)
 			{
 				ClearStateStack();
 			}

@@ -135,15 +135,6 @@ void Update(float dt)
 // Main entry point for the application
 int main()
 {
-    //Initialise graphics system(s)
-    //Iw2DInit();
-
-    // Create root node
-    //g_SceneRoot = new CNode();
-
-    // Add 2D scene graph nodes to the root node here
-
-
     if (!s3eFacebookAvailable())
     {
         IwTrace(S3EFACEBOOK, ("Facebook extension not found"));
@@ -165,10 +156,11 @@ int main()
 	stateStack->PushState(logoState);
 	logoState = nullptr;
 
+	/*
 	// Import the scene and its associated resources
 	core::CSceneContainer* sc = s_game->GetSceneContainer();
 	const int zIndex = 0;
-	if (sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, &s_SceneId))
+	if (sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, true, &s_SceneId))
 	{
 
 		// Attach pressed and released event callbacks to button
@@ -199,8 +191,10 @@ int main()
 
 		sc->DestroyScene(s_SceneId);
 	}
-
+	*/
 	
+	s_game->Run();
+
 
 	// Destroy the game manager
 	s_game = nullptr;

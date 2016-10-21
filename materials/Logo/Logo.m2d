@@ -1,0 +1,14 @@
+{
+    "name": "Logo",
+    "resources": [
+        {
+            "filename": "Logo.resources"
+        }
+    ],
+    "scenes": [
+        {
+            "filename": "Scene.json"
+        }
+    ],
+    "version": "1.2"
+}

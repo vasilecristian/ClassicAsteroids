@@ -1,0 +1,156 @@
+{
+    "name": "Scene",
+    "nodes": [
+        {
+            "id": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "ConsumeTouch": 0,
+                "Name": "Scene",
+                "Size": [
+                    640,
+                    960
+                ],
+                "TemplateName": ""
+            },
+            "timeStamp": 1447438574607,
+            "typeName": "RootNode",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{6c9f1efe-5e33-4956-8f13-9de97f60abe6}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 4,
+                "AnchoringUnits": 0,
+                "AnchoringVector": [
+                    -49.714618682861328,
+                    53.333328247070312
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    768,
+                    1024
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Background",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    318.17355346679688,
+                    448.00003051757812
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    0.83114159107208252,
+                    1
+                ],
+                "Size": [
+                    768,
+                    1024
+                ],
+                "SizeAnchoringType": 0,
+                "TemplateName": "",
+                "TextureId": 5,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1456739563384,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{91105dd9-2ac0-4825-af19-feee6b483937}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "Alignment": 4,
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -640,
+                    -960
+                ],
+                "Animation": -1,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "FontColor": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "FontId": 0,
+                "FontSize": 61,
+                "InternalSizeAnchoringBaseSize": [
+                    335.4287109375,
+                    73.673583984375
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "Label",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    320,
+                    466.15628051757812
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    335.4287109375,
+                    73.673583984375
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "Text": "Loading...",
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1477061130186,
+            "typeName": "Label",
+            "user_properties": {
+            }
+        }
+    ],
+    "orientation": 1,
+    "version": "1.2"
+}

@@ -37,7 +37,7 @@ namespace gs
 
 		/** Update - the game state stack.
 		* @param timestamp is float, the time*/
-		void Update(long timestamp);
+		void Update(float timestamp);
 
         /** InitStateStack - initialize the state stack. */
 		void InitStateStack() { m_stateIndex = -1; m_stateCountToDelete = 0; }

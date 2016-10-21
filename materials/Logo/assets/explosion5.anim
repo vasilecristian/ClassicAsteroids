@@ -1,0 +1,119 @@
+{
+    "keys": [
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 0,
+            "type": 0,
+            "value": 232
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 100,
+            "type": 0,
+            "value": 233
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 200,
+            "type": 0,
+            "value": 234
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 300,
+            "type": 0,
+            "value": 235
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 400,
+            "type": 0,
+            "value": 236
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 500,
+            "type": 0,
+            "value": 237
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 600,
+            "type": 0,
+            "value": 238
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 700,
+            "type": 0,
+            "value": 239
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 800,
+            "type": 0,
+            "value": 240
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 900,
+            "type": 0,
+            "value": 241
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1000,
+            "type": 0,
+            "value": 242
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1100,
+            "type": 0,
+            "value": 243
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1200,
+            "type": 0,
+            "value": 244
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1300,
+            "type": 0,
+            "value": 245
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1400,
+            "type": 0,
+            "value": 246
+        },
+        {
+            "easing": 0,
+            "name": "TextureId",
+            "time": 1500,
+            "type": 0,
+            "value": 247
+        }
+    ],
+    "loop": true,
+    "playDirection": 0,
+    "version": "1.1"
+}

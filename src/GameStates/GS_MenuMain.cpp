@@ -6,10 +6,12 @@
 #include "GameManager.h"
 #include "GameStatesBase/StatesStack.h"
 
+using namespace m2dkit;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 GS_MenuMain::GS_MenuMain(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr)
+	: m_gameWeakPtr(gamePtr), m_sceneId(-1)
 {
 
 }
@@ -21,7 +23,12 @@ GS_MenuMain::~GS_MenuMain()
 //
 int GS_MenuMain::Create()
 {
-	
+	if (auto game = m_gameWeakPtr.lock())
+	{
+		core::CSceneContainer* sc = game->GetSceneContainer();
+		const int zIndex = 0;
+		sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_sceneId);
+	}
 
 	return true ;
 }
@@ -49,7 +56,7 @@ void GS_MenuMain::Release()
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void GS_MenuMain::Update(long dt)
+void GS_MenuMain::Update(float dt)
 {
 	
 }
@@ -59,4 +66,25 @@ void GS_MenuMain::Update(long dt)
 void GS_MenuMain::Render()
 {
 	
+}
+
+bool GS_MenuMain::Load()
+{
+	if (auto game = m_gameWeakPtr.lock())
+	{
+
+		core::CSceneContainer* sc = game->GetSceneContainer();
+
+		int loadingSceneID = m_sceneId;
+		
+
+		const int zIndex = 0;
+		sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, true, &m_sceneId);
+
+
+		sc->DestroyScene(loadingSceneID);//destroy the loading screen
+		return false;
+	}
+
+	return true;
 }

@@ -34,7 +34,7 @@ namespace gs
 			
         /** Update - updates the game state.  To be implemented by a derived class.
         * @param long is the time passed from the last call. */
-		virtual void Update(long) = 0;
+		virtual void Update(float) = 0;
 
         /** Render - draw the game state.
         * To be implemented by a derived class.*/

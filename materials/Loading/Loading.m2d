@@ -1,0 +1,14 @@
+{
+    "name": "Loading",
+    "resources": [
+        {
+            "filename": "Loading.resources"
+        }
+    ],
+    "scenes": [
+        {
+            "filename": "Scene.json"
+        }
+    ],
+    "version": "1.2"
+}

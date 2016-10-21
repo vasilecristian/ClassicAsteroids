@@ -5,6 +5,7 @@
 #include "GameStates/GS_MenuMain.h"
 #include "GameManager.h"
 #include "GameStatesBase/StatesStack.h"
+#include "GameStates/GS_MenuMain.h"
 
 
 
@@ -12,13 +13,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-
+using namespace m2dkit;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 
 GS_Logo::GS_Logo(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr) 
-	: m_gameWeakPtr(gamePtr), m_timer(2000)
+	: m_gameWeakPtr(gamePtr), m_timer(2), m_sceneId(-1)
 {
 	
 
@@ -34,8 +35,12 @@ GS_Logo::~GS_Logo()
 //
 int GS_Logo::Create()
 {
-	
-
+	if (auto game = m_gameWeakPtr.lock())
+	{
+		core::CSceneContainer* sc = game->GetSceneContainer();
+		const int zIndex = 0;
+		sc->LoadSceneFromDisk("Logo.json", "Logo.resources", zIndex, true, &m_sceneId);
+	}
 	return true;
 }
 
@@ -49,15 +54,31 @@ void GS_Logo::Resume()
 //
 void GS_Logo::Release()
 {
-	
+	if (auto game = m_gameWeakPtr.lock())
+	{
+		core::CSceneContainer* sc = game->GetSceneContainer();
+		sc->DestroyScene(m_sceneId);
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void GS_Logo::Update(long dt)
+void GS_Logo::Update(float dt)
 {
-	
+	if (m_timer > 0)
+	{
+		m_timer -= dt;
+		return;
+	}
+
+	if (auto game = m_gameWeakPtr.lock())
+	{
+		auto ss = game->GetStateStack();
+		std::shared_ptr<gs::GameState> menuMain = std::shared_ptr<gs::GameState>(new GS_MenuMain(game));
+		ss->PushState(menuMain);
+		menuMain = nullptr;
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

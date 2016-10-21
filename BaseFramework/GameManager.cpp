@@ -194,6 +194,17 @@ void CGameManager::Update(float dt)
 
     // Update scenes
     m_SceneContainer->Update(dt);
+
+	gs::StatesStack* stateStack = GetStateStack();
+	if (stateStack)
+	{
+		stateStack->Update(dt);
+	}
+
+	if (m_customUpdateCallback)
+	{
+		m_customUpdateCallback(dt);
+	}
 }
 
 void CGameManager::Draw()
@@ -236,10 +247,6 @@ void CGameManager::RunOneFrame()
 
     // Update game
     Update(dt);
-	if (m_customUpdateCallback)
-	{
-		m_customUpdateCallback(dt);
-	}
 
     // Draw game
     IwGxSetColClear(m_ClearColour.r, m_ClearColour.g, m_ClearColour.b, m_ClearColour.a);

@@ -1,0 +1,111 @@
+{
+    "elements": [
+        {
+            "ConsumeTouch": 0,
+            "Name": "Scene",
+            "Size": [
+                640,
+                960
+            ],
+            "TemplateName": "",
+            "id": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "RootNode"
+        },
+        {
+            "AnchoringType": "TopLeft",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -49.714618682861328,
+                53.333328247070312
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "Background",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                318.17355346679688,
+                448.00003051757812
+            ],
+            "Rotation": 0,
+            "Scale": [
+                0.83114159107208252,
+                1
+            ],
+            "Size": [
+                768,
+                1024
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "TextureId": 5,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{6c9f1efe-5e33-4956-8f13-9de97f60abe6}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        },
+        {
+            "Alignment": "TopCentre",
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
+                -640,
+                -960
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "FontColor": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "FontId": 0,
+            "FontSize": 61,
+            "Name": "Label",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                320,
+                466.15628051757812
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                335.4287109375,
+                73.673583984375
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "Text": "Loading...",
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{91105dd9-2ac0-4825-af19-feee6b483937}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Label"
+        }
+    ],
+    "orientation": 1
+}

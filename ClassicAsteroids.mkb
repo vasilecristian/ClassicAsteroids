@@ -46,6 +46,9 @@ files
 	GS_Logo.h
 	GS_MenuMain.cpp
 	GS_MenuMain.h
+	GS_Play.cpp
+	GS_Play.h
+	
 	
 }
 

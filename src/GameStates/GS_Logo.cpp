@@ -7,7 +7,7 @@
 #include "GameStatesBase/StatesStack.h"
 #include "GameStates/GS_MenuMain.h"
 
-
+#include "IwDebug.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +39,8 @@ int GS_Logo::Create()
 	{
 		core::CSceneContainer* sc = game->GetSceneContainer();
 		const int zIndex = 0;
-		sc->LoadSceneFromDisk("Logo.json", "Logo.resources", zIndex, true, &m_sceneId);
+		bool sceneLoadedOK = sc->LoadSceneFromDisk("Logo.json", "Logo.resources", zIndex, true, &m_sceneId);
+		IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Logo.json or Logo.resources"));
 	}
 	return true;
 }

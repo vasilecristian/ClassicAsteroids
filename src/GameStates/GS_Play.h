@@ -1,5 +1,5 @@
-#ifndef __GS_MenuMain_H__
-#define __GS_MenuMain_H__
+#ifndef __GS_Play_H__
+#define __GS_Play_H__
 
 #include "GameStatesBase/GameStates.h"
 #include <memory>
@@ -17,7 +17,7 @@ namespace m2dkit
  * Class defining the state which holds the main menu.
  * All tests are accessible from this state.
  */
-class GS_MenuMain : public gs::GameState
+class GS_Play : public gs::GameState
 {
 public:
     
@@ -25,12 +25,12 @@ public:
     /** 
      * Constructor
      */
-	GS_MenuMain(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr);
+	GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr);
 
     /**
      * Destructor
      */
-	~GS_MenuMain();
+	~GS_Play();
 
     /**
      * Update method.
@@ -68,7 +68,7 @@ public:
 
 	bool Load();
 
-	void PlayButtonReleasedCallback(m2dkit::core::CEventArgs* args);
+	void ButtonReleasedCallback1(m2dkit::core::CEventArgs* args);
 	
 private:
 
@@ -76,4 +76,4 @@ private:
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
 };
 
-#endif //_GS_MenuMain_H_
+#endif //__GS_Play_H__

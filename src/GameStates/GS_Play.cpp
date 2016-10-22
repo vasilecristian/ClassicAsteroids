@@ -88,9 +88,10 @@ bool GS_Play::Load()
 {
 	if (auto game = m_gameWeakPtr.lock())
 	{
+		core::CSceneContainer* sc = game->GetSceneContainer();
+
 		if (m_loadingPtogress == 0)
 		{
-			core::CSceneContainer* sc = game->GetSceneContainer();
 			const int zIndex = 0;
 			bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_sceneId);
 			IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Loading.json or Loading.resources"));
@@ -100,7 +101,7 @@ bool GS_Play::Load()
 		else if (m_loadingPtogress == 10)
 		{
 
-			core::CSceneContainer* sc = game->GetSceneContainer();
+			
 
 			int loadingSceneID = m_sceneId;
 
@@ -123,6 +124,8 @@ bool GS_Play::Load()
 		}
 		else if (m_loadingPtogress == 100)
 		{
+			sc->SetSceneActive(m_sceneId, true);
+			sc->SetSceneVisible(m_sceneId, true);
 			return false;
 		}
 
@@ -137,40 +140,3 @@ bool GS_Play::Load()
 	return true;
 }
 
-void GS_Play::ButtonReleasedCallback1(m2dkit::core::CEventArgs* args)
-{
-	if (auto game = m_gameWeakPtr.lock())
-	{
-		core::CSceneContainer* sc = game->GetSceneContainer();
-
-		shared_ptr<core::CSprite> dfpSprite = sc->GetNode<core::CSprite>(m_sceneId, "Scene.omulet");
-		IwAssertMsg(2DENGINE, dfpSprite != 0, ("%s not found", "Scene.omulet"));
-
-
-		if (dfpSprite)
-		{
-			dfpSprite->SetScale(CIwFVec2(4, 4));
-			core::CAnimationInstance* anim = dfpSprite->GetAnimationContainer().SetCurrentAnimation("assets2/n69yj7.anim/WalkN");
-			if (anim)
-			{
-				anim->Play();
-			}
-		}
-
-		shared_ptr<core::CSprite> ship1 = sc->GetNode<core::CSprite>(m_sceneId, "Scene.ship1");
-		IwAssertMsg(2DENGINE, ship1 != 0, ("%s not found", "Scene.ship1"));
-
-		if (ship1)
-		{
-			ship1->SetScale(CIwFVec2(4, 4));
-			ship1->SetPosition(CIwFVec2(300, 300));
-			core::CAnimationInstance* anim = ship1->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
-			if (anim)
-			{
-				anim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
-				anim->SetRepeatCount(1);
-				anim->Play();
-			}
-		}
-	}
-}

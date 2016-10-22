@@ -68,7 +68,6 @@ public:
 
 	bool Load();
 
-	void ButtonReleasedCallback1(m2dkit::core::CEventArgs* args);
 	
 private:
 

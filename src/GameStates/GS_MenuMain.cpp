@@ -60,7 +60,12 @@ void GS_MenuMain::Resume()
 //
 void GS_MenuMain::Release()
 {
-	
+	if (auto game = m_gameWeakPtr.lock())
+	{
+		core::CSceneContainer* sc = game->GetSceneContainer();
+		sc->SetSceneActive(m_sceneId, false);
+		sc->SetSceneVisible(m_sceneId, false);
+	}
 }
 
 
@@ -73,7 +78,7 @@ void GS_MenuMain::Update(float dt)
 		{
 			auto ss = game->GetStateStack();
 			auto play = std::shared_ptr<gs::GameState>(new GS_Play(game, "Level1"));
-			ss->PushState(play);
+			ss->ChangeState(play);
 			play = nullptr;
 		}
 	}

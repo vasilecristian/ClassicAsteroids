@@ -25,7 +25,7 @@ public:
     /** 
      * Constructor
      */
-	GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr);
+	GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr, std::string levelName);
 
     /**
      * Destructor
@@ -74,6 +74,8 @@ private:
 
 	int m_sceneId; /// The scenes unique Id
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
+	std::string m_levelName;
+	int m_loadingPtogress;
 };
 
 #endif //__GS_Play_H__

@@ -17,7 +17,9 @@ using namespace m2dkit;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 GS_MenuMain::GS_MenuMain(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr)
-	: m_gameWeakPtr(gamePtr), m_sceneId(-1)
+	: m_gameWeakPtr(gamePtr)
+	, m_sceneId(-1)
+	, m_menuAction(MenuAction::IDLE)
 {
 
 }
@@ -65,7 +67,16 @@ void GS_MenuMain::Release()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void GS_MenuMain::Update(float dt)
 {
-	
+	if (m_menuAction == MenuAction::PLAY)
+	{
+		if (auto game = m_gameWeakPtr.lock())
+		{
+			auto ss = game->GetStateStack();
+			auto play = std::shared_ptr<gs::GameState>(new GS_Play(game, "Level1"));
+			ss->PushState(play);
+			play = nullptr;
+		}
+	}
 	
 }
 
@@ -105,11 +116,5 @@ bool GS_MenuMain::Load()
 
 void GS_MenuMain::PlayButtonReleasedCallback(m2dkit::core::CEventArgs* args)
 {
-	if (auto game = m_gameWeakPtr.lock())
-	{
-		auto ss = game->GetStateStack();
-		auto play = std::shared_ptr<gs::GameState>(new GS_Play(game));
-		ss->PushState(play);
-		play = nullptr;
-	}
+	m_menuAction = MenuAction::PLAY;
 }

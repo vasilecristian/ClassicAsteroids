@@ -1,0 +1,748 @@
+{
+    "resources": {
+        "100": {
+            "path": "/assets/explosion1.png/explosion1_28",
+            "type": "Image"
+        },
+        "101": {
+            "path": "/assets/explosion1.png/explosion1_29",
+            "type": "Image"
+        },
+        "102": {
+            "path": "/assets/explosion1.png/explosion1_30",
+            "type": "Image"
+        },
+        "103": {
+            "path": "/assets/explosion1.png/explosion1_31",
+            "type": "Image"
+        },
+        "104": {
+            "path": "/assets/explosion1.png/explosion1_32",
+            "type": "Image"
+        },
+        "105": {
+            "path": "/assets/explosion1.png/explosion1_33",
+            "type": "Image"
+        },
+        "106": {
+            "path": "/assets/explosion1.png/explosion1_34",
+            "type": "Image"
+        },
+        "107": {
+            "path": "/assets/explosion1.png/explosion1_35",
+            "type": "Image"
+        },
+        "108": {
+            "path": "/assets/explosion1.png/explosion1_36",
+            "type": "Image"
+        },
+        "109": {
+            "path": "/assets/explosion1.anim",
+            "type": "Animation"
+        },
+        "13": {
+            "path": "/assets/asteroid2.png/asteroid2_2",
+            "type": "Image"
+        },
+        "14": {
+            "path": "/assets/asteroid2.png/asteroid2_3",
+            "type": "Image"
+        },
+        "15": {
+            "path": "/assets/asteroid2.png/asteroid2_4",
+            "type": "Image"
+        },
+        "16": {
+            "path": "/assets/asteroid2.png/asteroid2_5",
+            "type": "Image"
+        },
+        "160": {
+            "path": "/assets/explosion3.png",
+            "type": "Atlas"
+        },
+        "161": {
+            "path": "/assets/explosion3.png/explosion3_1",
+            "type": "Image"
+        },
+        "162": {
+            "path": "/assets/explosion3.png/explosion3_2",
+            "type": "Image"
+        },
+        "163": {
+            "path": "/assets/explosion3.png/explosion3_3",
+            "type": "Image"
+        },
+        "164": {
+            "path": "/assets/explosion3.png/explosion3_4",
+            "type": "Image"
+        },
+        "165": {
+            "path": "/assets/explosion3.png/explosion3_5",
+            "type": "Image"
+        },
+        "166": {
+            "path": "/assets/explosion3.png/explosion3_6",
+            "type": "Image"
+        },
+        "167": {
+            "path": "/assets/explosion3.png/explosion3_7",
+            "type": "Image"
+        },
+        "168": {
+            "path": "/assets/explosion3.png/explosion3_8",
+            "type": "Image"
+        },
+        "169": {
+            "path": "/assets/explosion3.png/explosion3_9",
+            "type": "Image"
+        },
+        "17": {
+            "path": "/assets/asteroid2.png/asteroid2_6",
+            "type": "Image"
+        },
+        "170": {
+            "path": "/assets/explosion3.png/explosion3_10",
+            "type": "Image"
+        },
+        "171": {
+            "path": "/assets/explosion3.png/explosion3_11",
+            "type": "Image"
+        },
+        "172": {
+            "path": "/assets/explosion3.png/explosion3_12",
+            "type": "Image"
+        },
+        "173": {
+            "path": "/assets/explosion3.png/explosion3_13",
+            "type": "Image"
+        },
+        "174": {
+            "path": "/assets/explosion3.png/explosion3_14",
+            "type": "Image"
+        },
+        "175": {
+            "path": "/assets/explosion3.png/explosion3_15",
+            "type": "Image"
+        },
+        "176": {
+            "path": "/assets/explosion3.png/explosion3_16",
+            "type": "Image"
+        },
+        "177": {
+            "path": "/assets/explosion3.png/explosion3_17",
+            "type": "Image"
+        },
+        "178": {
+            "path": "/assets/explosion3.png/explosion3_18",
+            "type": "Image"
+        },
+        "179": {
+            "path": "/assets/explosion3.png/explosion3_19",
+            "type": "Image"
+        },
+        "18": {
+            "path": "/assets/asteroid2.png/asteroid2_7",
+            "type": "Image"
+        },
+        "180": {
+            "path": "/assets/explosion3.png/explosion3_20",
+            "type": "Image"
+        },
+        "181": {
+            "path": "/assets/explosion3.png/explosion3_21",
+            "type": "Image"
+        },
+        "182": {
+            "path": "/assets/explosion3.png/explosion3_22",
+            "type": "Image"
+        },
+        "183": {
+            "path": "/assets/explosion3.png/explosion3_23",
+            "type": "Image"
+        },
+        "184": {
+            "path": "/assets/explosion3.png/explosion3_24",
+            "type": "Image"
+        },
+        "185": {
+            "path": "/assets/explosion3.png/explosion3_25",
+            "type": "Image"
+        },
+        "186": {
+            "path": "/assets/explosion3.png/explosion3_26",
+            "type": "Image"
+        },
+        "187": {
+            "path": "/assets/explosion3.png/explosion3_27",
+            "type": "Image"
+        },
+        "188": {
+            "path": "/assets/explosion3.png/explosion3_28",
+            "type": "Image"
+        },
+        "189": {
+            "path": "/assets/explosion3.png/explosion3_29",
+            "type": "Image"
+        },
+        "19": {
+            "path": "/assets/asteroid2.png/asteroid2_8",
+            "type": "Image"
+        },
+        "190": {
+            "path": "/assets/explosion3.png/explosion3_30",
+            "type": "Image"
+        },
+        "191": {
+            "path": "/assets/explosion3.png/explosion3_31",
+            "type": "Image"
+        },
+        "192": {
+            "path": "/assets/explosion3.png/explosion3_32",
+            "type": "Image"
+        },
+        "193": {
+            "path": "/assets/explosion3.png/explosion3_33",
+            "type": "Image"
+        },
+        "194": {
+            "path": "/assets/explosion3.png/explosion3_34",
+            "type": "Image"
+        },
+        "195": {
+            "path": "/assets/explosion3.png/explosion3_35",
+            "type": "Image"
+        },
+        "196": {
+            "path": "/assets/explosion3.png/explosion3_36",
+            "type": "Image"
+        },
+        "197": {
+            "path": "/assets/explosion3.png/explosion3_37",
+            "type": "Image"
+        },
+        "198": {
+            "path": "/assets/explosion3.png/explosion3_38",
+            "type": "Image"
+        },
+        "199": {
+            "path": "/assets/explosion3.png/explosion3_39",
+            "type": "Image"
+        },
+        "20": {
+            "path": "/assets/asteroid2.png/asteroid2_9",
+            "type": "Image"
+        },
+        "200": {
+            "path": "/assets/explosion3.png/explosion3_40",
+            "type": "Image"
+        },
+        "201": {
+            "path": "/assets/explosion3.png/explosion3_41",
+            "type": "Image"
+        },
+        "202": {
+            "path": "/assets/explosion3.png/explosion3_42",
+            "type": "Image"
+        },
+        "203": {
+            "path": "/assets/explosion3.anim",
+            "type": "Animation"
+        },
+        "204": {
+            "path": "/assets/explosion4.png",
+            "type": "Atlas"
+        },
+        "205": {
+            "path": "/assets/explosion4.png/explosion4_1",
+            "type": "Image"
+        },
+        "206": {
+            "path": "/assets/explosion4.png/explosion4_2",
+            "type": "Image"
+        },
+        "207": {
+            "path": "/assets/explosion4.png/explosion4_3",
+            "type": "Image"
+        },
+        "208": {
+            "path": "/assets/explosion4.png/explosion4_4",
+            "type": "Image"
+        },
+        "209": {
+            "path": "/assets/explosion4.png/explosion4_5",
+            "type": "Image"
+        },
+        "21": {
+            "path": "/assets/asteroid2.png/asteroid2_10",
+            "type": "Image"
+        },
+        "210": {
+            "path": "/assets/explosion4.png/explosion4_6",
+            "type": "Image"
+        },
+        "211": {
+            "path": "/assets/explosion4.png/explosion4_7",
+            "type": "Image"
+        },
+        "212": {
+            "path": "/assets/explosion4.png/explosion4_8",
+            "type": "Image"
+        },
+        "213": {
+            "path": "/assets/explosion4.png/explosion4_9",
+            "type": "Image"
+        },
+        "214": {
+            "path": "/assets/explosion4.png/explosion4_10",
+            "type": "Image"
+        },
+        "215": {
+            "path": "/assets/explosion4.png/explosion4_11",
+            "type": "Image"
+        },
+        "216": {
+            "path": "/assets/explosion4.png/explosion4_12",
+            "type": "Image"
+        },
+        "217": {
+            "path": "/assets/explosion4.png/explosion4_13",
+            "type": "Image"
+        },
+        "218": {
+            "path": "/assets/explosion4.png/explosion4_14",
+            "type": "Image"
+        },
+        "219": {
+            "path": "/assets/explosion4.png/explosion4_15",
+            "type": "Image"
+        },
+        "22": {
+            "path": "/assets/asteroid2.png/asteroid2_11",
+            "type": "Image"
+        },
+        "220": {
+            "path": "/assets/explosion4.png/explosion4_16",
+            "type": "Image"
+        },
+        "221": {
+            "path": "/assets/explosion4.png/explosion4_17",
+            "type": "Image"
+        },
+        "222": {
+            "path": "/assets/explosion4.png/explosion4_18",
+            "type": "Image"
+        },
+        "223": {
+            "path": "/assets/explosion4.png/explosion4_19",
+            "type": "Image"
+        },
+        "224": {
+            "path": "/assets/explosion4.png/explosion4_20",
+            "type": "Image"
+        },
+        "225": {
+            "path": "/assets/explosion4.png/explosion4_21",
+            "type": "Image"
+        },
+        "226": {
+            "path": "/assets/explosion4.png/explosion4_22",
+            "type": "Image"
+        },
+        "227": {
+            "path": "/assets/explosion4.png/explosion4_23",
+            "type": "Image"
+        },
+        "228": {
+            "path": "/assets/explosion4.png/explosion4_24",
+            "type": "Image"
+        },
+        "229": {
+            "path": "/assets/explosion4.png/explosion4_25",
+            "type": "Image"
+        },
+        "23": {
+            "path": "/assets/asteroid2.png/asteroid2_12",
+            "type": "Image"
+        },
+        "230": {
+            "path": "/assets/explosion4.anim",
+            "type": "Animation"
+        },
+        "231": {
+            "path": "/assets/explosion5.png",
+            "type": "Atlas"
+        },
+        "232": {
+            "path": "/assets/explosion5.png/explosion5_1",
+            "type": "Image"
+        },
+        "233": {
+            "path": "/assets/explosion5.png/explosion5_2",
+            "type": "Image"
+        },
+        "234": {
+            "path": "/assets/explosion5.png/explosion5_3",
+            "type": "Image"
+        },
+        "235": {
+            "path": "/assets/explosion5.png/explosion5_4",
+            "type": "Image"
+        },
+        "236": {
+            "path": "/assets/explosion5.png/explosion5_5",
+            "type": "Image"
+        },
+        "237": {
+            "path": "/assets/explosion5.png/explosion5_6",
+            "type": "Image"
+        },
+        "238": {
+            "path": "/assets/explosion5.png/explosion5_7",
+            "type": "Image"
+        },
+        "239": {
+            "path": "/assets/explosion5.png/explosion5_8",
+            "type": "Image"
+        },
+        "24": {
+            "path": "/assets/asteroid2.png/asteroid2_13",
+            "type": "Image"
+        },
+        "240": {
+            "path": "/assets/explosion5.png/explosion5_9",
+            "type": "Image"
+        },
+        "241": {
+            "path": "/assets/explosion5.png/explosion5_10",
+            "type": "Image"
+        },
+        "242": {
+            "path": "/assets/explosion5.png/explosion5_11",
+            "type": "Image"
+        },
+        "243": {
+            "path": "/assets/explosion5.png/explosion5_12",
+            "type": "Image"
+        },
+        "244": {
+            "path": "/assets/explosion5.png/explosion5_13",
+            "type": "Image"
+        },
+        "245": {
+            "path": "/assets/explosion5.png/explosion5_14",
+            "type": "Image"
+        },
+        "246": {
+            "path": "/assets/explosion5.png/explosion5_15",
+            "type": "Image"
+        },
+        "247": {
+            "path": "/assets/explosion5.png/explosion5_16",
+            "type": "Image"
+        },
+        "248": {
+            "path": "/assets/explosion5.anim",
+            "type": "Animation"
+        },
+        "25": {
+            "path": "/assets/asteroid2.png/asteroid2_14",
+            "type": "Image"
+        },
+        "26": {
+            "path": "/assets/asteroid2.png/asteroid2_15",
+            "type": "Image"
+        },
+        "27": {
+            "path": "/assets/asteroid2.png/asteroid2_16",
+            "type": "Image"
+        },
+        "28": {
+            "path": "/assets/asteroid2.png/asteroid2_17",
+            "type": "Image"
+        },
+        "29": {
+            "path": "/assets/asteroid2.png/asteroid2_18",
+            "type": "Image"
+        },
+        "30": {
+            "path": "/assets/asteroid2.png/asteroid2_19",
+            "type": "Image"
+        },
+        "31": {
+            "path": "/assets/asteroid2.png/asteroid2_20",
+            "type": "Image"
+        },
+        "33": {
+            "path": "/assets/asteroid1.png",
+            "type": "Atlas"
+        },
+        "34": {
+            "path": "/assets/asteroid1.png/asteroid1_1",
+            "type": "Image"
+        },
+        "35": {
+            "path": "/assets/asteroid1.png/asteroid1_2",
+            "type": "Image"
+        },
+        "36": {
+            "path": "/assets/asteroid1.png/asteroid1_3",
+            "type": "Image"
+        },
+        "37": {
+            "path": "/assets/asteroid1.png/asteroid1_4",
+            "type": "Image"
+        },
+        "38": {
+            "path": "/assets/asteroid1.png/asteroid1_5",
+            "type": "Image"
+        },
+        "39": {
+            "path": "/assets/asteroid1.png/asteroid1_6",
+            "type": "Image"
+        },
+        "4": {
+            "path": "/assets/Animation1.anim",
+            "type": "Animation"
+        },
+        "40": {
+            "path": "/assets/asteroid1.png/asteroid1_7",
+            "type": "Image"
+        },
+        "41": {
+            "path": "/assets/asteroid1.png/asteroid1_8",
+            "type": "Image"
+        },
+        "42": {
+            "path": "/assets/asteroid1.png/asteroid1_9",
+            "type": "Image"
+        },
+        "43": {
+            "path": "/assets/asteroid1.png/asteroid1_10",
+            "type": "Image"
+        },
+        "44": {
+            "path": "/assets/asteroid1.png/asteroid1_11",
+            "type": "Image"
+        },
+        "45": {
+            "path": "/assets/asteroid1.png/asteroid1_12",
+            "type": "Image"
+        },
+        "46": {
+            "path": "/assets/asteroid1.png/asteroid1_13",
+            "type": "Image"
+        },
+        "47": {
+            "path": "/assets/asteroid1.png/asteroid1_14",
+            "type": "Image"
+        },
+        "48": {
+            "path": "/assets/asteroid1.png/asteroid1_15",
+            "type": "Image"
+        },
+        "49": {
+            "path": "/assets/asteroid1.png/asteroid1_16",
+            "type": "Image"
+        },
+        "5": {
+            "path": "/assets/bg_image2.png",
+            "type": "Image"
+        },
+        "50": {
+            "path": "/assets/asteroid1.png/asteroid1_17",
+            "type": "Image"
+        },
+        "51": {
+            "path": "/assets/asteroid1.png/asteroid1_18",
+            "type": "Image"
+        },
+        "52": {
+            "path": "/assets/asteroid1.png/asteroid1_19",
+            "type": "Image"
+        },
+        "53": {
+            "path": "/assets/asteroid1.png/asteroid1_20",
+            "type": "Image"
+        },
+        "54": {
+            "path": "/assets/asteroid1.png/asteroid1_21",
+            "type": "Image"
+        },
+        "55": {
+            "path": "/assets/asteroid1.png/asteroid1_22",
+            "type": "Image"
+        },
+        "56": {
+            "path": "/assets/asteroid1.png/asteroid1_23",
+            "type": "Image"
+        },
+        "57": {
+            "path": "/assets/asteroid1.png/asteroid1_24",
+            "type": "Image"
+        },
+        "58": {
+            "path": "/assets/asteroid1.png/asteroid1_25",
+            "type": "Image"
+        },
+        "59": {
+            "path": "/assets/asteroid1.png/asteroid1_26",
+            "type": "Image"
+        },
+        "6": {
+            "path": "/assets/asteroid2.anim",
+            "type": "Animation"
+        },
+        "60": {
+            "path": "/assets/asteroid1.png/asteroid1_27",
+            "type": "Image"
+        },
+        "61": {
+            "path": "/assets/asteroid1.png/asteroid1_28",
+            "type": "Image"
+        },
+        "62": {
+            "path": "/assets/asteroid1.png/asteroid1_29",
+            "type": "Image"
+        },
+        "63": {
+            "path": "/assets/asteroid1.png/asteroid1_30",
+            "type": "Image"
+        },
+        "64": {
+            "path": "/assets/asteroid1.anim",
+            "type": "Animation"
+        },
+        "67": {
+            "path": "/assets/explosion3.anim/Label1",
+            "type": "Animation"
+        },
+        "68": {
+            "path": "/assets/explosion3.anim/Label2",
+            "type": "Animation"
+        },
+        "7": {
+            "path": "/assets/asteroid2.png",
+            "type": "Atlas"
+        },
+        "72": {
+            "path": "/assets/explosion1.png",
+            "type": "Atlas"
+        },
+        "73": {
+            "path": "/assets/explosion1.png/explosion1_1",
+            "type": "Image"
+        },
+        "74": {
+            "path": "/assets/explosion1.png/explosion1_2",
+            "type": "Image"
+        },
+        "75": {
+            "path": "/assets/explosion1.png/explosion1_3",
+            "type": "Image"
+        },
+        "76": {
+            "path": "/assets/explosion1.png/explosion1_4",
+            "type": "Image"
+        },
+        "77": {
+            "path": "/assets/explosion1.png/explosion1_5",
+            "type": "Image"
+        },
+        "78": {
+            "path": "/assets/explosion1.png/explosion1_6",
+            "type": "Image"
+        },
+        "79": {
+            "path": "/assets/explosion1.png/explosion1_7",
+            "type": "Image"
+        },
+        "8": {
+            "path": "/assets/asteroid2.png/asteroid2_1",
+            "type": "Image"
+        },
+        "80": {
+            "path": "/assets/explosion1.png/explosion1_8",
+            "type": "Image"
+        },
+        "81": {
+            "path": "/assets/explosion1.png/explosion1_9",
+            "type": "Image"
+        },
+        "82": {
+            "path": "/assets/explosion1.png/explosion1_10",
+            "type": "Image"
+        },
+        "83": {
+            "path": "/assets/explosion1.png/explosion1_11",
+            "type": "Image"
+        },
+        "84": {
+            "path": "/assets/explosion1.png/explosion1_12",
+            "type": "Image"
+        },
+        "85": {
+            "path": "/assets/explosion1.png/explosion1_13",
+            "type": "Image"
+        },
+        "86": {
+            "path": "/assets/explosion1.png/explosion1_14",
+            "type": "Image"
+        },
+        "87": {
+            "path": "/assets/explosion1.png/explosion1_15",
+            "type": "Image"
+        },
+        "88": {
+            "path": "/assets/explosion1.png/explosion1_16",
+            "type": "Image"
+        },
+        "89": {
+            "path": "/assets/explosion1.png/explosion1_17",
+            "type": "Image"
+        },
+        "90": {
+            "path": "/assets/explosion1.png/explosion1_18",
+            "type": "Image"
+        },
+        "91": {
+            "path": "/assets/explosion1.png/explosion1_19",
+            "type": "Image"
+        },
+        "92": {
+            "path": "/assets/explosion1.png/explosion1_20",
+            "type": "Image"
+        },
+        "93": {
+            "path": "/assets/explosion1.png/explosion1_21",
+            "type": "Image"
+        },
+        "94": {
+            "path": "/assets/explosion1.png/explosion1_22",
+            "type": "Image"
+        },
+        "95": {
+            "path": "/assets/explosion1.png/explosion1_23",
+            "type": "Image"
+        },
+        "96": {
+            "path": "/assets/explosion1.png/explosion1_24",
+            "type": "Image"
+        },
+        "97": {
+            "path": "/assets/explosion1.png/explosion1_25",
+            "type": "Image"
+        },
+        "98": {
+            "path": "/assets/explosion1.png/explosion1_26",
+            "type": "Image"
+        },
+        "99": {
+            "path": "/assets/explosion1.png/explosion1_27",
+            "type": "Image"
+        },
+        "993": {
+            "path": "/assets/Animation2.anim",
+            "type": "Animation"
+        }
+    }
+}

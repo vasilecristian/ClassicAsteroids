@@ -1,0 +1,23 @@
+{
+    "name": "Scene",
+    "nodes": [
+        {
+            "id": "{c30c7c23-9884-458e-9501-6e6d9d9573d4}",
+            "properties": {
+                "ConsumeTouch": 0,
+                "Name": "Scene",
+                "Size": [
+                    1024,
+                    768
+                ],
+                "TemplateName": ""
+            },
+            "timeStamp": 1447438574608,
+            "typeName": "RootNode",
+            "user_properties": {
+            }
+        }
+    ],
+    "orientation": 0,
+    "version": "1.2"
+}

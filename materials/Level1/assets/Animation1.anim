@@ -1,0 +1,27 @@
+{
+    "keys": [
+        {
+            "easing": 14,
+            "name": "Scale",
+            "time": 0,
+            "type": 1,
+            "value": [
+                0.95522797107696533,
+                0.8946043848991394
+            ]
+        },
+        {
+            "easing": 0,
+            "name": "Scale",
+            "time": 2000,
+            "type": 1,
+            "value": [
+                -0.35279178619384766,
+                -0.36240166425704956
+            ]
+        }
+    ],
+    "loop": false,
+    "playDirection": 0,
+    "version": "1.1"
+}

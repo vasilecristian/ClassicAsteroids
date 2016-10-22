@@ -1,0 +1,14 @@
+{
+    "name": "Level1",
+    "resources": [
+        {
+            "filename": "Level1.resources"
+        }
+    ],
+    "scenes": [
+        {
+            "filename": "Scene.json"
+        }
+    ],
+    "version": "1.2"
+}

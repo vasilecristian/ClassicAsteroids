@@ -1,0 +1,59 @@
+{
+    "elements": [
+        {
+            "ConsumeTouch": 0,
+            "Name": "Scene",
+            "Size": [
+                640,
+                960
+            ],
+            "TemplateName": "",
+            "id": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "RootNode"
+        },
+        {
+            "AnchoringType": "TopLeft",
+            "AnchoringUnits": "Percents",
+            "AnchoringVector": [
+                -49.714618682861328,
+                53.333328247070312
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "Name": "Background",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                318.17355346679688,
+                448.00003051757812
+            ],
+            "Rotation": 0,
+            "Scale": [
+                0.83114159107208252,
+                1
+            ],
+            "Size": [
+                768,
+                1024
+            ],
+            "SizeAnchoringType": "None",
+            "TemplateName": "",
+            "TextureId": 5,
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{6c9f1efe-5e33-4956-8f13-9de97f60abe6}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Sprite"
+        }
+    ],
+    "orientation": 1
+}

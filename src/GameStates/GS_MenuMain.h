@@ -74,6 +74,14 @@ private:
 
 	int m_sceneId; /// The scenes unique Id
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
+
+	enum class MenuAction
+	{
+		IDLE,
+		PLAY,
+	};
+
+	MenuAction m_menuAction;
 };
 
 #endif //_GS_MenuMain_H_

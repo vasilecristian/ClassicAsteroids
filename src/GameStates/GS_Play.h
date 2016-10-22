@@ -72,9 +72,10 @@ public:
 private:
 
 	int m_sceneId; /// The scenes unique Id
+	int m_loadingSceneId;
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
 	std::string m_levelName;
-	int m_loadingPtogress;
+	int m_loadingProgress;
 };
 
 #endif //__GS_Play_H__

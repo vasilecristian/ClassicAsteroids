@@ -18,8 +18,9 @@ using namespace m2dkit;
 GS_Play::GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr, std::string levelName)
 	: m_gameWeakPtr(gamePtr)
 	, m_sceneId(-1)
+	, m_loadingSceneId(-1)
 	, m_levelName(levelName)
-	, m_loadingPtogress(0)
+	, m_loadingProgress(0)
 {
 
 }
@@ -90,48 +91,44 @@ bool GS_Play::Load()
 	{
 		core::CSceneContainer* sc = game->GetSceneContainer();
 
-		if (m_loadingPtogress == 0)
+		if (m_loadingProgress == 0)
 		{
 			const int zIndex = 0;
-			bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_sceneId);
+			bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_loadingSceneId);
 			IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Loading.json or Loading.resources"));
-			m_loadingPtogress = 10;
+			m_loadingProgress = 10;
 			return true;
 		}
-		else if (m_loadingPtogress == 10)
+		else if (m_loadingProgress == 10)
 		{
-			int loadingSceneID = m_sceneId;
-
 			std::string sceneJson = m_levelName + ".json";
 			std::string sceneResources = m_levelName + ".resources";
 
 			const int zIndex = 0;
 			bool sceneLoadedOK = sc->LoadSceneFromDisk(sceneJson.c_str(), sceneResources.c_str(), zIndex, false, &m_sceneId);
 			IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s or %s not found!", sceneJson.c_str(), sceneResources.c_str()));
-
-			sc->DestroyScene(loadingSceneID);//destroy the loading screen
-
-
+			
+			m_loadingProgress = 70;
+			return true;
+		}
+		else if (m_loadingProgress == 70)
+		{
 			shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, m_sceneId, "Scene");
 
 			shared_ptr<core::CSprite> ship1 = dfp::CreateDFPNode("ship1", "assets2/ship1.anim", sc, m_sceneId, "Scene");
-		
-			m_loadingPtogress = 100;
+
+			m_loadingProgress = 100;
 			return true;
 		}
-		else if (m_loadingPtogress == 100)
+		else if (m_loadingProgress == 100)
 		{
 			sc->SetSceneActive(m_sceneId, true);
 			sc->SetSceneVisible(m_sceneId, true);
+
+			sc->DestroyScene(m_loadingSceneId);//destroy the loading screen
+
 			return false;
 		}
-
-		// Attach pressed and released event callbacks to button
-		//shared_ptr<core::CButton> btn1 = sc->GetNode<core::CButton>(m_sceneId, "Scene.ButtonPlay");
-		//IwAssertMsg(2DENGINE, btn1 != 0, ("%s not found", "Scene.ButtonPlay"));
-		//btn1->SubscribeEvent(core::BUTTON_EVENT_RELEASED, std::bind(&GS_Play::ButtonReleasedCallback1, this, std::placeholders::_1));
-
-		return false;
 	}
 
 	return true;

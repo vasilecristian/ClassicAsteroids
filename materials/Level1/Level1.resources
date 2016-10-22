@@ -334,6 +334,12 @@
         "type": 1
     },
     {
+        "filename": "explosion41.anim",
+        "hidden": false,
+        "id": 32,
+        "type": 6
+    },
+    {
         "filename": "asteroid1.png",
         "frames": {
             "asteroid1_1": [

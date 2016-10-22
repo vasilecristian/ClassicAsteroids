@@ -63,6 +63,7 @@ namespace gs
 		{
 			pState->SetReady(true);
 			pState->Resume();
+			pState->SetLoading(true);
 		}
 
 		ResetTouch();

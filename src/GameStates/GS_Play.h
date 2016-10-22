@@ -66,7 +66,7 @@ public:
      */
 	void Resume() override;
 
-	bool Load();
+	bool Load() override;
 
 	
 private:

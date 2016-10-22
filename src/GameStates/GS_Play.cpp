@@ -100,9 +100,6 @@ bool GS_Play::Load()
 		}
 		else if (m_loadingPtogress == 10)
 		{
-
-			
-
 			int loadingSceneID = m_sceneId;
 
 			std::string sceneJson = m_levelName + ".json";

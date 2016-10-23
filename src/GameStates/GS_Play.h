@@ -76,6 +76,31 @@ private:
 	std::weak_ptr<m2dkit::engine::CGameManager> m_gameWeakPtr;
 	std::string m_levelName;
 	int m_loadingProgress;
+
+
+	enum class PlayerMove
+	{
+		IDLE,
+		LEFT,
+		RIGHT,
+		FORWARD,
+		BACKWARD,
+	};
+
+	PlayerMove m_playerMove;
+
+	m2dkit::core::CAnimationInstance* m_animPlayerShipTurnLeft;
+	m2dkit::core::CAnimationInstance* m_animPlayerShipReleaseLeft;
+
+	m2dkit::core::CAnimationInstance* m_animPlayerShipTurnRight;
+	m2dkit::core::CAnimationInstance* m_animPlayerShipReleaseRight;
+
+	m2dkit::core::CAnimationInstance* m_animPlayerShipIdle;
+
+	m2dkit::shared_ptr<m2dkit::core::CSprite> m_playerShip;
+
+	int m_posX;
+	int m_posY;
 };
 
 #endif //__GS_Play_H__

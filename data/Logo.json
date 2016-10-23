@@ -59,6 +59,58 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
+                -960,
+                -1476.8367919921875
+            ],
+            "Animation": -1,
+            "Class": "",
+            "Color": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "ConsumeTouch": 1,
+            "FontColor": [
+                255,
+                255,
+                255,
+                255
+            ],
+            "FontId": 0,
+            "FontSize": 46,
+            "Name": "Label_1",
+            "Pivot": [
+                0.5,
+                0.5
+            ],
+            "Position": [
+                320,
+                452.00457763671875
+            ],
+            "Rotation": 0,
+            "Scale": [
+                1,
+                1
+            ],
+            "Size": [
+                335.4287109375,
+                73.673583984375
+            ],
+            "SizeAnchoringType": "Parent",
+            "TemplateName": "",
+            "Text": "by c78App",
+            "Visible": true,
+            "ZIndex": 0,
+            "id": "{91105dd9-2ac0-4825-af19-feee6b483937}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "typeName": "Label"
+        },
+        {
+            "Alignment": "Centre",
+            "AnchoringType": "None",
+            "AnchoringUnits": "Pixels",
+            "AnchoringVector": [
                 -640,
                 -960
             ],
@@ -78,15 +130,15 @@
                 255
             ],
             "FontId": 0,
-            "FontSize": 61,
-            "Name": "Label_1",
+            "FontSize": 70,
+            "Name": "Label_2",
             "Pivot": [
                 0.5,
                 0.5
             ],
             "Position": [
-                320,
-                516.8367919921875
+                333.06954956054688,
+                542.91278076171875
             ],
             "Rotation": 0,
             "Scale": [
@@ -94,15 +146,15 @@
                 1
             ],
             "Size": [
-                335.4287109375,
-                73.673583984375
+                549.9630126953125,
+                108.142822265625
             ],
             "SizeAnchoringType": "Parent",
             "TemplateName": "",
-            "Text": "Loading...",
+            "Text": "Clasic Asteroids",
             "Visible": true,
             "ZIndex": 0,
-            "id": "{91105dd9-2ac0-4825-af19-feee6b483937}",
+            "id": "{5aa9af12-9f0e-4776-a47a-9ca5bb4f0a96}",
             "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
             "typeName": "Label"
         }

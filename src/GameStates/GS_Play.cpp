@@ -21,6 +21,14 @@ GS_Play::GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr, std::strin
 	, m_loadingSceneId(-1)
 	, m_levelName(levelName)
 	, m_loadingProgress(0)
+	, m_playerMove(PlayerMove::IDLE)
+	, m_animPlayerShipTurnLeft(0)
+	, m_animPlayerShipTurnRight(0)
+	, m_animPlayerShipReleaseLeft(0)
+	, m_animPlayerShipReleaseRight(0)
+	, m_animPlayerShipIdle(0)
+	, m_posX(100)
+	, m_posY(100)
 {
 
 }
@@ -60,22 +68,31 @@ void GS_Play::Release()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void GS_Play::Update(float dt)
 {
-	// Check current status of the Android "back" key
+	int32 leftKeyState = s3eKeyboardGetState(s3eKeyLeft);
 	int32 rightKeyState = s3eKeyboardGetState(s3eKeyRight);
-	if (rightKeyState & S3E_KEY_STATE_PRESSED)
-	{
-		int a = 1;
-	}
-	else if (rightKeyState & S3E_KEY_STATE_RELEASED)
-	{
-		int a = 1;
-	}
+	int32 upKeyState = s3eKeyboardGetState(s3eKeyUp);
+	int32 downKeyState = s3eKeyboardGetState(s3eKeyDown);
 
 	if (rightKeyState & S3E_KEY_STATE_DOWN)
 	{
-		int a = 1;
+		m_playerMove = PlayerMove::RIGHT;
 	}
-	
+	else if (leftKeyState & S3E_KEY_STATE_DOWN)
+	{
+		m_playerMove = PlayerMove::LEFT;
+	}
+	else if (upKeyState & S3E_KEY_STATE_DOWN)
+	{
+		m_playerMove = PlayerMove::FORWARD;
+	}
+	else if (downKeyState & S3E_KEY_STATE_DOWN)
+	{
+		m_playerMove = PlayerMove::BACKWARD;
+	}
+	else
+	{
+		m_animPlayerShipIdle->Play();
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -113,9 +130,12 @@ bool GS_Play::Load()
 		}
 		else if (m_loadingProgress == 70)
 		{
-			shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, m_sceneId, "Scene");
+			//shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, m_sceneId, "Scene");
 
-			shared_ptr<core::CSprite> ship1 = dfp::CreateDFPNode("ship1", "assets2/ship1.anim", sc, m_sceneId, "Scene");
+			m_playerShip = dfp::CreateDFPNode("PlayerShip", "assets2/ship1.anim", sc, m_sceneId, "Scene");
+
+			m_animPlayerShipIdle = m_playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/normal");
+		
 
 			m_loadingProgress = 100;
 			return true;

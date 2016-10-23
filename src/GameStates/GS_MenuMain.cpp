@@ -96,7 +96,6 @@ bool GS_MenuMain::Load()
 {
 	if (auto game = m_gameWeakPtr.lock())
 	{
-
 		core::CSceneContainer* sc = game->GetSceneContainer();
 
 		int loadingSceneID = m_sceneId;

@@ -97,8 +97,6 @@ private:
 
 	m2dkit::core::CAnimationInstance* m_animPlayerShipIdle;
 
-	m2dkit::shared_ptr<m2dkit::core::CSprite> m_playerShip;
-
 	int m_posX;
 	int m_posY;
 };

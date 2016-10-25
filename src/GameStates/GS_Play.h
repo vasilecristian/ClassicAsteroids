@@ -68,7 +68,8 @@ public:
 
 	bool Load() override;
 
-	
+	void AnimationCallback(m2dkit::core::Animation::ePlaybackEvent event, m2dkit::core::CAnimationInstance* source);
+
 private:
 
 	int m_sceneId; /// The scenes unique Id

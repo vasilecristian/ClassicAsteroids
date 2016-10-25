@@ -16,7 +16,7 @@ using namespace m2dkit;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-GS_Play::GS_Play(std::weak_ptr<m2dkit::engine::CGameManager> gamePtr, std::string levelName)
+GS_Play::GS_Play(std::weak_ptr<engine::CGameManager> gamePtr, std::string levelName)
 	: m_gameWeakPtr(gamePtr)
 	, m_sceneId(-1)
 	, m_loadingSceneId(-1)
@@ -69,20 +69,57 @@ void GS_Play::Release()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void GS_Play::Update(float dt)
 {
+	auto game = m_gameWeakPtr.lock();
+	if (!game)
+	{
+		return;
+	}
+
+	core::CSceneContainer* sc = game->GetSceneContainer();
+
+
 	int32 leftKeyState = s3eKeyboardGetState(s3eKeyLeft);
 	int32 rightKeyState = s3eKeyboardGetState(s3eKeyRight);
 	int32 upKeyState = s3eKeyboardGetState(s3eKeyUp);
 	int32 downKeyState = s3eKeyboardGetState(s3eKeyDown);
 
+	shared_ptr<core::CSprite> playerShip = sc->GetNode<core::CSprite>(m_sceneId, "Scene.PlayerShip");
+	IwAssertMsg(2DENGINE, playerShip != 0, ("%s not found", "Scene.PlayerShip"));
 
 	if (rightKeyState & S3E_KEY_STATE_PRESSED)
 	{
-		m_animPlayerShipTurnRight->Play();
+		m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnRight");
+		currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
+		currentAnim->SetRepeatCount(1);
+		currentAnim->Play(NULL);
 	}
-
-	if (leftKeyState & S3E_KEY_STATE_PRESSED)
+	else if (leftKeyState & S3E_KEY_STATE_PRESSED)
 	{
-		m_animPlayerShipTurnLeft->Play();
+		m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
+		currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
+		currentAnim->SetRepeatCount(1);
+		currentAnim->Play(NULL);
+	}
+	else if (rightKeyState & S3E_KEY_STATE_RELEASED)
+	{
+		m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnRight");
+		currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionReverse);
+		currentAnim->SetRepeatCount(1);
+		currentAnim->Play(NULL);
+	}
+	else if (leftKeyState & S3E_KEY_STATE_RELEASED)
+	{
+		m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
+		currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionReverse);
+		currentAnim->SetRepeatCount(1);
+		currentAnim->Play(NULL);
+	}
+	else if (!(rightKeyState & S3E_KEY_STATE_DOWN) && !(leftKeyState & S3E_KEY_STATE_DOWN))
+	{
+		//m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/normal");
+		//currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
+		//currentAnim->SetRepeatCount(1);
+		//currentAnim->Play(NULL);
 	}
 
 	if (rightKeyState & S3E_KEY_STATE_DOWN)
@@ -106,15 +143,6 @@ void GS_Play::Update(float dt)
 		m_playerMove = PlayerMove::IDLE;
 	}
 
-
-	if (m_playerMove == PlayerMove::IDLE)
-	{
-		//m_animPlayerShipIdle->Play();
-	}
-	else if (m_playerMove == PlayerMove::RIGHT)
-	{
-		
-	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -152,26 +180,12 @@ bool GS_Play::Load()
 		}
 		else if (m_loadingProgress == 70)
 		{
-			//shared_ptr<core::CSprite> dfpSprite = dfp::CreateDFPNode("omulet", "assets2/n69yj7.anim", sc, m_sceneId, "Scene");
-
 			m2dkit::shared_ptr<core::CSprite> playerShip = dfp::CreateDFPNode("PlayerShip", "assets2/ship1.anim", sc, m_sceneId, "Scene");
-
-			m_animPlayerShipIdle = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/normal");
-
-			m_animPlayerShipTurnRight = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnRight");
-			m_animPlayerShipTurnRight->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
-			m_animPlayerShipTurnRight->SetRepeatCount(1);
-			m_animPlayerShipReleaseRight = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnRight");
-			m_animPlayerShipTurnRight->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionReverse);
-			m_animPlayerShipTurnRight->SetRepeatCount(1);
-			
-
-			m_animPlayerShipTurnLeft = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
-			m_animPlayerShipTurnLeft->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
-			m_animPlayerShipTurnLeft->SetRepeatCount(1);
-			m_animPlayerShipReleaseLeft = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/TurnLeft");
-			m_animPlayerShipReleaseLeft->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionReverse);
-			m_animPlayerShipReleaseLeft->SetRepeatCount(1);
+			playerShip->SetScale(CIwFVec2(5, 5));
+			m2dkit::core::CAnimationInstance* currentAnim = playerShip->GetAnimationContainer().SetCurrentAnimation("assets2/ship1.anim/normal");
+			currentAnim->SetPlaybackDirection(core::Animation::ePlaybackDirection::PlaybackDirectionForward);
+			currentAnim->SetRepeatCount(1);
+			currentAnim->Play(NULL);
 			
 
 			m_loadingProgress = 100;

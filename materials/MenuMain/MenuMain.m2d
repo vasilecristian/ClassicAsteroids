@@ -1,0 +1,14 @@
+{
+    "name": "MenuMain",
+    "resources": [
+        {
+            "filename": "MenuMain.resources"
+        }
+    ],
+    "scenes": [
+        {
+            "filename": "Scene.json"
+        }
+    ],
+    "version": "1.2"
+}

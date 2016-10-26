@@ -35,7 +35,7 @@ int GS_MenuMain::Create()
 	{
 		core::CSceneContainer* sc = game->GetSceneContainer();
 		const int zIndex = 0;
-		bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_sceneId);
+		bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, &m_sceneId, 0, true);
 		IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Loading.json or Loading.resources"));
 	}
 
@@ -102,8 +102,8 @@ bool GS_MenuMain::Load()
 		
 
 		const int zIndex = 0;
-		bool sceneLoadedOK = sc->LoadSceneFromDisk("Scene.json", "Scene.resources", zIndex, true, &m_sceneId);
-		IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Scene.json or Scene.resources"));
+		bool sceneLoadedOK = sc->LoadSceneFromDisk("MenuMain.json", "MenuMain.resources", zIndex, &m_sceneId, 0, true);
+		IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "MenuMain.json or MenuMain.resources"));
 
 		sc->DestroyScene(loadingSceneID);//destroy the loading screen
 

@@ -39,7 +39,7 @@ int GS_Logo::Create()
 	{
 		core::CSceneContainer* sc = game->GetSceneContainer();
 		const int zIndex = 0;
-		bool sceneLoadedOK = sc->LoadSceneFromDisk("Logo.json", "Logo.resources", zIndex, true, &m_sceneId);
+		bool sceneLoadedOK = sc->LoadSceneFromDisk("Logo.json", "Logo.resources", zIndex, &m_sceneId, 0, true);
 		IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Logo.json or Logo.resources"));
 	}
 	return true;

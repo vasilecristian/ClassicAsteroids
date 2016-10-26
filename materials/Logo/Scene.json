@@ -88,7 +88,7 @@
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
                     -960,
-                    -1476.8367919921875
+                    -1412.004638671875
                 ],
                 "Animation": -1,
                 "Class": "",
@@ -158,8 +158,8 @@
                 "AnchoringType": 0,
                 "AnchoringUnits": 1,
                 "AnchoringVector": [
-                    -640,
-                    -960
+                    -973.069580078125,
+                    -1502.912841796875
                 ],
                 "Animation": -1,
                 "Class": "",

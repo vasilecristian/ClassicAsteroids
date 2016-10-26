@@ -60,7 +60,7 @@
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
                 -960,
-                -1476.8367919921875
+                -1412.004638671875
             ],
             "Animation": -1,
             "Class": "",
@@ -111,8 +111,8 @@
             "AnchoringType": "None",
             "AnchoringUnits": "Pixels",
             "AnchoringVector": [
-                -640,
-                -960
+                -973.069580078125,
+                -1502.912841796875
             ],
             "Animation": -1,
             "Class": "",

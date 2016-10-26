@@ -175,7 +175,7 @@ bool GS_Play::Load()
 		if (m_loadingProgress == 0)
 		{
 			const int zIndex = 0;
-			bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, true, &m_loadingSceneId);
+			bool sceneLoadedOK = sc->LoadSceneFromDisk("Loading.json", "Loading.resources", zIndex, &m_loadingSceneId, 0, true);
 			IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s not found!", "Loading.json or Loading.resources"));
 			m_loadingProgress = 10;
 			return true;
@@ -186,7 +186,7 @@ bool GS_Play::Load()
 			std::string sceneResources = m_levelName + ".resources";
 
 			const int zIndex = 0;
-			bool sceneLoadedOK = sc->LoadSceneFromDisk(sceneJson.c_str(), sceneResources.c_str(), zIndex, false, &m_sceneId);
+			bool sceneLoadedOK = sc->LoadSceneFromDisk(sceneJson.c_str(), sceneResources.c_str(), zIndex, &m_sceneId, false);
 			IwAssertMsg(2DENGINE, sceneLoadedOK, ("%s or %s not found!", sceneJson.c_str(), sceneResources.c_str()));
 			
 			m_loadingProgress = 70;

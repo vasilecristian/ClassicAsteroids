@@ -1,0 +1,24 @@
+{
+    "resources": {
+        "10": {
+            "path": "/assets/square_pixel-7.ttf",
+            "type": "Font"
+        },
+        "11": {
+            "path": "/assets/selected_btn.png",
+            "type": "Image"
+        },
+        "2": {
+            "path": "/assets/behaviour_bgpanel.png",
+            "type": "Image"
+        },
+        "5": {
+            "path": "/assets/bg_image2.png",
+            "type": "Image"
+        },
+        "9": {
+            "path": "/assets/default_btn.png",
+            "type": "Image"
+        }
+    }
+}

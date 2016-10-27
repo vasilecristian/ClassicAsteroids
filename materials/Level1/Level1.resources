@@ -18,18 +18,6 @@
         "type": 1
     },
     {
-        "filename": "bg_image.png",
-        "hidden": false,
-        "id": 3,
-        "type": 1
-    },
-    {
-        "filename": "Animation1.anim",
-        "hidden": false,
-        "id": 4,
-        "type": 6
-    },
-    {
         "filename": "bg_image2.png",
         "hidden": false,
         "id": 5,
@@ -192,12 +180,6 @@
         "filename": "selected_btn.png",
         "hidden": false,
         "id": 11,
-        "type": 1
-    },
-    {
-        "filename": "sprite_swap_ship2.png",
-        "hidden": false,
-        "id": 12,
         "type": 1
     },
     {
@@ -736,12 +718,6 @@
         "hidden": false,
         "id": 64,
         "type": 6
-    },
-    {
-        "filename": "asteroid3.png",
-        "hidden": false,
-        "id": 66,
-        "type": 1
     },
     {
         "filename": "Label1",
@@ -2358,12 +2334,6 @@
         "filename": "explosion5.anim",
         "hidden": false,
         "id": 248,
-        "type": 6
-    },
-    {
-        "filename": "Animation2.anim",
-        "hidden": false,
-        "id": 993,
         "type": 6
     }
 ]

@@ -6,15 +6,51 @@
         "type": 3
     },
     {
+        "filename": "Animation1.anim",
+        "hidden": false,
+        "id": 1,
+        "type": 6
+    },
+    {
         "filename": "behaviour_bgpanel.png",
         "hidden": false,
         "id": 2,
         "type": 1
     },
     {
+        "filename": "Animation2.anim",
+        "hidden": false,
+        "id": 3,
+        "type": 6
+    },
+    {
+        "filename": "asteroid1.anim",
+        "hidden": false,
+        "id": 4,
+        "type": 6
+    },
+    {
         "filename": "bg_image2.png",
         "hidden": false,
         "id": 5,
+        "type": 1
+    },
+    {
+        "filename": "asteroid1.png",
+        "hidden": false,
+        "id": 6,
+        "type": 1
+    },
+    {
+        "filename": "asteroid2.anim",
+        "hidden": false,
+        "id": 7,
+        "type": 6
+    },
+    {
+        "filename": "asteroid2.png",
+        "hidden": false,
+        "id": 8,
         "type": 1
     },
     {
@@ -33,6 +69,92 @@
         "filename": "selected_btn.png",
         "hidden": false,
         "id": 11,
+        "type": 1
+    },
+    {
+        "filename": "asteroid3.png",
+        "hidden": false,
+        "id": 12,
+        "type": 1
+    },
+    {
+        "filename": "bg_image.png",
+        "hidden": false,
+        "id": 13,
+        "type": 1
+    },
+    {
+        "filename": "explosion1.anim",
+        "hidden": false,
+        "id": 14,
+        "type": 6
+    },
+    {
+        "filename": "explosion1.png",
+        "hidden": false,
+        "id": 15,
+        "type": 1
+    },
+    {
+        "filename": "explosion3.anim",
+        "hidden": false,
+        "id": 16,
+        "type": 6
+    },
+    {
+        "filename": "Label1",
+        "hidden": false,
+        "id": 17,
+        "parentID": 16,
+        "type": 6
+    },
+    {
+        "filename": "Label2",
+        "hidden": false,
+        "id": 18,
+        "parentID": 16,
+        "type": 6
+    },
+    {
+        "filename": "explosion3.png",
+        "hidden": false,
+        "id": 19,
+        "type": 1
+    },
+    {
+        "filename": "explosion4.anim",
+        "hidden": false,
+        "id": 20,
+        "type": 6
+    },
+    {
+        "filename": "explosion4.png",
+        "hidden": false,
+        "id": 21,
+        "type": 1
+    },
+    {
+        "filename": "explosion5.anim",
+        "hidden": false,
+        "id": 22,
+        "type": 6
+    },
+    {
+        "filename": "explosion5.png",
+        "hidden": false,
+        "id": 23,
+        "type": 1
+    },
+    {
+        "filename": "sprite_swap.png",
+        "hidden": false,
+        "id": 24,
+        "type": 1
+    },
+    {
+        "filename": "sprite_swap_ship2.png",
+        "hidden": false,
+        "id": 25,
         "type": 1
     }
 ]

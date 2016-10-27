@@ -78,6 +78,130 @@
             "typeName": "Sprite",
             "user_properties": {
             }
+        },
+        {
+            "id": "{dc3eda70-b1c0-45f4-89c4-d0074444f424}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -640,
+                    -960
+                ],
+                "Animation": 64,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    64,
+                    64
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "AsteroidType1",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    72.33709716796875,
+                    822.3367919921875
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    64,
+                    64
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "TextureId": 34,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1477593344321,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
+        },
+        {
+            "id": "{130dbb34-5fed-4d32-95c1-7a9119571a0e}",
+            "parentID": "{b77c9d24-9e85-4733-ae9b-f908a998d1bb}",
+            "properties": {
+                "AnchoringType": 0,
+                "AnchoringUnits": 1,
+                "AnchoringVector": [
+                    -640,
+                    -960
+                ],
+                "Animation": 6,
+                "Class": "",
+                "Color": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "ConsumeTouch": 1,
+                "EditorLock": false,
+                "EditorVisible": true,
+                "InternalSizeAnchoringBaseSize": [
+                    64,
+                    64
+                ],
+                "InternalSizeAnchoringCachedParentSize": [
+                    640,
+                    960
+                ],
+                "InternalSizeAnchoringCoeff": [
+                    1,
+                    1
+                ],
+                "Name": "AsteroidType2",
+                "Pivot": [
+                    0.5,
+                    0.5
+                ],
+                "Position": [
+                    72.33709716796875,
+                    739.243408203125
+                ],
+                "Rotation": 0,
+                "Scale": [
+                    1,
+                    1
+                ],
+                "Size": [
+                    64,
+                    64
+                ],
+                "SizeAnchoringType": 4,
+                "TemplateName": "",
+                "TextureId": 8,
+                "Visible": true,
+                "ZIndex": 0
+            },
+            "timeStamp": 1477593447185,
+            "typeName": "Sprite",
+            "user_properties": {
+            }
         }
     ],
     "orientation": 1,

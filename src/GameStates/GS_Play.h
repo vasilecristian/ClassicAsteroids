@@ -98,8 +98,8 @@ private:
 
 	m2dkit::core::CAnimationInstance* m_animPlayerShipIdle;
 
-	int m_posX;
-	int m_posY;
+	float m_posX;
+	float m_posY;
 };
 
 #endif //__GS_Play_H__

@@ -129,22 +129,22 @@ void GS_Play::Update(float dt)
 	if (rightKeyState & S3E_KEY_STATE_DOWN)
 	{
 		m_playerMove = PlayerMove::RIGHT;
-		m_posX += 10;
+		m_posX += (100 * dt);
 	}
 	else if (leftKeyState & S3E_KEY_STATE_DOWN)
 	{
 		m_playerMove = PlayerMove::LEFT;
-		m_posX -= 10;
+		m_posX -= (100 * dt);
 	}
 	else if (upKeyState & S3E_KEY_STATE_DOWN)
 	{
 		m_playerMove = PlayerMove::FORWARD;
-		m_posY += 5;
+		m_posY += (50 * dt);
 	}
 	else if (downKeyState & S3E_KEY_STATE_DOWN)
 	{
 		m_playerMove = PlayerMove::BACKWARD;
-		m_posY -= 5;
+		m_posY -= (50 * dt);
 	}
 	else
 	{
@@ -203,6 +203,20 @@ bool GS_Play::Load()
 			currentAnim->SetRepeatCount(1);
 			currentAnim->Play(NULL);
 			
+
+			m_loadingProgress = 80;
+			return true;
+		}
+		else if (m_loadingProgress == 80)
+		{
+			shared_ptr<core::CSprite> asteroidType1 = sc->GetNode<core::CSprite>(m_sceneId, "Scene.AsteroidType1");
+			shared_ptr<core::CSprite> asteroidType1_I1 = asteroidType1->Copy();
+			sc->GetScene(m_sceneId)->GetRootNode()->AddChild(asteroidType1_I1);
+			asteroidType1_I1->SetVisible(true);
+			asteroidType1_I1->SetActive(true);
+			asteroidType1_I1->SetPosition(CIwFVec2(300, 300));
+			m2dkit::core::CAnimationInstance* currentAnim = asteroidType1_I1->GetAnimationContainer().SetCurrentAnimation(0);
+			currentAnim->Play(NULL);
 
 			m_loadingProgress = 100;
 			return true;

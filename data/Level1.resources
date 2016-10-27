@@ -500,10 +500,6 @@
             "path": "/assets/asteroid1.png/asteroid1_6",
             "type": "Image"
         },
-        "4": {
-            "path": "/assets/Animation1.anim",
-            "type": "Animation"
-        },
         "40": {
             "path": "/assets/asteroid1.png/asteroid1_7",
             "type": "Image"
@@ -739,10 +735,6 @@
         "99": {
             "path": "/assets/explosion1.png/explosion1_27",
             "type": "Image"
-        },
-        "993": {
-            "path": "/assets/Animation2.anim",
-            "type": "Animation"
         }
     }
 }

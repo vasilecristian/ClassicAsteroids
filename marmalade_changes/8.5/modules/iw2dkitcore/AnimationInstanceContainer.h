@@ -79,6 +79,8 @@ public:
 
 	CAnimationInstance*				SetCurrentAnimation(const char* name);
 
+	CAnimationInstance*				SetCurrentAnimation(int index);
+
     /**
      * Updates this animation instance container. The container node will call this to update its animations.
      *

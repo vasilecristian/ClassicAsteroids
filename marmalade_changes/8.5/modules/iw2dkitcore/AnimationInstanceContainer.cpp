@@ -122,8 +122,21 @@ CAnimationInstance* CAnimationInstanceContainer::SetCurrentAnimation(const char*
 	return 0;
 }
 
+CAnimationInstance* CAnimationInstanceContainer::SetCurrentAnimation(int index)
+{
+	if (index >= 0 && index < m_Animations.size())
+	{
+		m_currentAnimationIndex = index;
+		return m_Animations[index];
+	}
+	
+	m_currentAnimationIndex = -1;
+	return 0;
+}
+
 void CAnimationInstanceContainer::Update(float dt)
 {
+	/// when there is current animation, will be updated, else, will beupdated all animations
 	if (m_currentAnimationIndex >= 0 && m_currentAnimationIndex < m_Animations.size())
 	{
 		m_Animations[m_currentAnimationIndex]->Update(dt);

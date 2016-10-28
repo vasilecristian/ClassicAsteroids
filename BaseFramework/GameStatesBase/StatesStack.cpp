@@ -261,7 +261,7 @@ namespace gs
 	{
 		std::lock_guard<std::recursive_mutex> lockGuard(m_pStateStackMutex);
 
-		return (m_stateIndex >= 0) ? m_pStateStack[m_stateIndex] : NULL;
+		return (m_stateIndex >= 0) ? m_pStateStack[m_stateIndex] : nullptr;
 	}
 
 

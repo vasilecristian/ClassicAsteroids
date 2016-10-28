@@ -1,0 +1,12 @@
+# Beginners should use the Configurations tab
+# Advanced users may edit this file directly
+# To reflect changes to this file in the Hub click 'Update from MKB'
+
+deployments
+{
+    #platforms android iphone osx win10 win32 wp8 wp81 ws80 ws81
+    android-install-location = "2"
+    android-extra-strings = "(app_id,FACEBOOK_APP_ID),(facebook_app_id, 12345678)"
+    android-unsigned = "1"
+
+}

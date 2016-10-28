@@ -81,3 +81,10 @@ deployment
     android-extra-strings='(app_id,FACEBOOK_APP_ID)' 
 
 }
+
+#Hub deployment options, please do not add anything below this line
+subproject
+{
+    (.)
+    ClassicAsteroids_deployment
+}

@@ -194,7 +194,7 @@ namespace dfp
 			
 			CResourceContainer resources = scene->GetResourceContainer();
 
-			for each (auto animIterator in dfpa->m_dfpAnimations->GetAnims())
+			for (auto animIterator : dfpa->m_dfpAnimations->GetAnims())
 			{
 				float time = 0;
 
@@ -209,10 +209,10 @@ namespace dfp
 
 				std::shared_ptr<Anim> anim = animIterator.second;
 				
-				for each (auto cell in anim->GetCells())
+				for (auto cell : anim->GetCells())
 				{
 					auto cellsSpr = cell->GetCellsSpr();
-					for each (auto cs in cellsSpr)
+					for (auto cs : cellsSpr)
 					{
 						std::shared_ptr<dfp::Spr> sp = dfpa->m_dfpSprite->GetSpr(cs->GetName());
 

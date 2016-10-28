@@ -186,7 +186,7 @@ public:
     /**
      * An animation instance callback.
      */
-	typedef std::function<void(Animation::ePlaybackEvent event, CAnimationInstance* source)> CAnimationInstanceCallback;
+	typedef std::function<void(Animation::ePlaybackEvent, CAnimationInstance*)> CAnimationInstanceCallback;
 
     /**
      * Constructs an instance of an animation instance from an animation schema. See @ref animation_definition

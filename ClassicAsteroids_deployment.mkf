@@ -8,5 +8,6 @@ deployments
     android-install-location = "2"
     android-extra-strings = "(app_id,FACEBOOK_APP_ID),(facebook_app_id, 12345678)"
     android-unsigned = "1"
+    android-tm = "0"
 
 }
